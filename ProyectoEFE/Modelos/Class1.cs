@@ -7,5 +7,6 @@ namespace ProyectoEFE.Modelos
 {
     public class Class1
     {
+        public int prueba;
     }
 }
