@@ -1,0 +1,280 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="ProyectoEFEModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="curs">
+          <Key>
+            <PropertyRef Name="id_curs" />
+          </Key>
+          <Property Name="id_curs" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name_curs" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="description_curs" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="icon" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="exercises">
+          <Key>
+            <PropertyRef Name="id_exercise" />
+          </Key>
+          <Property Name="id_exercise" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="50" />
+          <Property Name="description" Type="varchar" MaxLength="255" />
+          <Property Name="solucion" Type="varchar" MaxLength="255" />
+          <Property Name="fk_lessons" Type="int" />
+        </EntityType>
+        <EntityType Name="lessons">
+          <Key>
+            <PropertyRef Name="id_lessons" />
+          </Key>
+          <Property Name="id_lessons" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="50" />
+          <Property Name="description" Type="varchar" MaxLength="255" />
+          <Property Name="icon" Type="varchar" MaxLength="50" />
+          <Property Name="contents" Type="varchar" MaxLength="255" />
+          <Property Name="fk_topics" Type="int" />
+        </EntityType>
+        <EntityType Name="topics">
+          <Key>
+            <PropertyRef Name="id_topic" />
+          </Key>
+          <Property Name="id_topic" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="description" Type="varchar" MaxLength="255" />
+          <Property Name="icon" Type="varchar" MaxLength="50" />
+          <Property Name="fk_curs" Type="int" />
+        </EntityType>
+        <Association Name="FK_exercises_lessons">
+          <End Role="lessons" Type="Self.lessons" Multiplicity="0..1" />
+          <End Role="exercises" Type="Self.exercises" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="lessons">
+              <PropertyRef Name="id_lessons" />
+            </Principal>
+            <Dependent Role="exercises">
+              <PropertyRef Name="fk_lessons" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_lessons_topics">
+          <End Role="topics" Type="Self.topics" Multiplicity="0..1" />
+          <End Role="lessons" Type="Self.lessons" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="topics">
+              <PropertyRef Name="id_topic" />
+            </Principal>
+            <Dependent Role="lessons">
+              <PropertyRef Name="fk_topics" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_topics_curs">
+          <End Role="curs" Type="Self.curs" Multiplicity="0..1" />
+          <End Role="topics" Type="Self.topics" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="curs">
+              <PropertyRef Name="id_curs" />
+            </Principal>
+            <Dependent Role="topics">
+              <PropertyRef Name="fk_curs" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ProyectoEFEModelStoreContainer">
+          <EntitySet Name="curs" EntityType="Self.curs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="exercises" EntityType="Self.exercises" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="lessons" EntityType="Self.lessons" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="topics" EntityType="Self.topics" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_exercises_lessons" Association="Self.FK_exercises_lessons">
+            <End Role="lessons" EntitySet="lessons" />
+            <End Role="exercises" EntitySet="exercises" />
+          </AssociationSet>
+          <AssociationSet Name="FK_lessons_topics" Association="Self.FK_lessons_topics">
+            <End Role="topics" EntitySet="topics" />
+            <End Role="lessons" EntitySet="lessons" />
+          </AssociationSet>
+          <AssociationSet Name="FK_topics_curs" Association="Self.FK_topics_curs">
+            <End Role="curs" EntitySet="curs" />
+            <End Role="topics" EntitySet="topics" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ProyectoEFEModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="cur">
+          <Key>
+            <PropertyRef Name="id_curs" />
+          </Key>
+          <Property Name="id_curs" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name_curs" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="description_curs" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="icon" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="topics" Relationship="Self.FK_topics_curs" FromRole="curs" ToRole="topics" />
+        </EntityType>
+        <EntityType Name="exercis">
+          <Key>
+            <PropertyRef Name="id_exercise" />
+          </Key>
+          <Property Name="id_exercise" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="description" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="solucion" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="fk_lessons" Type="Int32" />
+          <NavigationProperty Name="lesson" Relationship="Self.FK_exercises_lessons" FromRole="exercises" ToRole="lessons" />
+        </EntityType>
+        <EntityType Name="lesson">
+          <Key>
+            <PropertyRef Name="id_lessons" />
+          </Key>
+          <Property Name="id_lessons" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="description" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="icon" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="contents" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="fk_topics" Type="Int32" />
+          <NavigationProperty Name="exercises" Relationship="Self.FK_exercises_lessons" FromRole="lessons" ToRole="exercises" />
+          <NavigationProperty Name="topic" Relationship="Self.FK_lessons_topics" FromRole="lessons" ToRole="topics" />
+        </EntityType>
+        <EntityType Name="topic">
+          <Key>
+            <PropertyRef Name="id_topic" />
+          </Key>
+          <Property Name="id_topic" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="description" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="icon" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="fk_curs" Type="Int32" />
+          <NavigationProperty Name="cur" Relationship="Self.FK_topics_curs" FromRole="topics" ToRole="curs" />
+          <NavigationProperty Name="lessons" Relationship="Self.FK_lessons_topics" FromRole="topics" ToRole="lessons" />
+        </EntityType>
+        <Association Name="FK_topics_curs">
+          <End Role="curs" Type="Self.cur" Multiplicity="0..1" />
+          <End Role="topics" Type="Self.topic" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="curs">
+              <PropertyRef Name="id_curs" />
+            </Principal>
+            <Dependent Role="topics">
+              <PropertyRef Name="fk_curs" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_exercises_lessons">
+          <End Role="lessons" Type="Self.lesson" Multiplicity="0..1" />
+          <End Role="exercises" Type="Self.exercis" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="lessons">
+              <PropertyRef Name="id_lessons" />
+            </Principal>
+            <Dependent Role="exercises">
+              <PropertyRef Name="fk_lessons" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_lessons_topics">
+          <End Role="topics" Type="Self.topic" Multiplicity="0..1" />
+          <End Role="lessons" Type="Self.lesson" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="topics">
+              <PropertyRef Name="id_topic" />
+            </Principal>
+            <Dependent Role="lessons">
+              <PropertyRef Name="fk_topics" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ProyectoEFEEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="curs" EntityType="Self.cur" />
+          <EntitySet Name="exercises" EntityType="Self.exercis" />
+          <EntitySet Name="lessons" EntityType="Self.lesson" />
+          <EntitySet Name="topics" EntityType="Self.topic" />
+          <AssociationSet Name="FK_topics_curs" Association="Self.FK_topics_curs">
+            <End Role="curs" EntitySet="curs" />
+            <End Role="topics" EntitySet="topics" />
+          </AssociationSet>
+          <AssociationSet Name="FK_exercises_lessons" Association="Self.FK_exercises_lessons">
+            <End Role="lessons" EntitySet="lessons" />
+            <End Role="exercises" EntitySet="exercises" />
+          </AssociationSet>
+          <AssociationSet Name="FK_lessons_topics" Association="Self.FK_lessons_topics">
+            <End Role="topics" EntitySet="topics" />
+            <End Role="lessons" EntitySet="lessons" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ProyectoEFEModelStoreContainer" CdmEntityContainer="ProyectoEFEEntities">
+          <EntitySetMapping Name="curs">
+            <EntityTypeMapping TypeName="ProyectoEFEModel.cur">
+              <MappingFragment StoreEntitySet="curs">
+                <ScalarProperty Name="id_curs" ColumnName="id_curs" />
+                <ScalarProperty Name="name_curs" ColumnName="name_curs" />
+                <ScalarProperty Name="description_curs" ColumnName="description_curs" />
+                <ScalarProperty Name="icon" ColumnName="icon" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="exercises">
+            <EntityTypeMapping TypeName="ProyectoEFEModel.exercis">
+              <MappingFragment StoreEntitySet="exercises">
+                <ScalarProperty Name="id_exercise" ColumnName="id_exercise" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="solucion" ColumnName="solucion" />
+                <ScalarProperty Name="fk_lessons" ColumnName="fk_lessons" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="lessons">
+            <EntityTypeMapping TypeName="ProyectoEFEModel.lesson">
+              <MappingFragment StoreEntitySet="lessons">
+                <ScalarProperty Name="id_lessons" ColumnName="id_lessons" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="icon" ColumnName="icon" />
+                <ScalarProperty Name="contents" ColumnName="contents" />
+                <ScalarProperty Name="fk_topics" ColumnName="fk_topics" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="topics">
+            <EntityTypeMapping TypeName="ProyectoEFEModel.topic">
+              <MappingFragment StoreEntitySet="topics">
+                <ScalarProperty Name="id_topic" ColumnName="id_topic" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="icon" ColumnName="icon" />
+                <ScalarProperty Name="fk_curs" ColumnName="fk_curs" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
