@@ -5,8 +5,7 @@ using System.Web;
 
 namespace ProyectoEFE.Modelos
 {
-    public class Class1
+    public class ExercisesModel
     {
-        public int prueba;
     }
 }
