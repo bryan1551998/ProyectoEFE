@@ -1,5 +1,5 @@
 ﻿using ProyectoEFE.DAL;
-using ProyectoEFE.Modelos;
+using ProyectoEFE.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
