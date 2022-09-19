@@ -43,10 +43,10 @@
             </div>
         </div>
         <div class="form-group">
-            <asp:Label runat="server" AssociatedControlID="UserName" CssClass="col-md-2 control-label">User Name</asp:Label>
+            <asp:Label runat="server" AssociatedControlID="NickName" CssClass="col-md-2 control-label">User Name</asp:Label>
             <div class="col-md-10">
-                <asp:TextBox runat="server" ID="UserName" CssClass="form-control" TextMode="SingleLine" />
-                <asp:RequiredFieldValidator runat="server" ControlToValidate="UserName"
+                <asp:TextBox runat="server" ID="NickName" CssClass="form-control" TextMode="SingleLine" />
+                <asp:RequiredFieldValidator runat="server" ControlToValidate="NickName"
                     CssClass="text-danger" ErrorMessage="The first name field is required." />
             </div>
         </div>
