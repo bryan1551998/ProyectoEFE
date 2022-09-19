@@ -55,9 +55,9 @@ namespace ProyectoEFE
             //   consumerKey: "",
             //   consumerSecret: "");
 
-            //app.UseFacebookAuthentication(
-            //   appId: "",
-            //   appSecret: "");
+            app.UseFacebookAuthentication(
+               appId: "3190664731151139",
+               appSecret: "88b45077b7e9373a3ea2b75adb37fa7f");
 
             //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             //{
