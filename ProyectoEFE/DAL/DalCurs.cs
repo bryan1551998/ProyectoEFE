@@ -10,7 +10,7 @@ namespace ProyectoEFE.DAL
 {
     public class DalCurs
     {
-      string strconx = ConfigurationManager.ConnectionStrings["con"].ConnectionString ;
+        string strconx = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
         public void AddCurs(CursModel cursm)
         {
             SqlConnection con = new SqlConnection(strconx);
@@ -31,9 +31,5 @@ namespace ProyectoEFE.DAL
                 con.Close();
             }
         }
-
-        internal void AddCurs()
-        {
-            throw new NotImplementedException();
-        }
     }
+}
