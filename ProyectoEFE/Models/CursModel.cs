@@ -1,4 +1,4 @@
-﻿namespace ProyectoEFE.Modelos
+﻿namespace ProyectoEFE.Models
 {
     public class CursModel
     {
