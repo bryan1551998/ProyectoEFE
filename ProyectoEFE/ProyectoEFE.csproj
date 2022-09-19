@@ -198,7 +198,7 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Account\Web.config" />
-    <Content Include="WebForm1.aspx" />
+    <Content Include="Views\Testing.aspx" />
     <EntityDeploy Include="Conexion\Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model1.Designer.cs</LastGenOutput>
@@ -401,7 +401,7 @@
       <DependentUpon>CursPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="DAL\DalExercises.cs" />
-    <Compile Include="DAL\DalLessons.cs" />
+    <Compile Include="DAL\DALLessons.cs" />
     <Compile Include="DAL\DalTopics.cs" />
     <Compile Include="DAL\DalCurs.cs" />
     <Compile Include="Default.aspx.cs">
@@ -414,6 +414,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\RelationshipCursUserModel.cs" />
     <Compile Include="Models\TopicsModel.cs" />
     <Compile Include="Models\LessonsModel.cs" />
     <Compile Include="Models\ExercisesModel.cs" />
@@ -442,12 +443,12 @@
     <Compile Include="ViewSwitcher.ascx.designer.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
     </Compile>
-    <Compile Include="WebForm1.aspx.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
+    <Compile Include="Views\Testing.aspx.cs">
+      <DependentUpon>Testing.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="WebForm1.aspx.designer.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
+    <Compile Include="Views\Testing.aspx.designer.cs">
+      <DependentUpon>Testing.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
