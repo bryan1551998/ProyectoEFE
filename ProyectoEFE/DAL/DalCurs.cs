@@ -1,10 +1,8 @@
 ﻿using ProyectoEFE.Models;
 using System;
-using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Web;
+
 
 namespace ProyectoEFE.DAL
 {
@@ -16,7 +14,7 @@ namespace ProyectoEFE.DAL
             SqlConnection con = new SqlConnection(strconx);
             con.Open();
 
-            string cadena = "insert into curs(name_curs, description_curs, icon)" +
+            string cadena = "insert into curs(name_curs, description_curs, image_curs)" +
                 " values ('" + cursm.Name_curs + "'" +
                 ",'" + cursm.Description_curs + "','" + cursm.Image_url_curs + "')";
 
