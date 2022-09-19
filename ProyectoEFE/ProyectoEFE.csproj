@@ -398,6 +398,9 @@
     <Compile Include="CursPage.aspx.designer.cs">
       <DependentUpon>CursPage.aspx</DependentUpon>
     </Compile>
+    <Compile Include="DAL\DalExercises.cs" />
+    <Compile Include="DAL\DalLessons.cs" />
+    <Compile Include="DAL\DalTopics.cs" />
     <Compile Include="DAL\DalCurs.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
