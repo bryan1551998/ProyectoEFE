@@ -1,6 +1,7 @@
 ﻿using ProyectoEFE.Conexion;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -13,7 +14,7 @@ namespace ProyectoEFE
         protected void Page_Load(object sender, EventArgs e)
         {
             ConexionBD cnn = new ConexionBD();
-                
+           
         }
     }
 }

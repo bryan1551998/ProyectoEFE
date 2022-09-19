@@ -2,33 +2,29 @@
 using System;
 using System.Configuration;
 using System.Data.SqlClient;
+using System.Diagnostics;
 
-
-namespace ProyectoEFE.DAL
+namespace ProyectoEFE.Conexion
 {
-    public class DalLessons
+    public class DALLessons
     {
-        string strconx = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
 
-        public void AddLesson(LessonsModel lessonsModel)
+        public LessonsModel Insert_Lesson(LessonsModel leson)
         {
-            SqlConnection con = new SqlConnection(strconx);
-            con.Open();
+            ConexionBD cnn = new ConexionBD();
 
-            string cadena = "insert into lessons(name_lesson, description_lesson, image_lesson)" +
-                " values ('" + lessonsModel.Name_lesson + "'" +
-                ",'" + lessonsModel.Description_lesson + "','" + lessonsModel.Image_url_lesson + "')";
-
-            try
-            {
-                SqlCommand comando = new SqlCommand(cadena, con);
-                comando.ExecuteNonQuery();
-                con.Close();
+            try { 
+            
             }
-            catch (Exception e)
+            catch (Exception exeption)
             {
-                con.Close();
+                Debug.WriteLine("ERROR INSERT LessonsModel: " + exeption.Message);
             }
+            finally
+            {
+                cnn.CerrarConexion();
+            }
+            return null;
         }
 
     }

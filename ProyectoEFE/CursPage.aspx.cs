@@ -32,7 +32,7 @@ namespace ProyectoEFE
 
         protected void Add_lesson_Click(object sender, EventArgs e)
         {
-            DalLessons addlesson = new DalLessons();
+            DALLessons addlesson = new DALLessons();
             string namele = txtlesson.Text;
             addlesson.AddLesson(new LessonsModel(namele, namele, namele));
         }
