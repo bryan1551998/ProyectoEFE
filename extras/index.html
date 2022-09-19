@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <title>W3.CSS Template</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <style>
+        body {font-family: "Lato", sans-serif;
+                /*background-color: skyblue;*/
+            }
+            .mySlides {display: none}
+            .imgenesprincipales{
+            width:100%;
+            height: 100vh;
+            }
+            .gradiantheaderbg{
+                background:linear-gradient(#f7b862,#e4360f)
+            }
+            .gradiantbg{
+                background:linear-gradient(#59d3fc,#554dde)
+            }
+            .gradiantftbg{
+                background:linear-gradient(#e4360f,#f7b862)
+            }
+            @media only screen and (min-width: 1000px) {
+                .imgenesprincipales{
+                width:100%;
+                height: 100%;
+                }
+            }
+
+
+    </style>
+
+    </head>
+    <body>
+
+    
+    <!-- Navbar -->
+    <div class="w3-top">
+        <div class="w3-bar w3-deep-orange w3-card">
+            <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+            <a href="#" class="w3-bar-item w3-button w3-padding-large">HOME</a>
+            <a href="#cursos" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Cursos</a>
+            <a href="#AboutUs" class="w3-bar-item w3-button w3-padding-large w3-hide-small">About Us</a>
+            <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Contacto</a>
+            <div class="w3-dropdown-hover w3-hide-small">
+                <button class="w3-padding-large w3-button" title="More">Proyecto Empresa <i class="fa fa-caret-down"></i></button>     
+                <div class="w3-dropdown-content w3-bar-block w3-card-4">
+                <a href="#" class="w3-bar-item w3-button">Que es?</a>
+                <a href="#contact" class="w3-bar-item w3-button">Contactanos</a>
+                <a href="#" class="w3-bar-item w3-button">Preguntas Frecuentes</a>
+                </div>
+            </div>
+            <a href="#contact" class="w3-padding-large w3-hover-red w3-hide-small w3-right"><i class="fa fa-search"></i></a>
+            <a href="#band" class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-right">Login</a>
+        </div>
+    </div>
+
+    <!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
+    <div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
+        <a href="#band" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">About Us</a>
+        <a href="#tour" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Cursos</a>
+        <a href="#contact" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Contacto</a>
+    </div>
+
+    <!-- Page content -->
+    <div class="w3-content" style="max-width:100%;margin-top:46px">
+
+    <!-- Automatic Slideshow Images -->
+    <div class="mySlides w3-display-container w3-center estilo_imagen_carrusel">
+        <img src="./imagenes/ProyectoAprendisaje1.jpg" class="imgenesprincipales">
+        <div class="w3-display-middle w3-container w3-text-white w3-padding-32 w3-hide-small">
+            <h1>E.f{e}</h1>
+            <h3><b>Education For Everyone</b></h3>  
+            <h6>
+                <button class="btn w3-white w3-padding-large w3-large w3-opacity w3-hover-opacity-off" style="transition: 3s;" 
+                    onclick="document.getElementById('subscribe').style.display='block'">
+                    Registrarme
+                </button>
+            </h6> 
+        </div>
+    </div>
+    <div class="mySlides w3-display-container w3-center estilo_imagen_carrusel">
+        <img src="./imagenes/working-on-code.jpg" class="imgenesprincipales" >
+        <div class="w3-display-middle w3-container w3-text-white w3-padding-32 w3-hide-small">
+            <h1>E.f{e}</h1>
+            <h3><b>Education For Everyone</b></h3>  
+            <h6>
+                <button class="btn w3-white w3-padding-large w3-large w3-opacity w3-hover-opacity-off" style="transition: 3s;"
+                    onclick="document.getElementById('subscribe').style.display='block'">
+                    Registrarme
+                </button>
+            </h6> 
+        </div>
+    </div>
+    <div class="mySlides w3-display-container w3-center estilo_imagen_carrusel">
+        <img src="./imagenes/imagenPefe.jpg" class="imgenesprincipales" >
+        <div class="w3-display-middle w3-container w3-text-white w3-padding-32 w3-hide-small">
+            <h1>E.f{e}</h1>
+            <h3><b>Education For Everyone</b></h3>  
+            <h6>
+                <button class="btn w3-white w3-padding-large w3-large w3-opacity w3-hover-opacity-off" style="transition: 3s;" 
+                    onclick="document.getElementById('subscribe').style.display='block'">
+                    Registrarme
+                </button>
+            </h6> 
+        </div>
+    </div>
+
+
+    <!--Curse section-->
+
+    <div class="gradiantbg">
+        <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:80%;max-height:70%;" id="cursos">
+            <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="./imagenes/WebDesign.jpg" class="d-block w-100" alt="..." width="600px" height="500px">
+                        <div class="carousel-caption d-none d-lg-block">
+                            <h5>Desarrollo Web</h5>
+                            <p>Some representative placeholder content for the first slide.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="./imagenes/CBSCTY.jpg" class="d-block w-100" alt="..." width="600px" height="500px">
+                        <div class="carousel-caption d-none d-lg-block">
+                            <h5>Ciberseguridad</h5>
+                            <p>Some representative placeholder content for the second slide.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="./imagenes/AI.jpg" class="d-block w-100" alt="..." width="600px" height="500px">
+                        <div class="carousel-caption d-none d-lg-block">
+                            <h5>Itenligencia Artificial</h5>
+                            <p>Some representative placeholder content for the third slide.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="./imagenes/Robotica.jpg" class="d-block w-100" alt="..." width="600px" height="500px">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Informatica aplicada al campo de la Robotica</h5>
+                            <p>Some representative placeholder content for the fourth slide.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    
+
+    <!-- The Band Section -->
+    <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="AboutUs">
+        <h2 class="w3-wide">Education For Everyone</h2>
+        <p class="w3-opacity">
+            <i>Nos encanta aprender y descubrir</i>
+        </p>
+        <p class="w3-justify">
+            hemos creado este sitio web para que la gente de cualquier clase social pueda aprender de manera gratiuta y sencilla el arte de programar 
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+            ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur
+            adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <div class="w3-row w3-padding-32">
+            <div class="w3-third">
+                <p>Ignacio Lerda</p>
+                <p>ing. Informatico & Founder</p>
+                <img src="./imagenes/The.Matrix.glmatrix.2.png" class="w3-round w3-margin-bottom" alt="Random Name" style="width:60%">
+            </div>
+            <div class="w3-third">
+                <p>Sebastian</p>
+                <p>ing. Informatico & Founder</p>
+                <img src="./imagenes/The.Matrix.glmatrix.2.png" class="w3-round w3-margin-bottom" alt="Random Name" style="width:60%">
+            </div>
+            <div class="w3-third">
+                <p>Bryan</p>
+                <p>ing. Informatico & Founder</p>
+                <img src="./imagenes/The.Matrix.glmatrix.2.png" class="w3-round" alt="Random Name" style="width:60%">
+            </div>
+        </div>
+    </div>
+    
+    <!-- The Contact Section -->
+    <div class="w3-container w3-content w3-padding-64" style="max-width:800px" id="contact">
+        <h2 class="w3-wide w3-center">Contactanos</h2>
+        <p class="w3-opacity w3-center"><i>Te atreves al reto?</i></p>
+        <div class="w3-row w3-padding-32">
+            <div class="w3-col m6 w3-large w3-margin-bottom">
+                <i class="fa fa-map-marker" style="width:30px"></i> Barcelona, Es<br>
+                <i class="fa fa-phone" style="width:30px"></i> Phone: +34 627894567<br>
+                <i class="fa fa-envelope" style="width:30px"> </i> Email: user@educatioforeveryone.com<br>
+            </div>
+            <div class="w3-col m6">
+                <form action="/action_page.php" target="_blank">
+                    <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
+                        <div class="w3-half">
+                            <input class="w3-input w3-border" type="text" placeholder="Name" required name="Name">
+                        </div>
+                        <div class="w3-half">
+                            <input class="w3-input w3-border" type="text" placeholder="Email" required name="Email">
+                        </div>
+                    </div>
+                    <input class="w3-input w3-border" type="text" placeholder="Message" required name="Message">
+                    <button class="w3-button w3-black w3-section w3-right" type="submit">Enviar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <!-- End Page Content -->
+    </div>
+</div>
+    <!-- Footer -->
+        <footer class="w3-container w3-padding-64 w3-center w3-opacity gradiantftbg w3-xlarge">
+            <i class="fa fa-facebook-official w3-hover-opacity"></i>
+            <i class="fa fa-instagram w3-hover-opacity"></i>
+            <i class="fa fa-snapchat w3-hover-opacity"></i>
+            <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+            <i class="fa fa-twitter w3-hover-opacity"></i>
+            <i class="fa fa-linkedin w3-hover-opacity"></i>
+        </footer>
+        
+        
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js" integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous"></script>
+        <script>
+            // Automatic Slideshow - change image every 4 seconds
+            var myIndex = 0;
+            carousel();
+
+            function carousel() {
+                var i;
+                var x = document.getElementsByClassName("mySlides");
+                for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";  
+                }
+                myIndex++;
+                if (myIndex > x.length) {myIndex = 1}    
+                x[myIndex-1].style.display = "block";  
+                setTimeout(carousel, 5000);    
+            }
+
+            // Used to toggle the menu on small screens when clicking on the menu button
+            function myFunction() {
+                var x = document.getElementById("navDemo");
+                if (x.className.indexOf("w3-show") == -1) {
+                x.className += " w3-show";
+                } else { 
+                x.className = x.className.replace(" w3-show", "");
+                }
+            }
+        </script>
+
+    </body>
+</html>
+
