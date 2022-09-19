@@ -1,5 +1,5 @@
 ﻿using ProyectoEFE.DAL;
-using ProyectoEFE.Modelos;
+using ProyectoEFE.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,8 +19,29 @@ namespace ProyectoEFE
         protected void Add_Curs_Click(object sender, EventArgs e)
         {
             DalCurs addcurs = new DalCurs();
-            string namc = txtnamecurs.Text;
+            string namc = txtcurso.Text;
             addcurs.AddCurs(new CursModel(namc, namc, namc));
+        }
+
+        protected void Add_topics_Click(object sender, EventArgs e)
+        {
+            DalTopics addtopoic = new DalTopics();
+            string nametop = txttopics.Text;
+            addtopoic.AddTopic(new TopicsModel(nametop, nametop, nametop));
+        }
+
+        protected void Add_lesson_Click(object sender, EventArgs e)
+        {
+            DalLessons addlesson = new DalLessons();
+            string namele = txtlesson.Text;
+            addlesson.AddLesson(new LessonsModel(namele, namele, namele));
+        }
+
+        protected void Add_exercises_Click(object sender, EventArgs e)
+        {
+            DalExercises addexerc = new DalExercises();
+            string nameexe = txtexerci.Text;
+            addexerc.AddExercises(new ExercisesModel(nameexe, nameexe, nameexe));
         }
     }
 }
