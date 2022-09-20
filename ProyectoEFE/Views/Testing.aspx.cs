@@ -16,8 +16,16 @@ namespace ProyectoEFE
         protected void Page_Load(object sender, EventArgs e)
         {
             DALCurs curs = new DALCurs();
-            CursModel cursModel = new CursModel("nombre 1", "description", "imagen");
-            curs.InsertCurs(cursModel);
+            //CursModel cursModel = new CursModel("nombre 1", "description", "imagen");
+            //curs.InsertCurs(cursModel);
+
+            //List<CursModel> lisModels = curs.SelectCurs();
+
+            //foreach (var item in lisModels)
+            //{
+            //    Debug.WriteLine(item.Id_curs+" - "+ item.Name_curs);
+               
+            //}
         }
     }
 }

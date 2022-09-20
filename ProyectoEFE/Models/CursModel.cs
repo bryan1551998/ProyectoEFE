@@ -29,5 +29,9 @@
             this.Description_curs = description_curs;
             this.Image_url_curs = image_url_curs;
         }
+
+        public CursModel()
+        {
+        }
     }
 }

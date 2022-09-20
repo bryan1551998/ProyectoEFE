@@ -1,33 +1,55 @@
-﻿using ProyectoEFE.Models;
+﻿using ProyectoEFE.Conexion;
+using ProyectoEFE.Models;
 using System;
 using System.Configuration;
 using System.Data.SqlClient;
+using System.Diagnostics;
 
 namespace ProyectoEFE.DAL
 {
-    public class DalTopics
+    public class DALTopics
     {
-        string strconx = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
-
-        public void AddTopic(TopicsModel topicsModel)
+        public void InsertCurs(CursModel curs)
         {
-            SqlConnection con = new SqlConnection(strconx);
-            con.Open();
 
-            string cadena = "insert into topics(name_topic, description_topic, image_topic)" +
-                " values ('" + topicsModel.Name_topic + "'" +
-                ",'" + topicsModel.Description_topic + "','" + topicsModel.Image_url_topic + "')";
+            ConexionBD cnn = new ConexionBD();
 
             try
             {
-                SqlCommand comando = new SqlCommand(cadena, con);
-                comando.ExecuteNonQuery();
-                con.Close();
+                //String query
+                String query = @"INSERT INTO curs VALUES
+                               (@pName_curs,
+                                @pDescription_curs, 
+                                @pImage_curs)";
+
+                //Conexion creada
+                SqlCommand comand = new SqlCommand(query, cnn.Connection);
+
+                //Parametros de la query
+                SqlParameter pName_curs = new SqlParameter("@pName_curs", curs.Name_curs);
+                SqlParameter pDescription_curs = new SqlParameter("@pDescription_curs", curs.Description_curs);
+                SqlParameter pImage_curs = new SqlParameter("@pImage_curs", curs.Image_url_curs);
+
+                //Añadir los parametros
+                comand.Parameters.Add(pName_curs);
+                comand.Parameters.Add(pDescription_curs);
+                comand.Parameters.Add(pImage_curs);
+
+                //Ejecutar query
+                comand.ExecuteNonQuery();
+                Debug.WriteLine("Curso " + curs.Name_curs + " creado");
+
             }
-            catch (Exception e)
+            catch (Exception exeption)
             {
-                con.Close();
+
+                Debug.WriteLine("ERROR INSERTAR CURS: " + exeption.Message);
             }
+            finally
+            {
+                cnn.CerrarConexion();
+            }
+
         }
     }
 }

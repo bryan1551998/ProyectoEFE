@@ -13,7 +13,7 @@ namespace ProyectoEFE.Views.Curs
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-           
+            this.CrearTableCurs();
         }
 
         protected void btn_Crear_Curs_Click(object sender, EventArgs e)
@@ -21,6 +21,32 @@ namespace ProyectoEFE.Views.Curs
             DALCurs curs = new DALCurs();
             CursModel cursModel = new CursModel(this.name_curs.Value, this.description_curs.Value, this.image_curs.Value);
             curs.InsertCurs(cursModel);
+            this.CrearTableCurs();
+            this.LimpiarFormCurs();
+        }
+        public void CrearTableCurs()
+        {
+
+            DALCurs curs = new DALCurs();
+            List<CursModel> lisModels = curs.SelectCurs();
+            this.GridViewCurs.DataSource = lisModels;
+            this.GridViewCurs.DataBind();
+        }
+
+        public void LimpiarFormCurs()
+        {
+            this.name_curs.Value = "";
+            this.description_curs.Value = "";
+            this.image_curs.Value = "";
+        }
+
+        protected void btn_eliminar_curs_Click(object sender, EventArgs e)
+        {
+            DALCurs curs = new DALCurs();
+            curs.EliminarCurs(int.Parse(this.id_curs_delete.Value));
+            this.id_curs_delete.Value = "";
+            this.CrearTableCurs();
+
         }
     }
 }
