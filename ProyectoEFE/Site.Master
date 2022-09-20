@@ -93,6 +93,8 @@
             </div>
         </nav>
         <div class="container">
+
+            <%-- Contenido dinamico --%>
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
 
