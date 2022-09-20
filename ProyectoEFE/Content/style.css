@@ -1,0 +1,9 @@
+﻿/*NAV*/
+.bg-light {
+    background: #ff5722 !important;
+   
+}
+
+.navbar-light .navbar-nav .nav-link.active, .navbar-brand {
+    color: white !important;
+}
