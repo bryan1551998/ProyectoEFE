@@ -59,11 +59,11 @@ namespace ProyectoEFE
                appId: "3190664731151139",
                appSecret: "88b45077b7e9373a3ea2b75adb37fa7f");
 
-            //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
-            //{
-            //    ClientId = "",
-            //    ClientSecret = ""
-            //});
+            app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+            {
+                ClientId = "885068843058-4e25k7fugm06807851d7jef97qf2ua2d.apps.googleusercontent.com",
+                ClientSecret = "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"
+            });
         }
     }
 }

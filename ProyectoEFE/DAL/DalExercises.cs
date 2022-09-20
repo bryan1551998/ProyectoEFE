@@ -17,7 +17,7 @@ namespace ProyectoEFE.DAL
 
             string cadena = "insert into exercises(name_exercise, description_exercise, solucion_exercise)" +
                 " values ('" + exercisesModel.Name_exercise + "'" +
-                ",'" + exercisesModel.Description_exercise + "','" + exercisesModel.Image_url_exercise + "')";
+                ",'" + exercisesModel.Description_exercise + "','" + exercisesModel.Image_exercise + "')";
 
             try
             {
