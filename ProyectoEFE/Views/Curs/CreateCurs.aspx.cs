@@ -23,11 +23,12 @@ namespace ProyectoEFE.Views.Curs
             curs.InsertCurs(cursModel);
             this.CrearTableCurs();
             this.LimpiarFormCurs();
+            Response.Redirect("~/Views/Curs/CreateCurs");
         }
+
         public void CrearTableCurs()
         {
-
-            DALCurs curs = new DALCurs();
+                        DALCurs curs = new DALCurs();
             List<CursModel> lisModels = curs.SelectCurs();
             this.GridViewCurs.DataSource = lisModels;
             this.GridViewCurs.DataBind();
@@ -46,7 +47,6 @@ namespace ProyectoEFE.Views.Curs
             curs.EliminarCurs(int.Parse(this.id_curs_delete.Value));
             this.id_curs_delete.Value = "";
             this.CrearTableCurs();
-
         }
     }
 }

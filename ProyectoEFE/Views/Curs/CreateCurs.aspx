@@ -6,13 +6,13 @@
             <div class="col-6">
 
                 <label for="name_curs" class="form-label">Nombre del curso</label>
-                <input runat="server" type="text" class="form-control" id="name_curs"  />
+                <input runat="server" type="text" class="form-control" id="name_curs" />
                 <br />
                 <label for="description_curs" class="form-label">Descripcion del curso</label>
-                <input runat="server" type="text" class="form-control" id="description_curs"  />
+                <textarea runat="server" type="text" class="form-control" id="description_curs" rows="4" cols="50" />
                 <br />
                 <label for="image_curs" class="form-label">Imagen del curso</label>
-                <input runat="server" type="text" class="form-control" id="image_curs"  />
+                <input runat="server" type="text" class="form-control" id="image_curs" />
                 <br />
                 <asp:Button ID="btn_Crear_Curs" runat="server" Text="Crear Curso" class="btn btn-primary" OnClick="btn_Crear_Curs_Click" />
 
@@ -38,4 +38,33 @@
         </div>
     </div>
 
+    
+<table class="default" id="jojojo">
+
+  <tr>
+
+    <td>Celda 1</td>
+
+    <td>Celda 2</td>
+
+    <td>Celda 3</td>
+
+  </tr>
+
+  <tr>
+
+    <td>Celda 4</td>
+
+    <td>Celda 5</td>
+
+    <td>Celda 6</td>
+
+  </tr>
+
+</table>
+
+    <script>
+        var tabla = document.querySelector("#MainContent_GridViewCurs");
+        var datatable = new DataTable(tabla);
+    </script>
 </asp:Content>
