@@ -24,8 +24,20 @@ namespace ProyectoEFE
             //foreach (var item in lisModels)
             //{
             //    Debug.WriteLine(item.Id_curs+" - "+ item.Name_curs);
-               
+
             //}
+
+
+            //List<CursModel> lisModels = curs.SelectCurs();
+            //foreach (var item in lisModels)
+            //{
+            //    this.DropDownList1.Items.Add("ID: " + item.Id_curs.ToString() + " - " + item.Name_curs.ToString());
+            //}
+
+
+
+
+
         }
     }
 }

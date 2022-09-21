@@ -1,7 +1,8 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Site.Master" CodeBehind="CreateCurs.aspx.cs" Inherits="ProyectoEFE.Views.Curs.WebForm1" %>
 
 <asp:Content ID="PaginaCurs" ContentPlaceHolderID="MainContent" runat="server">
-    <div class="container">
+
+    <div class="container pb-4">
         <div class="row pt-4 pb-4">
             <div class="col-6">
 
@@ -25,8 +26,8 @@
                 </asp:GridView>
 
             </div>
-
         </div>
+
         <div class="row pt-4 pb-4">
             <div class="col-6">
 
@@ -34,34 +35,10 @@
                 <input runat="server" type="number" class="form-control" id="id_curs_delete" />
                 <br />
                 <asp:Button ID="btn_eliminar_curs" runat="server" Text="Eliminar" class="btn btn-primary" OnClick="btn_eliminar_curs_Click" />
+
             </div>
         </div>
     </div>
-
-    
-<table class="default" id="jojojo">
-
-  <tr>
-
-    <td>Celda 1</td>
-
-    <td>Celda 2</td>
-
-    <td>Celda 3</td>
-
-  </tr>
-
-  <tr>
-
-    <td>Celda 4</td>
-
-    <td>Celda 5</td>
-
-    <td>Celda 6</td>
-
-  </tr>
-
-</table>
 
     <script>
         var tabla = document.querySelector("#MainContent_GridViewCurs");

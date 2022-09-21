@@ -1,6 +1,7 @@
 ﻿using ProyectoEFE.Conexion;
 using ProyectoEFE.Models;
 using System;
+using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
 using System.Diagnostics;
@@ -9,7 +10,7 @@ namespace ProyectoEFE.DAL
 {
     public class DALTopics
     {
-        public void InsertCurs(CursModel curs)
+        public void InsertTopic(TopicsModel topics)
         {
 
             ConexionBD cnn = new ConexionBD();
@@ -17,39 +18,112 @@ namespace ProyectoEFE.DAL
             try
             {
                 //String query
-                String query = @"INSERT INTO curs VALUES
-                               (@pName_curs,
-                                @pDescription_curs, 
-                                @pImage_curs)";
+                String query = @"INSERT topics VALUES
+                               (@pFk_curs,
+                                @pImage_topic,
+                                @pName_topic,
+                                @pDescription_topic)";
 
                 //Conexion creada
                 SqlCommand comand = new SqlCommand(query, cnn.Connection);
 
                 //Parametros de la query
-                SqlParameter pName_curs = new SqlParameter("@pName_curs", curs.Name_curs);
-                SqlParameter pDescription_curs = new SqlParameter("@pDescription_curs", curs.Description_curs);
-                SqlParameter pImage_curs = new SqlParameter("@pImage_curs", curs.Image_url_curs);
+                SqlParameter pFk_curs = new SqlParameter("@pFk_curs", topics.Fk_curs);
+                SqlParameter pImage_topic = new SqlParameter("@pImage_topic", topics.Image_url_topic);
+                SqlParameter pName_topic = new SqlParameter("@pName_topic", topics.Name_topic);
+                SqlParameter pDescription_topic = new SqlParameter("@pDescription_topic", topics.Description_topic);
 
                 //Añadir los parametros
-                comand.Parameters.Add(pName_curs);
-                comand.Parameters.Add(pDescription_curs);
-                comand.Parameters.Add(pImage_curs);
+                comand.Parameters.Add(pFk_curs);
+                comand.Parameters.Add(pImage_topic);
+                comand.Parameters.Add(pName_topic);
+                comand.Parameters.Add(pDescription_topic);
 
                 //Ejecutar query
                 comand.ExecuteNonQuery();
-                Debug.WriteLine("Curso " + curs.Name_curs + " creado");
+                Debug.WriteLine("Curso " + topics.Name_topic + " creado");
 
             }
             catch (Exception exeption)
             {
+                Debug.WriteLine("ERROR INSERTAR TEMAS: " + exeption.Message);
+            }
+            finally
+            {
+                cnn.CerrarConexion();
+            }
+        }
 
-                Debug.WriteLine("ERROR INSERTAR CURS: " + exeption.Message);
+        public List<TopicsModel> SelectTopics()
+        {
+            List<TopicsModel> lisTopics = new List<TopicsModel>();
+            ConexionBD cnn = new ConexionBD();
+
+            try
+            {
+                //String query
+                String query = @"SELECT * FROM topics";
+
+                //Conexion creada
+                SqlCommand comand = new SqlCommand(query, cnn.Connection);
+
+                //Ejecutar query
+                SqlDataReader registros = comand.ExecuteReader();
+
+                //Obtener lo datos
+                while (registros.Read())
+                {
+                    TopicsModel cursModel = new TopicsModel();
+                    cursModel.Id_topic = (int)registros["id_topic"];
+                    cursModel.Fk_curs = (int)registros["fk_curs"];
+                    cursModel.Image_url_topic=(String)registros["image_topic"];
+                    cursModel.Name_topic = (String)registros["name_topic"];
+                    cursModel.Description_topic = (String)registros["description_topic"];
+                    lisTopics.Add(cursModel);
+                }
+            }
+            catch (Exception exeption)
+            {
+                Debug.WriteLine("ERROR SELECT TEMAS: " + exeption.Message);
             }
             finally
             {
                 cnn.CerrarConexion();
             }
 
+            return lisTopics;
+        }
+
+        public void EliminarTopic(int id_topic)
+        {
+
+            ConexionBD cnn = new ConexionBD();
+
+            try
+            {
+                //String query
+                String query = @"DELETE FROM topics
+                               WHERE id_topic = @pId_topic";
+
+                //Conexion creada
+                SqlCommand comand = new SqlCommand(query, cnn.Connection);
+
+                //Parametros de la query
+                SqlParameter pId_topic = new SqlParameter("@pId_topic", id_topic);
+                comand.Parameters.Add(pId_topic);
+
+                //Ejecutar query
+                SqlDataReader registros = comand.ExecuteReader();
+                Debug.WriteLine("Tema " + id_topic + " eliminado");
+            }
+            catch (Exception exeption)
+            {
+                Debug.WriteLine("ERROR ELIMINAR CURS: " + exeption.Message);
+            }
+            finally
+            {
+                cnn.CerrarConexion();
+            }
         }
     }
 }

@@ -34,5 +34,9 @@ namespace ProyectoEFE.Models
             this.Name_lesson = name_lesson;
             this.Description_lesson = description_lesson;
         }
+
+        public LessonsModel()
+        {
+        }
     }
 }

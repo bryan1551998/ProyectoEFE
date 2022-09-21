@@ -33,5 +33,9 @@
             this.Name_topic = name_topic;
             this.Description_topic = description_topic;
         }
+
+        public TopicsModel()
+        {
+        }
     }
 }
