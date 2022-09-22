@@ -9,7 +9,10 @@
 <body>
     <form id="form1" runat="server">
         <div>
+            <asp:Label ID="Label1" runat="server" Text="El Rol Es: "></asp:Label>
+            <h1 runat="server" id="role"> </h1>
         </div>
+        <asp:Button ID="Button1" runat="server" Text="Ver Rol" OnClick="Button1_Click" />
     </form>
 </body>
 </html>

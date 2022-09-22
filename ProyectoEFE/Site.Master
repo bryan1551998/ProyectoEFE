@@ -66,7 +66,18 @@
                         <li class="nav-item"><a class="nav-link active" aria-current="page" runat="server" href="~/">Home</a></li>
                         <li class="nav-item"><a class="nav-link active" aria-current="page" runat="server" href="~/About">About</a></li>
                         <li class="nav-item"><a class="nav-link active" aria-current="page" runat="server" href="~/Contact">Contact</a></li>
-                        <li class="nav-item"><a class="nav-link active" aria-current="page" runat="server" href="~/CursPage">Cursos</a></li>
+                        <% if (Session["role"].ToString().Trim() == Session["admin"].ToString().Trim())
+                                {%>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" runat="server" href="~/Contact">Admin</a></li>
+                        <%
+                            }
+                            %>
+                        <% if (Session["role"].ToString().Trim() == Session["student"].ToString().Trim())
+                                {%>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" runat="server" href="~/Contact">Student</a></li>
+                        <%
+                            }
+                            %>
                     </ul>
 
                     <div class="d-flex">
@@ -89,7 +100,6 @@
                                         <asp:LoginStatus class="nav-link active" runat="server" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" />
                                     </li>
                                 </ul>
-
                             </LoggedInTemplate>
                         </asp:LoginView>
                     </div>

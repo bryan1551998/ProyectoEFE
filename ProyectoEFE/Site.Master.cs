@@ -7,6 +7,7 @@ using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Microsoft.AspNet.Identity;
+using ProyectoEFE.DAL;
 
 namespace ProyectoEFE
 {
@@ -45,10 +46,10 @@ namespace ProyectoEFE
                 Response.Cookies.Set(responseCookie);
             }
 
-            Page.PreLoad += master_Page_PreLoad;
+            Page.PreLoad += Master_Page_PreLoad;
         }
 
-        protected void master_Page_PreLoad(object sender, EventArgs e)
+        protected void Master_Page_PreLoad(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
@@ -69,7 +70,10 @@ namespace ProyectoEFE
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            Session["admin"] = "admin";
+            Session["student"] = "student";
+            DALRole roleuser = new DALRole();
+            Session["role"] = roleuser.ReadRol(Context.User.Identity.GetUserName()).Trim();
         }
 
         protected void Unnamed_LoggingOut(object sender, LoginCancelEventArgs e)

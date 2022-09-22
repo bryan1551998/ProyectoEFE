@@ -517,6 +517,7 @@
     </Compile>
     <Compile Include="DAL\DalExercises.cs" />
     <Compile Include="DAL\DALLessons.cs" />
+    <Compile Include="DAL\DALRole.cs" />
     <Compile Include="DAL\DALTopics.cs" />
     <Compile Include="DAL\DALCurs.cs" />
     <Compile Include="Default.aspx.cs">
