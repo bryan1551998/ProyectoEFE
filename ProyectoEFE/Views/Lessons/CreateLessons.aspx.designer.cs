@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ProyectoEFE.Views.Topics
+namespace ProyectoEFE.Views.Lessons
 {
 
 
@@ -15,75 +15,75 @@ namespace ProyectoEFE.Views.Topics
     {
 
         /// <summary>
-        /// SelectCurs control.
+        /// SelectLesson control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList SelectCurs;
+        protected global::System.Web.UI.WebControls.DropDownList SelectLesson;
 
         /// <summary>
-        /// name_topics control.
+        /// name_lesson control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText name_topics;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText name_lesson;
 
         /// <summary>
-        /// description_topics control.
+        /// description_lesson control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTextArea description_topics;
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea description_lesson;
 
         /// <summary>
-        /// image_topics control.
+        /// image_lesson control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText image_topics;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText image_lesson;
 
         /// <summary>
-        /// btn_Crear_Topics control.
+        /// btn_Crear_Lesson control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_Crear_Topics;
+        protected global::System.Web.UI.WebControls.Button btn_Crear_Lesson;
 
         /// <summary>
-        /// GridViewTopics control.
+        /// GridViewLesson control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridViewTopics;
+        protected global::System.Web.UI.WebControls.GridView GridViewLesson;
 
         /// <summary>
-        /// id_tema_delete control.
+        /// id_lesson_delete control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl id_tema_delete;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl id_lesson_delete;
 
         /// <summary>
-        /// btn_eliminar_curs control.
+        /// btn_eliminar_lesson control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_eliminar_curs;
+        protected global::System.Web.UI.WebControls.Button btn_eliminar_lesson;
     }
 }

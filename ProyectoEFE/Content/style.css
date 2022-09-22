@@ -45,7 +45,7 @@
 #header {
     height: 100vh;
     text-align: center;
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../images/imagenPefe.jpg) no-repeat center center fixed;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../images/ProyectoAprendisaje1.jpg) no-repeat center center fixed;
     background-size: cover;
 }
 #header > #tituloDeLaPagina {
@@ -120,4 +120,38 @@
     background: -webkit-linear-gradient(to top, #eea849, #f46b45); /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to top, #eea849, #f46b45); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     
+}
+.fondoPantallaGeneralDisplayFlex {
+    height: 100vh;
+    text-align: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../images/imagenPefe.jpg) no-repeat center center fixed;
+    background-size: cover;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+.fondoPantallaGeneralDisplaygrid {
+    height: 100vh;
+    text-align: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../images/imagenPefe.jpg) no-repeat center center fixed;
+    background-size: cover;
+    display: grid;
+    grid-template-columns: 1fr,400px,400px,1fr;
+    grid-template-rows: 1fr,400px,400px,1fr;
+}
+.color-contenedor {
+    background: #4b6cb7; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #182848, #4b6cb7); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #182848, #4b6cb7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: white;
+}
+.posicionamiento {
+    max-width: 800px;
+    max-height: 700px;
+    border-radius: 20px;
+    -webkit-box-shadow: 36px 32px 57px -1px rgba(0,0,0,0.61);
+    -moz-box-shadow: 36px 32px 57px -1px rgba(0,0,0,0.61);
+    box-shadow: 36px 32px 57px -1px rgba(0,0,0,0.61);
+    padding-left: 16px;
+    padding-right: 16px;
 }

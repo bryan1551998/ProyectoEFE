@@ -28,7 +28,7 @@ namespace ProyectoEFE.Views.Curs
 
         public void CrearTableCurs()
         {
-                        DALCurs curs = new DALCurs();
+            DALCurs curs = new DALCurs();
             List<CursModel> lisModels = curs.SelectCurs();
             this.GridViewCurs.DataSource = lisModels;
             this.GridViewCurs.DataBind();
