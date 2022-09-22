@@ -42,6 +42,15 @@ namespace ProyectoEFE.Account
         protected global::System.Web.UI.WebControls.TextBox LastName;
 
         /// <summary>
+        /// Control NickName.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox NickName;
+
+        /// <summary>
         /// Control BirthDay.
         /// </summary>
         /// <remarks>
@@ -58,15 +67,6 @@ namespace ProyectoEFE.Account
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox Email;
-
-        /// <summary>
-        /// Control NickName.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox NickName;
 
         /// <summary>
         /// Control Password.
