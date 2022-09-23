@@ -1,4 +1,5 @@
-﻿using ProyectoEFE.DAL;
+﻿using Microsoft.AspNet.Identity;
+using ProyectoEFE.DAL;
 using ProyectoEFE.Models;
 using System;
 using System.Collections.Generic;
@@ -13,6 +14,12 @@ namespace ProyectoEFE.Views.Curs
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            DALRole roleuser = new DALRole();
+            Session["role"] = roleuser.ReadRol(Context.User.Identity.GetUserName());
+            if (Session["role"].ToString().Trim() != "admin")
+            {
+                Response.Redirect("~/");
+            }
             this.CrearTableCurs();
         }
 
