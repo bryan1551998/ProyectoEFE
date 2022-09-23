@@ -95,8 +95,6 @@
     color: white;
 }
 .posicionamiento {
-    max-width: 800px;
-    max-height: 700px;
     border-radius: 20px;
     -webkit-box-shadow: 36px 32px 57px -1px rgba(0,0,0,0.61);
     -moz-box-shadow: 36px 32px 57px -1px rgba(0,0,0,0.61);
@@ -131,4 +129,27 @@
 .botonLogin {
     margin-top:10px;
     margin-bottom: 10px;
+}
+
+                /*  perfil general  */
+
+.contenedorInfoGeneral{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+}
+.contenedorInfoGeneral div:nth-child(1){
+   
+    grid-column:1;
+
+}
+.img {
+    width: 200px;
+    height: 200px;
+    border-radius:20px;
+}
+.contenedorInfoGeneral div:nth-child(1) {
+
+}
+.contenidos {
+  
 }

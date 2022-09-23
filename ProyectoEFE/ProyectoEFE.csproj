@@ -355,6 +355,7 @@
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Views\Admin\Topics\CreateTopics.aspx" />
     <Content Include="Views\User\AllCurs.aspx" />
+    <Content Include="Views\User\Perfil.aspx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
     <Content Include="Site.Mobile.Master" />
@@ -604,6 +605,16 @@
     <Compile Include="Views\User\AllCurs.aspx.designer.cs">
       <DependentUpon>AllCurs.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Views\User\HtmlElementEventArgs.cs" />
+    <Compile Include="Views\User\HtmlElementEventHandler.cs" />
+    <Compile Include="Views\User\Perfil.aspx.cs">
+      <DependentUpon>Perfil.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\User\Perfil.aspx.designer.cs">
+      <DependentUpon>Perfil.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\User\StyleGenerator.cs" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
