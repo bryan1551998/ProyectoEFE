@@ -40,7 +40,7 @@
                         </div>
                         <div class="form-group botonLogin ">
                             <div class="">
-                                <asp:Button runat="server" OnClick="LogIn" Text="Log in" CssClass="btn btn btn-outline-light " />
+                                <asp:Button runat="server" OnClick="LogIn" Text="Log in" CssClass="btn btn-outline-light " />
                             </div>
                         </div>
                     </div>
