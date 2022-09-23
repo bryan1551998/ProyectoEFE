@@ -193,6 +193,7 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Account\Web.config" />
+    <Content Include="http404.aspx" />
     <Content Include="images\AI.jpg" />
     <Content Include="images\C++.png" />
     <Content Include="images\C-sharp.png" />
@@ -524,6 +525,13 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="http404.aspx.cs">
+      <DependentUpon>http404.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="http404.aspx.designer.cs">
+      <DependentUpon>http404.aspx</DependentUpon>
     </Compile>
     <Compile Include="Models\RelationshipCursUserModel.cs" />
     <Compile Include="Models\TopicsModel.cs" />
