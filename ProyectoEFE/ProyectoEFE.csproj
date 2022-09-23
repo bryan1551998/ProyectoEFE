@@ -298,8 +298,9 @@
     <Content Include="Scripts\umd\popper-utils.min.js" />
     <Content Include="Scripts\umd\popper.js" />
     <Content Include="Scripts\umd\popper.min.js" />
-    <Content Include="Views\Curs\CreateCurs.aspx" />
-    <Content Include="Views\Lessons\CreateLessons.aspx" />
+    <Content Include="Views\Admin\Curs\CreateCurs.aspx" />
+    <Content Include="Views\Admin\Exercises\CreateExercises.aspx" />
+    <Content Include="Views\Admin\Lessons\CreateLessons.aspx" />
     <Content Include="Views\Testing.aspx" />
     <EntityDeploy Include="Conexion\Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
@@ -352,7 +353,8 @@
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="Site.Master" />
     <Content Include="ViewSwitcher.ascx" />
-    <Content Include="Views\Topics\CreateTopics.aspx" />
+    <Content Include="Views\Admin\Topics\CreateTopics.aspx" />
+    <Content Include="Views\User\AllCurs.aspx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
     <Content Include="Site.Mobile.Master" />
@@ -516,7 +518,7 @@
     <Compile Include="CursPage.aspx.designer.cs">
       <DependentUpon>CursPage.aspx</DependentUpon>
     </Compile>
-    <Compile Include="DAL\DalExercises.cs" />
+    <Compile Include="DAL\DALExercises.cs" />
     <Compile Include="DAL\DALLessons.cs" />
     <Compile Include="DAL\DALRole.cs" />
     <Compile Include="DAL\DALTopics.cs" />
@@ -560,18 +562,25 @@
     <Compile Include="ViewSwitcher.ascx.designer.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Views\Curs\CreateCurs.aspx.cs">
+    <Compile Include="Views\Admin\Curs\CreateCurs.aspx.cs">
       <DependentUpon>CreateCurs.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Views\Curs\CreateCurs.aspx.designer.cs">
+    <Compile Include="Views\Admin\Curs\CreateCurs.aspx.designer.cs">
       <DependentUpon>CreateCurs.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Views\Lessons\CreateLessons.aspx.cs">
+    <Compile Include="Views\Admin\Exercises\CreateExercises.aspx.cs">
+      <DependentUpon>CreateExercises.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Admin\Exercises\CreateExercises.aspx.designer.cs">
+      <DependentUpon>CreateExercises.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Admin\Lessons\CreateLessons.aspx.cs">
       <DependentUpon>CreateLessons.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Views\Lessons\CreateLessons.aspx.designer.cs">
+    <Compile Include="Views\Admin\Lessons\CreateLessons.aspx.designer.cs">
       <DependentUpon>CreateLessons.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Testing.aspx.cs">
@@ -581,12 +590,19 @@
     <Compile Include="Views\Testing.aspx.designer.cs">
       <DependentUpon>Testing.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Views\Topics\CreateTopics.aspx.cs">
+    <Compile Include="Views\Admin\Topics\CreateTopics.aspx.cs">
       <DependentUpon>CreateTopics.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Views\Topics\CreateTopics.aspx.designer.cs">
+    <Compile Include="Views\Admin\Topics\CreateTopics.aspx.designer.cs">
       <DependentUpon>CreateTopics.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\User\AllCurs.aspx.cs">
+      <DependentUpon>AllCurs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\User\AllCurs.aspx.designer.cs">
+      <DependentUpon>AllCurs.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

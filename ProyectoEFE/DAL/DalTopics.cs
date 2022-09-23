@@ -41,7 +41,7 @@ namespace ProyectoEFE.DAL
 
                 //Ejecutar query
                 comand.ExecuteNonQuery();
-                Debug.WriteLine("Curso " + topics.Name_topic + " creado");
+                Debug.WriteLine("Tema " + topics.Name_topic + " creado");
 
             }
             catch (Exception exeption)

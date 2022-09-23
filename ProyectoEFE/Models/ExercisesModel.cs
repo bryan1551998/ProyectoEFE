@@ -37,5 +37,9 @@
             this.Description_exercise = description_exercise;
             this.Solution_exercise = solution_exercise;
         }
+
+        public ExercisesModel()
+        {
+        }
     }
 }

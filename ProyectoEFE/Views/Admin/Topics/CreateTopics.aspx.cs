@@ -21,8 +21,6 @@ namespace ProyectoEFE.Views.Topics
                 foreach (var item in lisModels)
                 {
                     this.SelectCurs.Items.Add("ID: " + item.Id_curs.ToString() + " - " + item.Name_curs.ToString());
-
-
                 }
             }
             this.CrearTableTopics();
