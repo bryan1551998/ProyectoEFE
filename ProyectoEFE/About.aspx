@@ -2,7 +2,7 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
-    <main class="fondoPantallaGeneral" >
+    <main class="fondoPantallaGeneralDisplayFlex" >
         <div class=" w3-content w3-center color-contenedor posicionamiento" id="AboutUs">
             <h2 class="w3-wide">Education For Everyone</h2>
             <p class="w3-opacity">
@@ -17,17 +17,17 @@
                 <div class="w3-third">
                     <p>Ignacio Lerda</p>
                     <p>ing. Informatico & Founder</p>
-                    <img src="./imagenes/The.Matrix.glmatrix.2.png" class="w3-round w3-margin-bottom" alt="Random Name" style="width:60%">
+                    <img src="../images/The.Matrix.glmatrix.2.png" class="w3-round w3-margin-bottom" alt="Random Name" style="width:60%">
                 </div>
                 <div class="w3-third">
                     <p>Sebastian</p>
                     <p>ing. Informatico & Founder</p>
-                    <img src="./imagenes/The.Matrix.glmatrix.2.png" class="w3-round w3-margin-bottom" alt="Random Name" style="width:60%">
+                    <img src="../images/The.Matrix.glmatrix.2.png" class="w3-round w3-margin-bottom" alt="Random Name" style="width:60%">
                 </div>
                 <div class="w3-third">
                     <p>Bryan</p>
                     <p>ing. Informatico & Founder</p>
-                    <img src="./imagenes/The.Matrix.glmatrix.2.png" class="w3-round" alt="Random Name" style="width:60%">
+                    <img src="../images/The.Matrix.glmatrix.2.png" class="w3-round" alt="Random Name" style="width:60%">
                 </div>
             </div>
         </div>
