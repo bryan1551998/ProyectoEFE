@@ -69,15 +69,24 @@
                         <li class="nav-item"><a class="nav-link active" aria-current="page" runat="server" href="~/">Home</a></li>
                         <li class="nav-item"><a class="nav-link active" aria-current="page" runat="server" href="~/About">About</a></li>
                         <li class="nav-item"><a class="nav-link active" aria-current="page" runat="server" href="~/Contact">Contact</a></li>
-                        <% if (Session["role"].ToString().Trim() == Session["admin"].ToString().Trim())
+                <%-- Admin Enlaces --%>
+                        <% if (Session["role"].ToString().Trim() == "admin")
                                 {%>
                         <li class="nav-item"><a class="nav-link active" aria-current="page" runat="server" href="~/Contact">Admin</a></li>
                         <%
                             }
                             %>
-                        <% if (Session["role"].ToString().Trim() == Session["student"].ToString().Trim())
+                <%-- Student Enlaces --%>
+                        <% if (Session["role"].ToString().Trim() == "student")
                                 {%>
                         <li class="nav-item"><a class="nav-link active" aria-current="page" runat="server" href="~/Contact">Student</a></li>
+                        <%
+                            }
+                            %>
+                 <%-- Teacher Enlaces --%>
+                        <% if (Session["role"].ToString().Trim() == "teacher")
+                                {%>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" runat="server" href="~/Contact">Teacher</a></li>
                         <%
                             }
                             %>

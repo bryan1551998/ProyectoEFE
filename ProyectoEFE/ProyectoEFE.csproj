@@ -189,7 +189,6 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Content\style.css" />
-    <Content Include="CursPage.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
@@ -510,13 +509,6 @@
     </Compile>
     <Compile Include="Contact.aspx.designer.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="CursPage.aspx.cs">
-      <DependentUpon>CursPage.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="CursPage.aspx.designer.cs">
-      <DependentUpon>CursPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="DAL\DALExercises.cs" />
     <Compile Include="DAL\DALLessons.cs" />

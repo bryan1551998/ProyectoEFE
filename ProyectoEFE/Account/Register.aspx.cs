@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -11,6 +12,7 @@ namespace ProyectoEFE.Account
 {
     public partial class Register : Page
     {
+         
         protected void CreateUser_Click(object sender, EventArgs e)
         {
             DateTime birthday = Convert.ToDateTime(BirthDay.Text);

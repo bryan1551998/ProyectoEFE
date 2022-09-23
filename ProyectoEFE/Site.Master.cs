@@ -70,10 +70,8 @@ namespace ProyectoEFE
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            Session["admin"] = "admin";
-            Session["student"] = "student";
             DALRole roleuser = new DALRole();
-            Session["role"] = roleuser.ReadRol(Context.User.Identity.GetUserName()).Trim();
+            Session["role"] = roleuser.ReadRol(Context.User.Identity.GetUserName());
         }
 
         protected void Unnamed_LoggingOut(object sender, LoginCancelEventArgs e)
