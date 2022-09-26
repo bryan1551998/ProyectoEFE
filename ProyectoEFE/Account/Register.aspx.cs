@@ -12,14 +12,27 @@ namespace ProyectoEFE.Account
 {
     public partial class Register : Page
     {
-         
+        
+
         protected void CreateUser_Click(object sender, EventArgs e)
         {
+            //Comprueba si quieres ser student o teacher y le otroga ese rol
+            string role;
+            if ((string)Session["regisTeacher"] == "teacher")
+            {
+                role = "teacher";
+                Session.Clear();
+            }
+            else
+            {
+                role = "student";
+                Session.Clear();
+            }
             DateTime birthday = Convert.ToDateTime(BirthDay.Text);
 
             var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
             var signInManager = Context.GetOwinContext().Get<ApplicationSignInManager>();
-            var user = new ApplicationUser() { UserName = Email.Text, Email = Email.Text, FirstName = FirstName.Text, LastName = LastName.Text, BirthDay = birthday, NickName =NickName.Text};
+            var user = new ApplicationUser() { UserName = Email.Text, Email = Email.Text, FirstName = FirstName.Text, LastName = LastName.Text, BirthDay = birthday, NickName =NickName.Text, Role = role};
             IdentityResult result = manager.Create(user, Password.Text);
             if (result.Succeeded)
             {

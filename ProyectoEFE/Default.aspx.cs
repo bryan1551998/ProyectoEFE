@@ -13,5 +13,12 @@ namespace ProyectoEFE
         {
 
         }
+
+        protected void butRegisteacher_Click(object sender, EventArgs e)
+        {
+            //Create a Teacher Register 
+            Session["regisTeacher"] = "teacher";
+            Response.Redirect("~/Account/Register");
+        }
     }
 }
