@@ -19,7 +19,7 @@ namespace ProyectoEFE.DAL
             try
             {
                 //String query
-                String query =@"SELECT FirstName, LastName, BirthDay FROM AspNetUsers WHERE Email='" + email + "'";
+                String query = @"SELECT FirstName, LastName, BirthDay, NickName FROM AspNetUsers WHERE Email='" + email + "'";
 
                 //Conexion creada
                 SqlCommand comand = new SqlCommand(query, cnn.Connection);
@@ -35,7 +35,7 @@ namespace ProyectoEFE.DAL
                     userModel.LastName1 = (String)registros["LastName"];
                     userModel.BirthDay1 = (DateTime)registros["BirthDay"];
                     userModel.NickName1 = (String)registros["NickName"];
-                    userModel.ProfilePicture1 = (String)registros["ProfilePicture"];
+                   // userModel.ProfilePicture1 = (String)registros["ProfilePicture"];
                     lisModels.Add(userModel);
                 }
             }
