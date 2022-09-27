@@ -41,8 +41,8 @@
                     <div class="form-group">
                         <asp:Label runat="server" AssociatedControlID="BirthDay" CssClass="">Fecha De Nacimiento</asp:Label>
                         <div class="">
-                            <asp:TextBox runat="server" placeholder="mm/dd/yyyy" ID="BirthDay" CssClass="form-control" TextMode="Date" />
-                            <asp:RequiredFieldValidator runat="server" ControlToValidate="LastName"
+                            <asp:TextBox runat="server" placeholder="mm/dd/yyyy" ID="BirthDay" CssClass="form-control" TextMode="Date" required="true" />
+                            <asp:RequiredFieldValidator runat="server" ControlToValidate="BirthDay"
                                 CssClass="text-danger" ErrorMessage="The birth day field is required." />
                         </div>
                     </div>
