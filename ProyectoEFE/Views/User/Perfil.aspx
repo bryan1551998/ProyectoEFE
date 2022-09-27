@@ -9,11 +9,19 @@
                     <img src="../../images/The.Matrix.glmatrix.2.png" class="img" />
                 </div>
                 <div>
-                    <p>Nombre</p>
-                    <p>Apellido</p>
-                    <p>Fecha de nacimiento</p>
-                    <p>Apodo</p>
-                    <p>Rol</p>
+                    <div id="contenedorInfo">
+                        <label for="nombreP">Nombre</label>
+                        <input type="text" id="nombreP" />
+                        <label for="apellidoP">Apellido</label>
+                        <input type="text" id="apellidoP" />
+                        <label for="fechaP">Fecha de nacimiento</label>
+                        <input type="text" id="fechaP"/>
+                        <label for="apodoP">Apodo</label>
+                        <input type="text" id="apodoP" />
+                        <label for="rolP">Rol</label>
+                        <input type="text" id="rolP"/>
+                    </div>
+                    
                 </div>
             </div>
             <div>
