@@ -23,7 +23,7 @@ namespace ProyectoEFE.Views.Curs
             curs.InsertCurs(cursModel);
             this.CrearTableCurs();
             this.LimpiarFormCurs();
-            Response.Redirect("~/Views/Curs/CreateCurs");
+            Response.Redirect("~/Views/Admin/Curs/CreateCurs");
         }
 
         public void CrearTableCurs()
