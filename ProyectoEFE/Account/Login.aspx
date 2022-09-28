@@ -5,7 +5,7 @@
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
         <div class="fondoPantallaGeneralDisplayFlex">
             <div class="color-contenedor posicionamiento ">
-                <div>
+                <div class="p-3">
                     <section id="loginForm">
                     <div class="">
                         <h4>Login</h4>
@@ -45,7 +45,7 @@
                         </div>
                     </div>
                     <p>
-                        <asp:HyperLink runat="server" ID="RegisterHyperLink" ViewStateMode="Disabled">Registrate</asp:HyperLink>
+                        <asp:HyperLink runat="server" CssClass="link-light" ID="RegisterHyperLink" ViewStateMode="Disabled">Registrate</asp:HyperLink>
                     </p>
                     <p>
                         <%-- Enable this once you have account confirmation enabled for password reset functionality
@@ -54,7 +54,7 @@
                     </p>
                 </section>
             </div>
-                <div class="">
+                <div>
                     <section id="socialLoginForm">
                         <uc:OpenAuthProviders runat="server" ID="OpenAuthLogin" />
                     </section>

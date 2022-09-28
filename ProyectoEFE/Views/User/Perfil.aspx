@@ -11,13 +11,13 @@
                 <div>
                     <div id="contenedorInfo">
                         <label for="nombreP">Nombre</label>
-                        <input type="text" id="nombreP" />
+                        <input type="text" id="nombreP" /><br />
                         <label for="apellidoP">Apellido</label>
-                        <input type="text" id="apellidoP" />
+                        <input type="text" id="apellidoP" /><br />
                         <label for="fechaP">Fecha de nacimiento</label>
-                        <input type="text" id="fechaP"/>
+                        <input type="text" id="fechaP"/><br />
                         <label for="apodoP">Apodo</label>
-                        <input type="text" id="apodoP" />
+                        <input type="text" id="apodoP" /><br />
                         <label for="rolP">Rol</label>
                         <input type="text" id="rolP"/>
                     </div>
@@ -45,5 +45,5 @@
                 </div>
             </div>
         </div>
-
+ </div>
 </asp:Content>

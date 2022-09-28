@@ -1,4 +1,49 @@
-﻿/*NAV*/
+﻿* {
+    margin: 0px;
+    padding: 0px;
+}
+
+
+/* contenido general de las paginas */
+
+.fondoPantallaGeneralDisplayFlex {
+    height: 100vh;
+    text-align: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../images/imagenPefe.jpg) no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.posicionamiento {
+    border-radius: 20px;
+    -webkit-box-shadow: 36px 32px 57px -1px rgba(0,0,0,0.61);
+    -moz-box-shadow: 36px 32px 57px -1px rgba(0,0,0,0.61);
+    box-shadow: 36px 32px 57px -1px rgba(0,0,0,0.61);
+
+}
+/*contenedor*/
+.color-contenedor {
+    background: #4b6cb7; /* fallback for old browsers */
+    background: -webkit-linear-gradient(#4b6cb7, #4b6cb7); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(#4b6cb7,#4b6cb7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: white;
+}
+/* nav*/
+.degradadoHaciaAbajo {
+    background: #4b6cb7; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #182848, #4b6cb7); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #182848, #4b6cb7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+/*footer*/
+.degradadoHaciaArriba {
+    background: #f46b45; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #182848, #4b6cb7); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #182848, #4b6cb7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+
+/*NAV*/
 .bg-light {
     background: #ff5722 !important;
 }
@@ -8,7 +53,7 @@
     transition: 0.6s;
 }
 
-    .navbar-light:hover .navbar-nav:hover .nav-link.active:hover, .navbar-brand:hover {
+.navbar-light:hover .navbar-nav:hover .nav-link.active:hover, .navbar-brand:hover {
         color: #f1d7cf !important;
         padding-right: 14px;
         padding-left: 14px;
@@ -21,25 +66,18 @@
     border: none !important;
     transition: 0.6s;
 }
-
-    .btn-primary:hover {
+.btn-primary:hover {
         background-color: #9364d7 !important;
         padding-left: 16px;
         padding-right: 16px;
         transition: 0.6s;
-    }
+}
 
 /*Footer*/
 /*GRID ALL CURS*/
 /*-----------------------------------------------------*/
-.imagen {
-    background-image:
-}
-* {
-    margin: 0px;
-    padding: 0px;
-}
-/*----encabezado de la pagina----*/
+
+/*---- pagina de inicio ----*/
 #header {
     height: 100vh;
     text-align: center;
@@ -56,46 +94,45 @@
         height: 100%;
 }
 
-                                      /* nav y footer */
+               /*Acerca de nosotros*/
 
-.degradadoHaciaAbajo {
-    background: #f46b45; /* fallback for old browsers */
-    background: -webkit-linear-gradient(to bottom, #eea849, #f46b45); /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to bottom, #eea849, #f46b45); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+.aboutContainer{
+    width:40%;
+    padding-bottom:20px;
 }
-.degradadoHaciaArriba {
-    background: #f46b45; /* fallback for old browsers */
-    background: -webkit-linear-gradient(to top, #eea849, #f46b45); /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to top, #eea849, #f46b45); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    
+.aboutContainer_Informacion{
+    padding:20px;
+}
+.aboutContainer_Personal{
+    display:grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: 1fr;
+    padding: 0px 20px 20px 20px;
+
+}
+.aboutContainer_Personal_img{
+    width: 175px;
+    height: 175px;
+    border-radius:20px;
+    border:none;
+}
+.aboutContainer_Personal:nth-child(1) {
+    grid-column: 1;
+}
+.aboutContainer_Personal:nth-child(2) {
+    grid-column: 2;
+}
+.aboutContainer_Personal:nth-child(3) {
+    grid-column: 3;
+}
+                /*contactanos*/
+.contenedorContactanos_form{
+    width:80%;
 }
 
-                                   /*modelo de paginas general*/
-.fondoPantallaGeneralDisplayFlex {
-    height: 100vh;
-    text-align: center;
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../images/imagenPefe.jpg) no-repeat center center fixed;
-    background-size: cover;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-}
+              /*modelo registro*/
 
-                                  /*modelo registro*/
-.color-contenedor {
-    background: #4b6cb7; /* fallback for old browsers */
-    background: -webkit-linear-gradient(to bottom, #182848, #4b6cb7); /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to bottom, #182848, #4b6cb7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    color: white;
-}
-.posicionamiento {
-    border-radius: 20px;
-    -webkit-box-shadow: 36px 32px 57px -1px rgba(0,0,0,0.61);
-    -moz-box-shadow: 36px 32px 57px -1px rgba(0,0,0,0.61);
-    box-shadow: 36px 32px 57px -1px rgba(0,0,0,0.61);
-    padding-left: 16px;
-    padding-right: 16px;
-}
+
 .displayGrid_register_zona1{
     display: grid;
     grid-template-columns: repeat(2, 1fr) ;
@@ -125,7 +162,7 @@
     margin-bottom: 10px;
 }
 
-                /*  perfil general  */
+          /*  perfil general  */
 
 .contenedorInfoGeneral{
     display:grid;
