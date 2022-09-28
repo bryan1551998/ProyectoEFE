@@ -8,31 +8,44 @@ namespace ProyectoEFE.Models
     public class UserModel
     {
         //Atributos
-        string NickName;
-        string FirstName;
-        string LastName;
-        string ProfilePicture;
-        DateTime BirthDay;
+        string id_user;
+        string nickname;
+        string firstname;
+        string lastname;
+        string profilepicture;
+        string role;
+        string email;
+        DateTime birtday;
 
         //Get and Set
-        public string NickName1 { get => NickName; set => NickName = value; }
-        public string FirstName1 { get => FirstName; set => FirstName = value; }
-        public string LastName1 { get => LastName; set => LastName = value; }
-        public DateTime BirthDay1 { get => BirthDay; set => BirthDay = value; }
-        public string ProfilePicture1 { get => ProfilePicture; set => ProfilePicture = value; }
+        public string NickName { get => nickname; set => nickname = value; }
+        public string FirstName { get => firstname; set => firstname = value; }
+        public string LastName { get => lastname; set => lastname = value; }
+        public DateTime BirthDay { get => birtday; set => birtday = value; }
+        public string ProfilePicture { get => profilepicture; set => profilepicture = value; }
+        public string Id_user { get => id_user; set => id_user = value; }
+        public string Role { get => role; set => role = value; }
+        public string Email { get => email; set => email = value; }
 
         //Constructors
-        public UserModel(string nickName, string firstName, string lastName, DateTime birthDay, string profilePicture)
+        public UserModel(string nickName, string firstName, string lastName, DateTime birthDay, string profilePicture, string id_user, string role, string email)
         {
-            this.NickName = nickName;
-            this.FirstName = firstName;
-            this.LastName = lastName;
-            this.BirthDay = birthDay;
-            this.ProfilePicture = profilePicture;
+            this.nickname = nickName;
+            this.firstname = firstName;
+            this.lastname = lastName;
+            this.birtday = birthDay;
+            this.profilepicture = profilePicture;
+            this.id_user = id_user;
+            this.role = role;
+            this.email = email;
+        }
+        public UserModel(string firstname, string lastname)
+        {
+            this.firstname = firstname;
+            this.lastname = lastname;
         }
         public UserModel()
         {
-
         }
     }
 }

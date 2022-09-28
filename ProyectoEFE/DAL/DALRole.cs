@@ -7,7 +7,7 @@ namespace ProyectoEFE.DAL
 {
     public class DALRole
     {
-        public string ReadRol(string email)
+        public string ReadRol(string id_user)
         {
             string userRole ="";
 
@@ -16,7 +16,7 @@ namespace ProyectoEFE.DAL
             try
             {
                 //String query
-                string role = "SELECT Role FROM AspNetUsers WHERE Email='" + email + "'";
+                string role = "SELECT Role FROM AspNetUsers WHERE Id='" + id_user + "'";
                 //Conexion creada
                 SqlCommand command = new SqlCommand(role, cnn.Connection);
                 //Read Rol

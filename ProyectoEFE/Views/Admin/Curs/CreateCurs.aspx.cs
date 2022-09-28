@@ -15,7 +15,7 @@ namespace ProyectoEFE.Views.Curs
         protected void Page_Load(object sender, EventArgs e)
         {
             DALRole roleuser = new DALRole();
-            Session["role"] = roleuser.ReadRol(Context.User.Identity.GetUserName());
+            Session["role"] = roleuser.ReadRol(Context.User.Identity.GetUserId());
             if (Session["role"].ToString().Trim() != "admin")
             {
                 Response.Redirect("~/");
@@ -26,7 +26,9 @@ namespace ProyectoEFE.Views.Curs
         protected void btn_Crear_Curs_Click(object sender, EventArgs e)
         {
             DALCurs curs = new DALCurs();
-            CursModel cursModel = new CursModel(this.name_curs.Value, this.description_curs.Value, this.image_curs.Value);
+            DALUser user = new DALUser();
+            
+            CursModel cursModel = new CursModel(this.name_curs.Value, this.description_curs.Value, this.image_curs.Value, user.NameUser(Context.User.Identity.GetUserId()).ToString());
             curs.InsertCurs(cursModel);
             this.CrearTableCurs();
             this.LimpiarFormCurs();
