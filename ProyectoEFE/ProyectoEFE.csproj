@@ -516,6 +516,7 @@
     <Compile Include="DAL\DALRole.cs" />
     <Compile Include="DAL\DALTopics.cs" />
     <Compile Include="DAL\DALCurs.cs" />
+    <Compile Include="DAL\DALUser.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -539,6 +540,7 @@
     <Compile Include="Models\ExercisesModel.cs" />
     <Compile Include="Models\CursModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\UserModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
