@@ -44,12 +44,19 @@ namespace ProyectoEFE.Views.User
                 item3.Attributes.Add("id", "imagenCurs" + i);
                 item3.Attributes.Add("src", lisModels[i].Image_url_curs);
                 item3.Attributes.Add("width", "50px");
-                
-                
+
+                //Crear un boton
+                //HtmlGenericControl item4 = new HtmlGenericControl("input");
+                //item4.Attributes.Add("id", "btn_Subs_curs" + i);
+                //item4.Attributes.Add("type", "submit");
+                //item4.Attributes.Add("class", "btn btn-primary");
+                //item4.Attributes.Add("runat", "server");
+                //item4.Attributes.Add("value", "Inscribirse");
+                //item4.Attributes.Add("OnClick" , "btn_Subscribirse_Click");
+
                 Button btn = new Button();
                 btn.Attributes.Add("runat", "server");
                 btn.Attributes.Add("OnClick","btn_Subscribirse_Click");
-                btn.Text = "Clic";  
 
                 HtmlGenericControl item5 = new HtmlGenericControl("br");
 
