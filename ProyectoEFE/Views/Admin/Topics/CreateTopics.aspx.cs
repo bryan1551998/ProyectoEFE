@@ -1,4 +1,5 @@
-﻿using ProyectoEFE.DAL;
+﻿using Microsoft.AspNet.Identity;
+using ProyectoEFE.DAL;
 using ProyectoEFE.Models;
 using System;
 using System.Collections.Generic;
@@ -14,6 +15,15 @@ namespace ProyectoEFE.Views.Topics
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            //Controlar ROL
+            DALRole roleuser = new DALRole();
+            Session["role"] = roleuser.ReadRol(Context.User.Identity.GetUserId());
+            if (Session["role"].ToString().Trim() != "admin")
+            {
+                Response.Redirect("~/");
+            }
+
+            //Controlar tabla para no crar duplicados
             if (!IsPostBack)
             {
                 DALCurs curs = new DALCurs();
@@ -39,7 +49,7 @@ namespace ProyectoEFE.Views.Topics
             TopicsModel topicsModel = new TopicsModel(lisModels[indiceSelect].Id_curs, this.image_topics.Value, this.name_topics.Value, this.description_topics.Value);
             DALTopics topic = new DALTopics();
             topic.InsertTopic(topicsModel);
-            Response.Redirect("~/Views/Topics/CreateTopics");
+            Response.Redirect("~/Views/Admin/Topics/CreateTopics");
         }
 
         public void CrearTableTopics()

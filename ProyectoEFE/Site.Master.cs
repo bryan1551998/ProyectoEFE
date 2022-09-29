@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Security.Claims;
 using System.Security.Principal;
 using System.Web;
@@ -7,6 +9,7 @@ using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Microsoft.AspNet.Identity;
+using ProyectoEFE.Conexion;
 using ProyectoEFE.DAL;
 
 namespace ProyectoEFE
@@ -77,6 +80,40 @@ namespace ProyectoEFE
         protected void Unnamed_LoggingOut(object sender, LoginCancelEventArgs e)
         {
             Context.GetOwinContext().Authentication.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
+        }
+
+        public  string nombreUser(string id_user)
+        {
+
+            string nameUser = "";
+
+            ConexionBD cnn = new ConexionBD();
+
+            try
+            {
+                //String query
+                string role = "SELECT FirstName FROM AspNetUsers WHERE Id='" + id_user + "'";
+                //Conexion creada
+                SqlCommand command = new SqlCommand(role, cnn.Connection);
+                //Read Rol
+                SqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    nameUser += reader["FirstName"].ToString();
+                }
+
+            }
+            catch (Exception exeption)
+            {
+
+                Debug.WriteLine("ERROR OBTENER NAME USER: " + exeption.Message);
+            }
+            finally
+            {
+                cnn.CerrarConexion();
+            }
+            return nameUser;
         }
     }
 

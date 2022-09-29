@@ -3,7 +3,6 @@
     padding: 0px;
 }
 
-
 /* contenido general de las paginas */
 
 .fondoPantallaGeneralDisplayFlex {
@@ -15,12 +14,17 @@
     justify-content: center;
     align-items: center;
 }
+
+.registerContenedor {
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../images/imagenPefe.jpg) no-repeat center center fixed;
+    background-size: cover;
+}
+
 .posicionamiento {
     border-radius: 20px;
     -webkit-box-shadow: 36px 32px 57px -1px rgba(0,0,0,0.61);
     -moz-box-shadow: 36px 32px 57px -1px rgba(0,0,0,0.61);
     box-shadow: 36px 32px 57px -1px rgba(0,0,0,0.61);
-
 }
 /*contenedor*/
 .color-contenedor {
@@ -28,6 +32,7 @@
     background: -webkit-linear-gradient(#4b6cb7, #4b6cb7); /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(#4b6cb7,#4b6cb7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     color: white;
+    min-width: 20rem;
 }
 /* nav*/
 .degradadoHaciaAbajo {
@@ -42,7 +47,6 @@
     background: linear-gradient(to top, #182848, #4b6cb7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
-
 /*NAV*/
 .bg-light {
     background: #ff5722 !important;
@@ -53,7 +57,7 @@
     transition: 0.6s;
 }
 
-.navbar-light:hover .navbar-nav:hover .nav-link.active:hover, .navbar-brand:hover {
+    .navbar-light:hover .navbar-nav:hover .nav-link.active:hover, .navbar-brand:hover {
         color: #f1d7cf !important;
         padding-right: 14px;
         padding-left: 14px;
@@ -66,12 +70,13 @@
     border: none !important;
     transition: 0.6s;
 }
-.btn-primary:hover {
+
+    .btn-primary:hover {
         background-color: #9364d7 !important;
         padding-left: 16px;
         padding-right: 16px;
         transition: 0.6s;
-}
+    }
 
 /*Footer*/
 /*GRID ALL CURS*/
@@ -84,7 +89,8 @@
     background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../images/ProyectoAprendisaje1.jpg) no-repeat center center fixed;
     background-size: cover;
 }
-#header > #tituloDeLaPagina {
+
+    #header > #tituloDeLaPagina {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -92,95 +98,210 @@
         font-size: 20px;
         width: 100%;
         height: 100%;
+    }
+
+/*Acerca de nosotros*/
+
+.aboutContainer {
+    width: 40%;
+    padding-bottom: 20px;
 }
 
-               /*Acerca de nosotros*/
+.aboutContainer_Informacion {
+    padding: 20px;
+}
 
-.aboutContainer{
-    width:40%;
-    padding-bottom:20px;
-}
-.aboutContainer_Informacion{
-    padding:20px;
-}
-.aboutContainer_Personal{
-    display:grid;
+.aboutContainer_Personal {
+    display: grid;
     grid-template-columns: repeat(3,1fr);
     grid-template-rows: 1fr;
     padding: 0px 20px 20px 20px;
-
 }
-.aboutContainer_Personal_img{
+
+.aboutContainer_Personal_img {
     width: 175px;
     height: 175px;
-    border-radius:20px;
-    border:none;
+    border-radius: 20px;
+    border: none;
 }
+
 .aboutContainer_Personal:nth-child(1) {
     grid-column: 1;
 }
+
 .aboutContainer_Personal:nth-child(2) {
     grid-column: 2;
 }
+
 .aboutContainer_Personal:nth-child(3) {
     grid-column: 3;
 }
-                /*contactanos*/
-.contenedorContactanos_form{
-    width:80%;
+/*contactanos*/
+.contenedorContactanos_form {
+    width: 80%;
 }
 
-              /*modelo registro*/
+/*modelo registro*/
 
-
-.displayGrid_register_zona1{
+#MainContent_contenedor_Register {
     display: grid;
-    grid-template-columns: repeat(2, 1fr) ;
-    grid-template-rows: 1fr 1fr;
-    grid-gap:20px;
+    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+    grid-auto-rows: auto;
+    grid-gap: 8px;
+    padding: 8px;
 }
-.displayGrid_register_zona2 {
+
+#divRegister {
+    height: 1050px;
+}
+
+.text-danger {
+    color: #f98e7c !important;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.displayGrid_register_zona1 {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 1fr 1fr ;
+    grid-template-rows: 1fr 1fr;
     grid-gap: 20px;
 }
 
-.displayGrid_register_zona2 div:nth-child(2) {
-    grid-column: 1;
-    grid-row: 2;
+.displayGrid_register_zona2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 20px;
 }
-.displayGrid_register_zona2 div:nth-child(3) {
-    grid-column: 2;
-    grid-row: 2;
-}
+
+    .displayGrid_register_zona2 div:nth-child(2) {
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    .displayGrid_register_zona2 div:nth-child(3) {
+        grid-column: 2;
+        grid-row: 2;
+    }
+
 .botonRegister {
     margin-bottom: 20px;
 }
+
 .botonLogin {
-    margin-top:10px;
+    margin-top: 10px;
     margin-bottom: 10px;
 }
 
+<<<<<<< HEAD
           /*  perfil general  */
-
-.contenedorInfoGeneral{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
+.contenedorPerfil{
+    width:27%;
 }
-.contenedorInfoGeneral div:nth-child(1){
-   
-    grid-column:1;
-
+.contenedorSuperior{
+    background:black;
+    border-radius:20px 20px 0px 0px;
 }
+.bg-carousel{
+    background-color:black;
+}
+.bg-pieDePerfil {
+    background-color: black;
+    border-radius: 0px 0px 20px 20px;
+}
+
+.bg_Sobremi {
+    background: white;
+    border-radius: 20px;
+    border: none;
+    width: 80%;
+}
+.btn1 {
+    transition: all 0.5s;
+}
+
+.btn1:hover{
+    transform: scale(1.15);
+}
+
+.btn1 {
+    height: 140px;
+    width: 140px;
+    border-radius: 50%
+}
+
+.name {
+    font-size: 22px;
+    font-weight: bold
+}
+
+.idd {
+    font-size: 14px;
+    font-weight: 600
+}
+
+.idd1 {
+    font-size: 12px
+}
+
+.number {
+    font-size: 22px;
+    font-weight: bold
+}
+
+.follow {
+    font-size: 12px;
+    font-weight: 500;
+    color: #444444
+}
+
+.text span {
+    font-size: 13px;
+    color: #545454;
+    font-weight: 500
+}
+
+.icons i {
+    font-size: 19px
+}
+
+hr .new1 {
+    border: 1px solid
+}
+
+.join {
+    font-size: 14px;
+    color: #a0a0a0;
+    font-weight: bold
+}
+
+.date {
+    background-color: #ccc
+}
+=======
+/*  perfil general  */
+
+.contenedorInfoGeneral {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
+
+    .contenedorInfoGeneral div:nth-child(1) {
+        grid-column: 1;
+    }
+
 .img {
-    padding-top:20px;
+    padding-top: 20px;
     width: 200px;
     height: 200px;
-    border-radius:20px;
+    border-radius: 20px;
 }
+
 #contenedoInfo {
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
+>>>>>>> 193b149cda71d72fa6409d12f804382496007cfa
