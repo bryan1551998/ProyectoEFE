@@ -194,7 +194,6 @@
     margin-bottom: 10px;
 }
 
-<<<<<<< HEAD
           /*  perfil general  */
 .contenedorPerfil{
     width:27%;
@@ -279,29 +278,35 @@ hr .new1 {
 .date {
     background-color: #ccc
 }
-=======
-/*  perfil general  */
+              /*all curs*/
 
-.contenedorInfoGeneral {
+#MainContent_contenedor {
+    background-color: #fafafa !important;
     display: grid;
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+    grid-auto-rows: auto;
+    grid-gap: 15px;
+    padding: 8px;
 }
 
-    .contenedorInfoGeneral div:nth-child(1) {
-        grid-column: 1;
-    }
-
-.img {
-    padding-top: 20px;
-    width: 200px;
-    height: 200px;
-    border-radius: 20px;
+.CursAll {
+    background-color: red;
+    border-radius: 8px;
 }
 
-#contenedoInfo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.tituloCursClass {
+    text-align: center;
+    padding: 12px;
 }
 
->>>>>>> 193b149cda71d72fa6409d12f804382496007cfa
+.imgCursClass {
+    margin: 10px auto;
+    display: block;
+}
+
+.descriptionCursClass {
+    padding: 10px;
+    text-align: justify;
+    height: 150px
+}
+
