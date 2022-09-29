@@ -10,13 +10,13 @@ using System.Web.UI.WebControls;
 
 namespace ProyectoEFE.Views.Curs
 {
-    public partial class WebForm1 : System.Web.UI.Page
+    public partial class TeacherCurs: System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
             DALRole roleuser = new DALRole();
             Session["role"] = roleuser.ReadRol(Context.User.Identity.GetUserId());
-            if (Session["role"].ToString().Trim() != "admin")
+            if (Session["role"].ToString().Trim() != "teacher")
             {
                 Response.Redirect("~/");
             }
@@ -25,19 +25,24 @@ namespace ProyectoEFE.Views.Curs
 
         protected void btn_Crear_Curs_Click(object sender, EventArgs e)
         {
+            string iduser = Context.User.Identity.GetUserId();
             DALCurs curs = new DALCurs();
             
-            CursModel cursModel = new CursModel(this.name_curs.Value, this.description_curs.Value, this.image_curs.Value, Context.User.Identity.GetUserId());
-            curs.InsertCurs(cursModel, Context.User.Identity.GetUserId());
+            CursModel cursModel = new CursModel(this.name_curs.Value, this.description_curs.Value, this.image_curs.Value, Context.User.Identity.GetUserName());
+            curs.InsertCurs(cursModel, iduser);
+            curs.SelectUserCurs(iduser);
+            int fkCurs = curs.SelectUserCurs(iduser);
+            curs.ReletionCursUser(fkCurs, iduser);
             this.CrearTableCurs();
             this.LimpiarFormCurs();
-            Response.Redirect("~/Views/Admin/Curs/CreateCurs");
+            Response.Redirect("~/Views/Teacher/CreateCurs");
         }
 
         public void CrearTableCurs()
         {
+            //creart otro insert en la tabla de relaciones
             DALCurs curs = new DALCurs();
-            List<CursModel> lisModels = curs.SelectCurs();
+            List<CursModel> lisModels = curs.UserCurs(Context.User.Identity.GetUserId());
             this.GridViewCurs.DataSource = lisModels;
             this.GridViewCurs.DataBind();
         }
