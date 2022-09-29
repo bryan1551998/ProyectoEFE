@@ -22,7 +22,7 @@
                </div>
             </div>
             
-            <div class="aboutContainer_Personal">
+            <div class="aboutContainer_Personal table-responsive">
                 <div>
                     <p>Ignacio Lerda</p>
                     <p>ing. Informatico & Founder</p>

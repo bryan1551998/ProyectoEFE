@@ -28,7 +28,7 @@ namespace ProyectoEFE.Views.User
             {
                 //Crear el DIV padre
                 HtmlGenericControl item = new HtmlGenericControl("div");
-                item.Attributes.Add("class", "CursAll pb-4");
+                item.Attributes.Add("class", "CursAll ");
                 item.Attributes.Add("id", "cursoDatos" + i);
 
                 //Crear titulo
