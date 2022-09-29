@@ -4,11 +4,8 @@
 
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
 
-    <div class="container-flex  registerContenedor " id="divRegister">
-        <div class="row justify-content-center">
-
-            <div class="col-5 posicionamiento color-contenedor mt-4 ">
-
+    <div class="fondoPantallaGeneralDisplayFlex ">
+        <div class="color-contenedor posicionamiento contenedorPerfil ">
                 <div>
                     <center>
                         <h4 class="p-2">Registro de nuevo usuario</h4>
@@ -95,7 +92,6 @@
                     </center>
                 </div>
             </div>
-        </div>
     </div>
 
 
