@@ -176,6 +176,46 @@ namespace ProyectoEFE.DAL
 
             return lisModels;
         }
+        public List<CursModel> SelectCurs(string id_user)
+        {
+            List<CursModel> lisModels = new List<CursModel>();
+            ConexionBD cnn = new ConexionBD();
+
+            try
+            {
+                //String query
+                String query = @"SELECT * FROM curs WHERE autor_idUser='" + id_user + "'";
+
+                //Conexion creada
+                SqlCommand comand = new SqlCommand(query, cnn.Connection);
+
+                //Ejecutar query
+                SqlDataReader registros = comand.ExecuteReader();
+
+                //Obtener lo datos
+                while (registros.Read())
+                {
+                    CursModel cursModel = new CursModel();
+                    cursModel.Id_curs = (int)registros["id_curs"];
+                    cursModel.Name_curs = (String)registros["name_curs"];
+                    cursModel.Description_curs = (String)registros["description_curs"];
+                    cursModel.Image_url_curs = (String)registros["image_curs"];
+                    cursModel.Autor_name = (String)registros["autor_name"];
+                    cursModel.Autor_idUser = (String)registros["autor_idUser"];
+                    lisModels.Add(cursModel);
+                }
+            }
+            catch (Exception exeption)
+            {
+                Debug.WriteLine("ERROR SELECT CURS: " + exeption.Message);
+            }
+            finally
+            {
+                cnn.CerrarConexion();
+            }
+
+            return lisModels;
+        }
 
         public void EliminarCurs(int id_curs)
         {

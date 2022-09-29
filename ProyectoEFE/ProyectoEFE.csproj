@@ -305,6 +305,7 @@
     <Content Include="Views\Admin\Exercises\CreateExercises.aspx" />
     <Content Include="Views\Admin\Lessons\CreateLessons.aspx" />
     <Content Include="Views\Teacher\CreateCurs.aspx" />
+    <Content Include="Views\Teacher\CreateTopics.aspx" />
     <Content Include="Views\Testing.aspx" />
     <EntityDeploy Include="Conexion\Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
@@ -588,6 +589,13 @@
     </Compile>
     <Compile Include="Views\Teacher\CreateCurs.aspx.designer.cs">
       <DependentUpon>CreateCurs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Teacher\CreateTopics.aspx.cs">
+      <DependentUpon>CreateTopics.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Teacher\CreateTopics.aspx.designer.cs">
+      <DependentUpon>CreateTopics.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Testing.aspx.cs">
       <DependentUpon>Testing.aspx</DependentUpon>

@@ -8,7 +8,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace ProyectoEFE.Views.Curs
+namespace ProyectoEFE.Views.Teacher
 {
     public partial class TeacherCurs: System.Web.UI.Page
     {
@@ -36,6 +36,10 @@ namespace ProyectoEFE.Views.Curs
             this.CrearTableCurs();
             this.LimpiarFormCurs();
             Response.Redirect("~/Views/Teacher/CreateCurs");
+        }
+        protected void btn_Crear_Topic_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Views/Teacher/CreateTopics");
         }
 
         public void CrearTableCurs()

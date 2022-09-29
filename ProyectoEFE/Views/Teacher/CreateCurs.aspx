@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Site.Master" CodeBehind="CreateCurs.aspx.cs" Inherits="ProyectoEFE.Views.Curs.TeacherCurs" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Site.Master" CodeBehind="CreateCurs.aspx.cs" Inherits="ProyectoEFE.Views.Teacher.TeacherCurs" %>
 
 <asp:Content ID="PaginaCurs" ContentPlaceHolderID="MainContent" runat="server">
 
@@ -16,9 +16,8 @@
                 <input runat="server" type="text" class="form-control" id="image_curs" />
                 <br />
                 <asp:Button ID="btn_Crear_Curs" runat="server" Text="Crear Curso" class="btn btn-primary" OnClick="btn_Crear_Curs_Click" />
-
+                <asp:Button ID="btn_Crear_Tema" runat="server" Text="Crear Tema" class="btn btn-primary" OnClick="btn_Crear_Topic_Click" />
             </div>
-
             <div class="col-6 table-responsive">
 
                 <asp:GridView ID="GridViewCurs" runat="server" CssClass="table table-hover" BorderStyle="None" GridLines="None">

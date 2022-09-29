@@ -11,71 +11,71 @@ namespace ProyectoEFE.Views.Teacher
 {
 
 
-    public partial class TeacherCurs
+    public partial class CreateTopic
     {
 
         /// <summary>
-        /// Control name_curs.
+        /// Control SelectCurs.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText name_curs;
+        protected global::System.Web.UI.WebControls.DropDownList SelectCurs;
 
         /// <summary>
-        /// Control description_curs.
+        /// Control name_topics.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTextArea description_curs;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText name_topics;
 
         /// <summary>
-        /// Control image_curs.
+        /// Control description_topics.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText image_curs;
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea description_topics;
 
         /// <summary>
-        /// Control btn_Crear_Curs.
+        /// Control image_topics.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_Crear_Curs;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText image_topics;
 
         /// <summary>
-        /// Control btn_Crear_Tema.
+        /// Control btn_Crear_Topics.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_Crear_Tema;
+        protected global::System.Web.UI.WebControls.Button btn_Crear_Topics;
 
         /// <summary>
-        /// Control GridViewCurs.
+        /// Control GridViewTopics.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridViewCurs;
+        protected global::System.Web.UI.WebControls.GridView GridViewTopics;
 
         /// <summary>
-        /// Control id_curs_delete.
+        /// Control id_tema_delete.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl id_curs_delete;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl id_tema_delete;
 
         /// <summary>
         /// Control btn_eliminar_curs.

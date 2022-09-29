@@ -10,7 +10,7 @@ namespace ProyectoEFE.DAL
 {
     public class DALTopics
     {
-        public void InsertTopic(TopicsModel topics)
+        public void InsertTopic(TopicsModel topics, int fk_curs)
         {
 
             ConexionBD cnn = new ConexionBD();
@@ -19,19 +19,20 @@ namespace ProyectoEFE.DAL
             {
                 //String query
                 String query = @"INSERT topics VALUES
-                               (@pFk_curs,
+                               (@pName_topic,
+                                @pDescription_topic,
                                 @pImage_topic,
-                                @pName_topic,
-                                @pDescription_topic)";
+                                @pFk_curs)";
+
 
                 //Conexion creada
                 SqlCommand comand = new SqlCommand(query, cnn.Connection);
 
                 //Parametros de la query
-                SqlParameter pFk_curs = new SqlParameter("@pFk_curs", topics.Fk_curs);
-                SqlParameter pImage_topic = new SqlParameter("@pImage_topic", topics.Image_url_topic);
                 SqlParameter pName_topic = new SqlParameter("@pName_topic", topics.Name_topic);
                 SqlParameter pDescription_topic = new SqlParameter("@pDescription_topic", topics.Description_topic);
+                SqlParameter pImage_topic = new SqlParameter("@pImage_topic", topics.Image_url_topic);
+                SqlParameter pFk_curs = new SqlParameter("@pFk_curs", fk_curs);
 
                 //Añadir los parametros
                 comand.Parameters.Add(pFk_curs);
