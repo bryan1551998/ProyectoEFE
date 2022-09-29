@@ -1,4 +1,5 @@
-﻿using ProyectoEFE.DAL;
+﻿using Microsoft.AspNet.Identity;
+using ProyectoEFE.DAL;
 using ProyectoEFE.Models;
 using System;
 using System.Collections.Generic;
@@ -14,6 +15,13 @@ namespace ProyectoEFE.Views.User
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            DALUser user = new DALUser();
+            string cualquiera= user.NameUser(Context.User.Identity.GetUserId());
+            this.nombreUser.InnerText = cualquiera;
+            DALRole rol = new DALRole();
+            string roles = rol.ReadRol(Context.User.Identity.GetUserId());
+            this.rolUser.InnerText = roles;
+
             DALCurs curs = new DALCurs();
             List<CursModel> lisModels = curs.SelectCurs();
             // Creamos los elementos de la lista de forma dinámica
@@ -21,10 +29,10 @@ namespace ProyectoEFE.Views.User
             for (int i = 0; i < lisModels.Count; i++)
             {
                 HtmlGenericControl item = new HtmlGenericControl("div");
-                item.Attributes.Add("class", "CursAll carousel-item ");
-                if (i == 2)
+                item.Attributes.Add("class", "CursAll carousel-item");
+                if (i == 0)
                 {
-                    item.Attributes.Add("class", "active");
+                    item.Attributes.Add("class", " CursAll carousel-item active ");
                 }
                 item.Attributes.Add("id", "cursoDatos" + i);
                 item.InnerText = lisModels[i].Name_curs;

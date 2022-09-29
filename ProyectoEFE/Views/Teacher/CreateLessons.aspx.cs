@@ -11,16 +11,16 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace ProyectoEFE.Views.Lessons
+namespace ProyectoEFE.Views.Teacher
 {
-    public partial class WebForm1 : System.Web.UI.Page
+    public partial class CreateLesson : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
             //Comprobar ROL
             DALRole roleuser = new DALRole();
             Session["role"] = roleuser.ReadRol(Context.User.Identity.GetUserId());
-            if (Session["role"].ToString().Trim() != "admin")
+            if (Session["role"].ToString().Trim() != "teacher")
             {
                 Response.Redirect("~/");
             }
@@ -29,7 +29,7 @@ namespace ProyectoEFE.Views.Lessons
             if (!IsPostBack)
             {
                 DALTopics topics = new DALTopics();
-                List<TopicsModel> lisModels = topics.SelectTopics();
+                List<TopicsModel> lisModels = topics.SelectTopics(Context.User.Identity.GetUserId());
                 foreach (var item in lisModels)
                 {
                     this.SelectLesson.Items.Add("ID: " + item.Id_topic.ToString() + " - " + item.Name_topic.ToString());
@@ -51,13 +51,17 @@ namespace ProyectoEFE.Views.Lessons
             LessonsModel topicsModel = new LessonsModel(this.image_lesson.Value, this.name_lesson.Value, this.description_lesson.Value);
             DALLessons lessons = new DALLessons();
             lessons.InsertLesson(topicsModel, indiceSelect);
-            Response.Redirect("~/Views/Admin/Lessons/CreateLessons");
+            Response.Redirect("~/Views/Teacher/CreateLessons");
+        }
+        protected void btn_Crear_Exercises_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Views/Teacher/CreateExercises");
         }
 
         public void CrearTableLessons()
         {
             DALLessons lessons = new DALLessons();
-            List<LessonsModel> lisModels = lessons.SelectLessons();
+            List<LessonsModel> lisModels = lessons.SelectLessons(Context.User.Identity.GetUserId());
             this.GridViewLesson.DataSource = lisModels;
             this.GridViewLesson.DataBind();
         }

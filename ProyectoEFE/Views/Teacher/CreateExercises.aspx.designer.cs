@@ -7,7 +7,7 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace ProyectoEFE.Views.Exercises
+namespace ProyectoEFE.Views.Teacher
 {
 
 
@@ -57,7 +57,7 @@ namespace ProyectoEFE.Views.Exercises
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText number_of_exercise;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl number_of_exercise;
 
         /// <summary>
         /// Control resposta_exercise.

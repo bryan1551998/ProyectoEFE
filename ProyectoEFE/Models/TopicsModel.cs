@@ -29,9 +29,17 @@
         public TopicsModel(int fk_curs, string image_url_topic, string name_topic, string description_topic)
         {
             this.Fk_curs = fk_curs;
-            this.Image_url_topic = image_url_topic;
             this.Name_topic = name_topic;
             this.Description_topic = description_topic;
+            this.Image_url_topic = image_url_topic;
+
+        }
+        public TopicsModel(string image_url_topic, string name_topic, string description_topic)
+        {
+            this.Name_topic = name_topic;
+            this.Description_topic = description_topic;
+            this.Image_url_topic = image_url_topic;
+
         }
 
         public TopicsModel()

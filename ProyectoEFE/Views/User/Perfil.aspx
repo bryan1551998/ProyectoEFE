@@ -10,15 +10,13 @@
                                      <button class="btn1 btn-secondary mt-3">
                                          <img src="https://i.imgur.com/wvxPV9S.png" height="100" width="100" />
                                      </button>
-                                      <span class="name mt-3">toma el nick name de quien se logee</span>
+                                       <div runat="server" id="nombreUser" class="name mt-3"></div>
+                                       <div runat="server" id="rolUser"></div>
 
-                                      <span class="idd">toma el nivel</span>
                                      <div class="d-flex flex-row justify-content-center align-items-center p-2">
-              
                                          <span class="number">1069 
                                              <span class="follow">Followers</span>
                                          </span> 
-
                                      </div>
                                     
                                     <div class="mb-2 bg_Sobremi"  style="color:black;">
@@ -34,15 +32,13 @@
                                  <h2>Cursos Iniciados/Realizados</h2>
                                  <hr />
                                     <div id="carouselExampleControls" class="carousel slide " data-bs-ride="carousel">
-                                       <div class="carousel-inner">
-                                          <div class="contenidos " id="contenedor" runat="server">
-                                          </div>
+                                       <div class="carousel-inner contenidos" id="contenedor" runat="server">
                                        </div>
-                                       <button runat="server" class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev" id="Next">
+                                       <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev" id="Next">
                                           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                           <span class="visually-hidden">Previous</span>
                                       </button>
-                                      <button runat="server" class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next" id="Prev">
+                                      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next" id="Prev">
                                           <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                           <span class="visually-hidden">Next</span>
                                       </button>
