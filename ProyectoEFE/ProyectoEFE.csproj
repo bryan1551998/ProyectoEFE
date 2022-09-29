@@ -517,6 +517,7 @@
     <Compile Include="Contact.aspx.designer.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
     </Compile>
+    <Compile Include="DAL\DALCursoUser.cs" />
     <Compile Include="DAL\DALExercises.cs" />
     <Compile Include="DAL\DALLessons.cs" />
     <Compile Include="DAL\DALRole.cs" />
@@ -540,6 +541,7 @@
     <Compile Include="http404.aspx.designer.cs">
       <DependentUpon>http404.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Models\CursUserModel.cs" />
     <Compile Include="Models\RelationshipCursUserModel.cs" />
     <Compile Include="Models\TopicsModel.cs" />
     <Compile Include="Models\LessonsModel.cs" />
