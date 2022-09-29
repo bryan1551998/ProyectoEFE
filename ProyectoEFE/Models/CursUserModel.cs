@@ -18,11 +18,17 @@ namespace ProyectoEFE.Models
         public int? Fk_exercise { get => fk_exercise; set => fk_exercise = value; }
 
         //Constructor
-        public CursUserModel(int fk_curs, string fk_users, int fk_ecercise)
+        public CursUserModel(int fk_curs, string fk_users, int? fk_exercise)
         {
-            this.Fk_curs = fk_curs;
-            this.Fk_users = fk_users;
-            this.Fk_ecercise = fk_ecercise;
+            Fk_curs = fk_curs;
+            Fk_users = fk_users;
+            Fk_exercise = fk_exercise;
+        }
+
+        public CursUserModel(int fk_curs, string fk_users)
+        {
+            Fk_curs = fk_curs;
+            Fk_users = fk_users;
         }
 
         public CursUserModel()

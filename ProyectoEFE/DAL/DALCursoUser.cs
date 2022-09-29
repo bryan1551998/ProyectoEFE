@@ -11,51 +11,42 @@ namespace ProyectoEFE.DAL
 {
     public class DALCursoUser
     {
-        public void InsertCursUser(String id_user, int curs) {
-
-
+        public void InsertCursUser(CursUserModel cursUser)
+        {
             ConexionBD cnn = new ConexionBD();
 
             try
             {
                 //String query
                 String query = @"INSERT INTO relationship_curs_user 
-                                VALUES(@pFk_curs,@pFk_users,@pFk_exercise);
-";
+                                VALUES(@pFk_curs,@pFk_users,@pFk_exercise)";
 
                 //Conexion creada
                 SqlCommand comand = new SqlCommand(query, cnn.Connection);
 
                 //Parametros de la query
-                SqlParameter pFk_curs = new SqlParameter("@pFk_curs", );
-                SqlParameter pFk_users = new SqlParameter("@pFk_users", curs.Description_curs);
-                SqlParameter pFk_exercise = new SqlParameter("@pFk_exercise", curs.Image_url_curs);
+                SqlParameter pFk_curs = new SqlParameter("@pFk_curs", cursUser.Fk_curs);
+                SqlParameter pFk_users = new SqlParameter("@pFk_users", cursUser.Fk_users);
+                SqlParameter pFk_exercise = new SqlParameter("@pFk_exercise", cursUser.Fk_exercise);
 
                 //Añadir los parametros
-                comand.Parameters.Add(pName_curs);
-                comand.Parameters.Add(pDescription_curs);
-                comand.Parameters.Add(pImage_curs);
-                comand.Parameters.Add(pAutor_name);
-                comand.Parameters.Add(pAutor_idUser);
+                comand.Parameters.Add(pFk_curs);
+                comand.Parameters.Add(pFk_users);
+                comand.Parameters.Add(pFk_users);
 
                 //Ejecutar query
                 comand.ExecuteNonQuery();
-                Debug.WriteLine("Curso " + curs.Name_curs + " creado");
+                Debug.WriteLine("Curso " + cursUser.Fk_curs + " -- " + cursUser.Fk_users + " creado");
 
             }
             catch (Exception exeption)
             {
-                Debug.WriteLine("ERROR INSERTAR CURS: " + exeption.Message + " --- " + curs.Name_curs);
+                Debug.WriteLine("ERROR INSERTAR CURS-USER: " + exeption.Message);
             }
             finally
             {
                 cnn.CerrarConexion();
             }
-
-
-
-
         }
-
     }
 }

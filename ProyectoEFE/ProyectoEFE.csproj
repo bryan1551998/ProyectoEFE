@@ -308,7 +308,6 @@
     <Content Include="Views\Teacher\CreateExercises.aspx" />
     <Content Include="Views\Teacher\CreateLessons.aspx" />
     <Content Include="Views\Teacher\CreateTopics.aspx" />
-    <Content Include="Views\Testing.aspx" />
     <EntityDeploy Include="Conexion\Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model1.Designer.cs</LastGenOutput>
@@ -615,13 +614,6 @@
     <Compile Include="Views\Teacher\CreateTopics.aspx.designer.cs">
       <DependentUpon>CreateTopics.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Views\Testing.aspx.cs">
-      <DependentUpon>Testing.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Views\Testing.aspx.designer.cs">
-      <DependentUpon>Testing.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Views\Admin\Topics\CreateTopics.aspx.cs">
       <DependentUpon>CreateTopics.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -636,8 +628,6 @@
     <Compile Include="Views\User\AllCurs.aspx.designer.cs">
       <DependentUpon>AllCurs.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Views\User\HtmlElementEventArgs.cs" />
-    <Compile Include="Views\User\HtmlElementEventHandler.cs" />
     <Compile Include="Views\User\Perfil.aspx.cs">
       <DependentUpon>Perfil.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -645,7 +635,6 @@
     <Compile Include="Views\User\Perfil.aspx.designer.cs">
       <DependentUpon>Perfil.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Views\User\StyleGenerator.cs" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
