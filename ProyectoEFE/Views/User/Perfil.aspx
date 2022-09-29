@@ -10,15 +10,13 @@
                                      <button class="btn1 btn-secondary mt-3">
                                          <img src="https://i.imgur.com/wvxPV9S.png" height="100" width="100" />
                                      </button>
-                                      <span class="name mt-3">toma el nick name de quien se logee</span>
+                                       <div runat="server" id="nombreUser" class="name mt-3"></div>
+                                       <div runat="server" id="rolUser"></div>
 
-                                      <span class="idd">toma el nivel</span>
                                      <div class="d-flex flex-row justify-content-center align-items-center p-2">
-              
                                          <span class="number">1069 
                                              <span class="follow">Followers</span>
                                          </span> 
-
                                      </div>
                                     
                                     <div class="mb-2 bg_Sobremi"  style="color:black;">
