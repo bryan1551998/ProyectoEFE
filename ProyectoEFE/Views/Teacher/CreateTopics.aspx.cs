@@ -38,11 +38,10 @@ namespace ProyectoEFE.Views.Teacher
 
         protected void btn_Crear_Topics_Click(object sender, EventArgs e)
         {
-            ViewState["id_curs"] = SelectCurs.SelectedIndex;
             DALCurs curs = new DALCurs();
             List<CursModel> lisModels = curs.SelectCurs(Context.User.Identity.GetUserId());
 
-            int indiceSelect = lisModels[(Int32)ViewState["id_curs"]].Id_curs;
+            int indiceSelect = lisModels[SelectCurs.SelectedIndex].Id_curs;
 
             //Insertar el tema
             TopicsModel topicsModel = new TopicsModel(this.name_topics.Value, this.description_topics.Value, this.image_topics.Value);
