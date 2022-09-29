@@ -14,6 +14,7 @@ namespace ProyectoEFE.Views.Curs
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            //Contolar ROL
             DALRole roleuser = new DALRole();
             Session["role"] = roleuser.ReadRol(Context.User.Identity.GetUserId());
             if (Session["role"].ToString().Trim() != "admin")

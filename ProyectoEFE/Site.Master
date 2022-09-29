@@ -73,7 +73,19 @@
                                 <%-- Admin Enlaces --%>
                                 <% if (Session["role"].ToString().Trim() == "admin")
                                     {%>
-                                <li class="nav-item"><a class="nav-link active" aria-current="page" runat="server" href="~/Contact">Admin</a></li>
+                                <li class="nav-item dropdown">
+
+                                    <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Administrar
+                                    </a>
+                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <li><a class="dropdown-item" href="/Views/Admin/Curs/CreateCurs">Cursos</a></li>
+                                        <li><a class="dropdown-item" href="/Views/Admin/Topics/CreateTopics">Temas</a></li>
+                                        <li><a class="dropdown-item" href="/Views/Admin/Lessons/CreateLessons">Lesiones</a></li>
+                                        <li><a class="dropdown-item" href="/Views/Admin/Exercises/CreateExercises">Ejercicios</a></li>
+                                    </ul>
+
+                                </li>
+
                                 <%
                                     }
                                 %>
@@ -81,7 +93,7 @@
                                 <%-- Student Enlaces --%>
                                 <% if (Session["role"].ToString().Trim() == "student")
                                     {%>
-                                <li class="nav-item"><a class="nav-link active" aria-current="page" runat="server" href="~/Contact">Student</a></li>
+                                <li class="nav-item"><a class="nav-link active" aria-current="page" runat="server" href="/Views/User/AllCurs">Cursos</a></li>
                                 <%
                                     }
                                 %>
@@ -89,7 +101,18 @@
                                 <%-- Teacher Enlaces --%>
                                 <% if (Session["role"].ToString().Trim() == "teacher")
                                     {%>
-                                <li class="nav-item"><a class="nav-link active" aria-current="page" runat="server" href="~/Contact">Teacher</a></li>
+                                <li class="nav-item dropdown">
+
+                                    <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown2" role="button" data-bs-toggle="dropdown" aria-expanded="false">Administrar Teacher
+                                    </a>
+                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                                        <li><a class="dropdown-item" href="/Views/Admin/Curs/CreateCurs">Cursos</a></li>
+                                        <li><a class="dropdown-item" href="/Views/Admin/Topics/CreateTopics">Temas</a></li>
+                                        <li><a class="dropdown-item" href="/Views/Admin/Lessons/CreateLessons">Lesiones</a></li>
+                                        <li><a class="dropdown-item" href="/Views/Admin/Exercises/CreateExercises">Ejercicios</a></li>
+                                    </ul>
+
+                                </li>
                                 <%
                                     }
                                 %>
