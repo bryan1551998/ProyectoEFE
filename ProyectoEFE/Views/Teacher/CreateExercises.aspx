@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="CreateExercises.aspx.cs" Inherits="ProyectoEFE.Views.Exercises.CreateExercises" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="CreateExercises.aspx.cs" Inherits="ProyectoEFE.Views.Teacher.CreateExercises" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
@@ -21,12 +21,11 @@
                 <input runat="server" type="text" class="form-control" id="image_exercise" />
                 <br />
                 <label for="number_of_exercise" class="form-label">Numero de Ejercicio</label>
-                <input runat="server" type="text" class="form-control" id="number_of_exercise" />
+                <input runat="server" type="number" class="form-control" id="number_of_exercise" />
                 <br />
                 <label for="resposta_exercise" class="form-label">Respuesta del ejercicio</label>
                 <input runat="server" type="text" class="form-control" id="resposta_exercise" />
                 <br />
-                
                 <asp:Button ID="btn_Crear_exercise" runat="server" Text="Crear Ejercicio" class="btn btn-primary" OnClick="btn_Crear_exercise_Click"  />
 
             </div>

@@ -9,7 +9,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace ProyectoEFE.Views.Exercises
+namespace ProyectoEFE.Views.Teacher
 {
     public partial class CreateExercises : System.Web.UI.Page
     {
@@ -18,7 +18,7 @@ namespace ProyectoEFE.Views.Exercises
             //Comprobar ROL
             DALRole roleuser = new DALRole();
             Session["role"] = roleuser.ReadRol(Context.User.Identity.GetUserId());
-            if (Session["role"].ToString().Trim() != "admin")
+            if (Session["role"].ToString().Trim() != "teacher")
             {
                 Response.Redirect("~/");
             }
@@ -27,7 +27,7 @@ namespace ProyectoEFE.Views.Exercises
             if (!IsPostBack)
             {
                 DALLessons lessons = new DALLessons();
-                List<LessonsModel> listLessons = lessons.SelectLessons();
+                List<LessonsModel> listLessons = lessons.SelectLessons(Context.User.Identity.GetUserId());
                 foreach (var item in listLessons)
                 {
                     this.SelectExercises.Items.Add("ID: " + item.Id_lessons.ToString() + " - " + item.Name_lesson.ToString());
@@ -49,13 +49,13 @@ namespace ProyectoEFE.Views.Exercises
             ExercisesModel exercisesModel = new ExercisesModel(this.image_exercise.Value, this.name_exercise.Value, this.description_exercise.Value, this.resposta_exercise.Value, this.number_of_exercise.Value);
             DALExercises exercise = new DALExercises();
             exercise.InsertExercises(exercisesModel, indiceSelect);
-            Response.Redirect("~/Views/Admin/Exercises/CreateExercises");
+            Response.Redirect("~/Views/Teacher/CreateExercises");
         }
 
         public void CrearTableTopics()
         {
             DALExercises exercise = new DALExercises();
-            List<ExercisesModel> lisModels = exercise.SelectExercises();
+            List<ExercisesModel> lisModels = exercise.SelectExercises(Context.User.Identity.GetUserId());
             this.GridViewExercise.DataSource = lisModels;
             this.GridViewExercise.DataBind();
         }

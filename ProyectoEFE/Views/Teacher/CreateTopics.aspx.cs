@@ -38,9 +38,11 @@ namespace ProyectoEFE.Views.Teacher
 
         protected void btn_Crear_Topics_Click(object sender, EventArgs e)
         {
+            //Recuperar los cursos del usuario
             DALCurs curs = new DALCurs();
             List<CursModel> lisModels = curs.SelectCurs(Context.User.Identity.GetUserId());
 
+            //Recuperar el indice seleccionado 
             int indiceSelect = lisModels[SelectCurs.SelectedIndex].Id_curs;
 
             //Insertar el tema
@@ -58,7 +60,7 @@ namespace ProyectoEFE.Views.Teacher
         public void CrearTableTopics()
         {
             DALTopics topics = new DALTopics();
-            List<TopicsModel> lisModels = topics.SelectTopics();
+            List<TopicsModel> lisModels = topics.SelectTopics(Context.User.Identity.GetUserId());
             this.GridViewTopics.DataSource = lisModels;
             this.GridViewTopics.DataBind();
         }

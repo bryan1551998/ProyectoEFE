@@ -256,7 +256,7 @@ namespace ProyectoEFE.DAL
             try
             {
                 //String query
-                String query = @"SELECT id_curs, name_curs, description_curs, image_curs, autor_name FROM curs c INNER JOIN relationship_curs_user r ON c.id_curs = r.fk_curs INNER JOIN AspNetUsers u ON u.id = r.fk_user WHERE id='"+ id_user+"'";
+                String query = @"SELECT name_curs, description_curs, image_curs FROM curs c INNER JOIN relationship_curs_user r ON c.id_curs = r.fk_curs INNER JOIN AspNetUsers u ON u.id = r.fk_user WHERE id='"+ id_user+"'";
 
                 //Conexion creada
                 SqlCommand comand = new SqlCommand(query, cnn.Connection);
@@ -268,11 +268,9 @@ namespace ProyectoEFE.DAL
                 while (registros.Read())
                 {
                     CursModel cursModel = new CursModel();
-                    cursModel.Id_curs = (int)registros["id_curs"];
                     cursModel.Name_curs = (String)registros["name_curs"];
                     cursModel.Description_curs = (String)registros["description_curs"];
                     cursModel.Image_url_curs = (String)registros["image_curs"];
-                    cursModel.Autor_name = (String)registros["autor_name"];
                     lisModels.Add(cursModel);
                 }
             }
