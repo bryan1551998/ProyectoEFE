@@ -20,7 +20,7 @@
                 <input runat="server" type="text" class="form-control" id="image_lesson" />
                 <br />
                 <asp:Button ID="btn_Crear_Lesson" runat="server" Text="Crear Lesión" class="btn btn-primary" OnClick="btn_Crear_Lesson_Click" />
-
+                <asp:Button ID="btn_Crear_Exercises" runat="server" Text="Crear Ejercicio" class="btn btn-primary" OnClick="btn_Crear_Exercises_Click" />
             </div>
 
             <div class="col-6 table-responsive">

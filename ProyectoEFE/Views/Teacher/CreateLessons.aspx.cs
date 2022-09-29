@@ -29,7 +29,7 @@ namespace ProyectoEFE.Views.Teacher
             if (!IsPostBack)
             {
                 DALTopics topics = new DALTopics();
-                List<TopicsModel> lisModels = topics.SelectTopics();
+                List<TopicsModel> lisModels = topics.SelectTopics(Context.User.Identity.GetUserId());
                 foreach (var item in lisModels)
                 {
                     this.SelectLesson.Items.Add("ID: " + item.Id_topic.ToString() + " - " + item.Name_topic.ToString());
@@ -40,24 +40,28 @@ namespace ProyectoEFE.Views.Teacher
 
         protected void btn_Crear_Lesson_Click(object sender, EventArgs e)
         {
-            //Recuperar el indice del select 
-            int indiceSelect = this.SelectLesson.SelectedIndex;
-
-            //Recuperar los cursos
+            //Recuperar los Topics del usuairp
             DALTopics topics = new DALTopics();
-            List<TopicsModel> lisModels = topics.SelectTopics();
+            List<TopicsModel> lisModels = topics.SelectTopics(Context.User.Identity.GetUserId());
+
+            //Recuperar el indice seleccionado 
+            int indiceSelect = lisModels[SelectLesson.SelectedIndex].Id_topic;
 
             //Insertar el tema
-            LessonsModel topicsModel = new LessonsModel(lisModels[indiceSelect].Id_topic, this.image_lesson.Value, this.name_lesson.Value, this.description_lesson.Value);
+            LessonsModel topicsModel = new LessonsModel(this.image_lesson.Value, this.name_lesson.Value, this.description_lesson.Value);
             DALLessons lessons = new DALLessons();
-            lessons.InsertLesson(topicsModel);
-            Response.Redirect("~/Views/Admin/Lessons/CreateLessons");
+            lessons.InsertLesson(topicsModel, indiceSelect);
+            Response.Redirect("~/Views/Teacher/CreateLessons");
+        }
+        protected void btn_Crear_Exercises_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Views/Teacher/CreateExercises");
         }
 
         public void CrearTableLessons()
         {
             DALLessons lessons = new DALLessons();
-            List<LessonsModel> lisModels = lessons.SelectLessons();
+            List<LessonsModel> lisModels = lessons.SelectLessons(Context.User.Identity.GetUserId());
             this.GridViewLesson.DataSource = lisModels;
             this.GridViewLesson.DataBind();
         }

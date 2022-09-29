@@ -10,7 +10,7 @@ namespace ProyectoEFE.Conexion
     public class DALLessons
     {
 
-        public void InsertLesson(LessonsModel lesson)
+        public void InsertLesson(LessonsModel lesson, int fk_topic)
         {
             ConexionBD cnn = new ConexionBD();
 
@@ -18,22 +18,23 @@ namespace ProyectoEFE.Conexion
             {
                 //String query
                 String query = @"INSERT lessons VALUES
-                               (@pFk_lessons,
-                                @pImage_lessons,
+                               (@pImage_lessons,
                                 @pName_lessons,
-                                @pDescription_lessons)";
+                                @pDescription_lessons,
+                                @pFk_topic)";
+
 
                 //Conexion creada
                 SqlCommand comand = new SqlCommand(query, cnn.Connection);
 
                 //Parametros de la query
-                SqlParameter pFk_lessons = new SqlParameter("@pFk_lessons", lesson.Fk_topic);
+                SqlParameter pFk_topic = new SqlParameter("@pFk_topic", fk_topic);
                 SqlParameter pImage_lessons = new SqlParameter("@pImage_lessons", lesson.Image_url_lesson);
                 SqlParameter pName_lessons = new SqlParameter("@pName_lessons", lesson.Name_lesson);
                 SqlParameter pDescription_lessons = new SqlParameter("@pDescription_lessons", lesson.Description_lesson);
 
                 //Añadir los parametros
-                comand.Parameters.Add(pFk_lessons);
+                comand.Parameters.Add(pFk_topic);
                 comand.Parameters.Add(pImage_lessons);
                 comand.Parameters.Add(pName_lessons);
                 comand.Parameters.Add(pDescription_lessons);
@@ -76,6 +77,49 @@ namespace ProyectoEFE.Conexion
                     cursModel.Id_lessons = (int)registros["id_lessons"];
                     cursModel.Fk_topic = (int)registros["fk_topic"];
                     cursModel.Image_url_lesson=(String)registros["image_lesson"];
+                    cursModel.Name_lesson = (String)registros["name_lesson"];
+                    cursModel.Description_lesson = (String)registros["description_lesson"];
+                    listLessons.Add(cursModel);
+                }
+            }
+            catch (Exception exeption)
+            {
+                Debug.WriteLine("ERROR SELECT LESIONES: " + exeption.Message);
+            }
+            finally
+            {
+                cnn.CerrarConexion();
+            }
+
+            return listLessons;
+        }
+        public List<LessonsModel> SelectLessons(string id_user)
+        {
+            List<LessonsModel> listLessons = new List<LessonsModel>();
+            ConexionBD cnn = new ConexionBD();
+
+            try
+            {
+                //String query
+                String query = @"SELECT * FROM lessons LEFT JOIN topics ON 
+                                lessons.fk_topic = topics.id_topic 
+                                LEFT JOIN curs ON
+                                topics.fk_curs = curs.id_curs 
+                                WHERE autor_idUser='" + id_user+"'";
+
+                //Conexion creada
+                SqlCommand comand = new SqlCommand(query, cnn.Connection);
+
+                //Ejecutar query
+                SqlDataReader registros = comand.ExecuteReader();
+
+                //Obtener lo datos
+                while (registros.Read())
+                {
+                    LessonsModel cursModel = new LessonsModel();
+                    cursModel.Id_lessons = (int)registros["id_lessons"];
+                    cursModel.Fk_topic = (int)registros["fk_topic"];
+                    cursModel.Image_url_lesson = (String)registros["image_lesson"];
                     cursModel.Name_lesson = (String)registros["name_lesson"];
                     cursModel.Description_lesson = (String)registros["description_lesson"];
                     listLessons.Add(cursModel);
