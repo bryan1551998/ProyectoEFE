@@ -11,80 +11,89 @@ namespace ProyectoEFE.Views.Teacher
 {
 
 
-    public partial class CreateLesson
+    public partial class CreateExercises
     {
 
         /// <summary>
-        /// Control SelectLesson.
+        /// Control SelectExercises.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList SelectLesson;
+        protected global::System.Web.UI.WebControls.DropDownList SelectExercises;
 
         /// <summary>
-        /// Control name_lesson.
+        /// Control name_exercise.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText name_lesson;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText name_exercise;
 
         /// <summary>
-        /// Control description_lesson.
+        /// Control description_exercise.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTextArea description_lesson;
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea description_exercise;
 
         /// <summary>
-        /// Control image_lesson.
+        /// Control image_exercise.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText image_lesson;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText image_exercise;
 
         /// <summary>
-        /// Control btn_Crear_Lesson.
+        /// Control number_of_exercise.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_Crear_Lesson;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl number_of_exercise;
 
         /// <summary>
-        /// Control btn_Crear_Exercises.
+        /// Control resposta_exercise.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_Crear_Exercises;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText resposta_exercise;
 
         /// <summary>
-        /// Control GridViewLesson.
+        /// Control btn_Crear_exercise.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridViewLesson;
+        protected global::System.Web.UI.WebControls.Button btn_Crear_exercise;
 
         /// <summary>
-        /// Control id_lesson_delete.
+        /// Control GridViewExercise.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl id_lesson_delete;
+        protected global::System.Web.UI.WebControls.GridView GridViewExercise;
+
+        /// <summary>
+        /// Control id_exercise_delete.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl id_exercise_delete;
 
         /// <summary>
         /// Control btn_eliminar_lesson.

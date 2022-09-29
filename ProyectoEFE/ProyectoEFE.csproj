@@ -305,6 +305,7 @@
     <Content Include="Views\Admin\Exercises\CreateExercises.aspx" />
     <Content Include="Views\Admin\Lessons\CreateLessons.aspx" />
     <Content Include="Views\Teacher\CreateCurs.aspx" />
+    <Content Include="Views\Teacher\CreateExercises.aspx" />
     <Content Include="Views\Teacher\CreateLessons.aspx" />
     <Content Include="Views\Teacher\CreateTopics.aspx" />
     <Content Include="Views\Testing.aspx" />
@@ -590,6 +591,13 @@
     </Compile>
     <Compile Include="Views\Teacher\CreateCurs.aspx.designer.cs">
       <DependentUpon>CreateCurs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Teacher\CreateExercises.aspx.cs">
+      <DependentUpon>CreateExercises.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Teacher\CreateExercises.aspx.designer.cs">
+      <DependentUpon>CreateExercises.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Teacher\CreateLessons.aspx.cs">
       <DependentUpon>CreateLessons.aspx</DependentUpon>
