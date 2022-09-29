@@ -199,8 +199,12 @@
 }
 
           /*  perfil general  */
-
-
+.contenedorPefil{
+    max-width:600px;
+    min-width:600px;
+    max-height:850px;
+    min-height:850px;
+}
 
 
 .bg_Sobremi {
@@ -209,6 +213,7 @@
     border: none;
     width: 90%;
     color:black;
+    padding:20px 10px;
 }
 .btn1 {
     transition: all 0.5s;
