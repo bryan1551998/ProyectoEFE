@@ -49,6 +49,11 @@ namespace ProyectoEFE.Views.Teacher
             topic.InsertTopic(topicsModel, indiceSelect);
             Response.Redirect("~/Views/Teacher/CreateTopics");
         }
+        protected void btn_Crear_Lessons_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Views/Teacher/CreateLessons");
+        }
+
 
         public void CrearTableTopics()
         {
