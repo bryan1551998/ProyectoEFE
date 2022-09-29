@@ -18,16 +18,8 @@ namespace ProyectoEFE.Account
         {
             //Comprueba si quieres ser student o teacher y le otroga ese rol
             string role;
-            if ((string)Session["regisTeacher"] == "teacher")
-            {
-                role = "teacher";
-                Session.Clear();
-            }
-            else
-            {
-                role = "student";
-                Session.Clear();
-            }
+            role = this.selectRol.Value.ToString();
+
             DateTime birthday = Convert.ToDateTime(BirthDay.Text);
 
             var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();

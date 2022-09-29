@@ -21,7 +21,8 @@ namespace ProyectoEFE.DAL
                 String query = @"INSERT INTO curs VALUES
                                (@pName_curs,
                                 @pDescription_curs, 
-                                @pImage_curs)";
+                                @pImage_curs,
+                                @pAutor_curs)";
 
                 //Conexion creada
                 SqlCommand comand = new SqlCommand(query, cnn.Connection);
@@ -30,11 +31,13 @@ namespace ProyectoEFE.DAL
                 SqlParameter pName_curs = new SqlParameter("@pName_curs", curs.Name_curs);
                 SqlParameter pDescription_curs = new SqlParameter("@pDescription_curs", curs.Description_curs);
                 SqlParameter pImage_curs = new SqlParameter("@pImage_curs", curs.Image_url_curs);
+                SqlParameter pAutor_curs = new SqlParameter("@pAutor_curs", curs.Autor_curs);
 
                 //Añadir los parametros
                 comand.Parameters.Add(pName_curs);
                 comand.Parameters.Add(pDescription_curs);
                 comand.Parameters.Add(pImage_curs);
+                comand.Parameters.Add(pAutor_curs);
 
                 //Ejecutar query
                 comand.ExecuteNonQuery();
@@ -43,7 +46,7 @@ namespace ProyectoEFE.DAL
             }
             catch (Exception exeption)
             {
-                Debug.WriteLine("ERROR INSERTAR CURS: " + exeption.Message);
+                Debug.WriteLine("ERROR INSERTAR CURS: " + exeption.Message +" --- "+ curs.Autor_curs);
             }
             finally
             {
@@ -76,6 +79,7 @@ namespace ProyectoEFE.DAL
                     cursModel.Name_curs = (String)registros["name_curs"];
                     cursModel.Description_curs = (String)registros["description_curs"];
                     cursModel.Image_url_curs = (String)registros["image_curs"];
+                    cursModel.Autor_curs = (String)registros["autor_curs"];
                     lisModels.Add(cursModel);
                 }
             }

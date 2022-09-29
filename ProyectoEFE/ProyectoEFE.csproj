@@ -196,10 +196,15 @@
     <Content Include="http404.aspx" />
     <Content Include="images\AI.jpg" />
     <Content Include="images\C++.png" />
-    <Content Include="images\C-sharp.png" />
     <Content Include="images\C.jpg" />
     <Content Include="images\CBSCTY.jpg" />
     <Content Include="images\coding.gif" />
+    <Content Include="images\cursos\c-shart.png" />
+    <Content Include="images\cursos\code.png" />
+    <Content Include="images\cursos\css.png" />
+    <Content Include="images\cursos\html.png" />
+    <Content Include="images\cursos\js.png" />
+    <Content Include="images\cursos\php.png" />
     <Content Include="images\Facebook.jpeg" />
     <Content Include="images\fondo_main.jpg" />
     <Content Include="images\fondo_main.png" />
@@ -209,9 +214,7 @@
     <Content Include="images\imagenPefe.jpg" />
     <Content Include="images\Instagram.png" />
     <Content Include="images\Java.png" />
-    <Content Include="images\Javascript.png" />
     <Content Include="images\matrix.jpg" />
-    <Content Include="images\PHP.jpg" />
     <Content Include="images\ProyectoAprendisaje1.jpg" />
     <Content Include="images\Python_logo.jpg" />
     <Content Include="images\Robotica.jpg" />
@@ -516,6 +519,7 @@
     <Compile Include="DAL\DALRole.cs" />
     <Compile Include="DAL\DALTopics.cs" />
     <Compile Include="DAL\DALCurs.cs" />
+    <Compile Include="DAL\DALUser.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -539,6 +543,7 @@
     <Compile Include="Models\ExercisesModel.cs" />
     <Compile Include="Models\CursModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\UserModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>

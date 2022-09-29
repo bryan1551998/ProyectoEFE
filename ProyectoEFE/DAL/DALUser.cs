@@ -11,15 +11,14 @@ namespace ProyectoEFE.DAL
 {
     public class DALUser
     {
-        public List<UserModel> SelectUser(string email)
+        public string NameUser(string id_user)
         {
             ConexionBD cnn = new ConexionBD();
-            List<UserModel> lisModels = new List<UserModel>();
-
+            string completename ="";
             try
             {
                 //String query
-                String query = @"SELECT FirstName, LastName, BirthDay, NickName FROM AspNetUsers WHERE Email='" + email + "'";
+                String query = @"SELECT firstname, lastname FROM AspNetUsers WHERE id='" + id_user + "'";
 
                 //Conexion creada
                 SqlCommand comand = new SqlCommand(query, cnn.Connection);
@@ -31,11 +30,49 @@ namespace ProyectoEFE.DAL
                 while (registros.Read())
                 {
                     UserModel userModel = new UserModel();
-                    userModel.FirstName1 = (String)registros["FirstName"];
-                    userModel.LastName1 = (String)registros["LastName"];
-                    userModel.BirthDay1 = (DateTime)registros["BirthDay"];
-                    userModel.NickName1 = (String)registros["NickName"];
-                   // userModel.ProfilePicture1 = (String)registros["ProfilePicture"];
+                    userModel.FirstName = (String)registros["firstname"];
+                    userModel.LastName = (String)registros["lastname"];
+                    completename = userModel.FirstName + " " + userModel.LastName;
+                }
+            }
+            catch (Exception exeption)
+            {
+                Debug.WriteLine("ERROR SELECT USER: " + exeption.Message);
+            }
+            finally
+            {
+                cnn.CerrarConexion();
+            }
+
+            return completename;
+        }
+
+        public List<UserModel> SelectUser(string id_user)
+        {
+            ConexionBD cnn = new ConexionBD();
+            List<UserModel> lisModels = new List<UserModel>();
+
+            try
+            {
+                //String query
+                String query = @"SELECT FirstName, LastName, BirthDay, NickName, ProfilePicture, Role FROM AspNetUsers WHERE Id='" + id_user + "'";
+
+                //Conexion creada
+                SqlCommand comand = new SqlCommand(query, cnn.Connection);
+
+                //Ejecutar query
+                SqlDataReader registros = comand.ExecuteReader();
+
+                //Obtener lo datos
+                while (registros.Read())
+                {
+                    UserModel userModel = new UserModel();
+                    userModel.FirstName = (String)registros["FirstName"];
+                    userModel.LastName = (String)registros["LastName"];
+                    userModel.BirthDay = (DateTime)registros["BirthDay"];
+                    userModel.NickName = (String)registros["NickName"];
+                    userModel.ProfilePicture = (String)registros["ProfilePicture"];
+                    userModel.Role = (String)registros["Role"];
                     lisModels.Add(userModel);
                 }
             }
@@ -49,6 +86,6 @@ namespace ProyectoEFE.DAL
             }
 
             return lisModels;
-            }
+        }
     }
 }

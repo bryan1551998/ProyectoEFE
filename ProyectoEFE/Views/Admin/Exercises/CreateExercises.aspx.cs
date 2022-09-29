@@ -1,4 +1,5 @@
-﻿using ProyectoEFE.Conexion;
+﻿using Microsoft.AspNet.Identity;
+using ProyectoEFE.Conexion;
 using ProyectoEFE.DAL;
 using ProyectoEFE.Models;
 using System;
@@ -14,6 +15,15 @@ namespace ProyectoEFE.Views.Exercises
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            //Comprobar ROL
+            DALRole roleuser = new DALRole();
+            Session["role"] = roleuser.ReadRol(Context.User.Identity.GetUserId());
+            if (Session["role"].ToString().Trim() != "admin")
+            {
+                Response.Redirect("~/");
+            }
+
+            //Controlar tabla para no crar duplicados
             if (!IsPostBack)
             {
                 DALLessons lessons = new DALLessons();
@@ -39,7 +49,7 @@ namespace ProyectoEFE.Views.Exercises
             ExercisesModel exercisesModel = new ExercisesModel(lisModels[indiceSelect].Id_lessons, this.image_exercise.Value, this.name_exercise.Value, this.description_exercise.Value, this.resposta_exercise.Value);
             DALExercises exercise = new DALExercises();
             exercise.InsertExercises(exercisesModel);
-            Response.Redirect("~/Views/Exercises/CreateExercises");
+            Response.Redirect("~/Views/Admin/Exercises/CreateExercises");
         }
 
         public void CrearTableTopics()

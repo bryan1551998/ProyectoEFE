@@ -35,37 +35,9 @@
                 <input runat="server" type="number" class="form-control" id="id_curs_delete" />
                 <br />
                 <asp:Button ID="btn_eliminar_curs" runat="server" Text="Eliminar" class="btn btn-primary" OnClick="btn_eliminar_curs_Click" />
-
             </div>
-
-
-            <div class="col-6">
-
-               <%-- form SEARCH --%>
-                <label for="id_curs_delete" class="form-label">Introduzca el <b>ID</b> del curso para eliminarlo: </label>
-                <input runat="server" type="number" class="form-control" id="Number1" />
-                <br />
-                <asp:Button ID="Button1" runat="server" Text="Eliminar" class="btn btn-primary" OnClick="btn_eliminar_curs_Click" />
-
-            </div>
-        </div>
-
-          <div class="row pt-4 pb-4">
-        
-
-
-            <div class="col-12">
-               <%-- form UPDATE --%>
-                <label for="id_curs_delete" class="form-label">Introduzca el <b>ID</b> del curso para eliminarlo: </label>
-                <input runat="server" type="number" class="form-control" id="Number3" />
-                <br />
-                <asp:Button ID="Button3" runat="server" Text="Eliminar" class="btn btn-primary" OnClick="btn_eliminar_curs_Click" />
-
-            </div>
-        </div>
-
     </div>
-
+</div>
     <script>
         var tabla = document.querySelector("#MainContent_GridViewCurs");
         var datatable = new DataTable(tabla);
