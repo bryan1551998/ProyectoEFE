@@ -95,6 +95,7 @@
                                 <% if (Session["role"].ToString().Trim() == "student")
                                     {%>
                                 <li class="nav-item"><a class="nav-link active" aria-current="page" runat="server" href="/Views/User/AllCurs">Cursos</a></li>
+                                <li class="nav-item"><a class="nav-link active" aria-current="page" runat="server" href="/Views/User/MisCursos">Mis cursos</a></li>
                                 <%
                                     }
                                 %>
@@ -107,10 +108,10 @@
                                     <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown2" role="button" data-bs-toggle="dropdown" aria-expanded="false">Administrar Teacher
                                     </a>
                                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown2">
-                                        <li><a class="dropdown-item" href="/Views/Admin/Curs/CreateCurs">Cursos</a></li>
-                                        <li><a class="dropdown-item" href="/Views/Admin/Topics/CreateTopics">Temas</a></li>
-                                        <li><a class="dropdown-item" href="/Views/Admin/Lessons/CreateLessons">Lesiones</a></li>
-                                        <li><a class="dropdown-item" href="/Views/Admin/Exercises/CreateExercises">Ejercicios</a></li>
+                                        <li><a class="dropdown-item" href="/Views/Teacher/CreateCurs">Cursos</a></li>
+                                        <li><a class="dropdown-item" href="/Views/Teacher/CreateTopics">Temas</a></li>
+                                        <li><a class="dropdown-item" href="/Views/Teacher/CreateLessons">Lesiones</a></li>
+                                        <li><a class="dropdown-item" href="/Views/Teacher/CreateExercises">Ejercicios</a></li>
                                     </ul>
 
                                 </li>

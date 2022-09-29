@@ -7,11 +7,14 @@
 
     <div class="container pb-4">
         <div class="row pt-4 pb-4">
+            <div id="result" class="contenidos" runat="server">
+            </div>
             <div id="contenedor" class="contenidos" runat="server">
-                
             </div>
             <asp:Button ID="Button1" runat="server" Text="Button" OnClick="Button1_Click" />
         </div>
+
+
 
     </div>
 </asp:Content>

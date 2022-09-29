@@ -11,33 +11,62 @@ namespace ProyectoEFE.DAL
 {
     public class DALCursoUser
     {
-        public void InsertCursUser(CursUserModel cursUser)
+        public string InsertCursUser(CursUserModel cursUser)
         {
-            ConexionBD cnn = new ConexionBD();
+            string result = "Gracias por suscribirte";
 
+            ConexionBD cnnselect = new ConexionBD();
+            ConexionBD cnn = new ConexionBD();
             try
             {
+
                 //String query
-                String query = @"INSERT INTO relationship_curs_user 
-                                VALUES(@pFk_curs,@pFk_users,@pFk_exercise)";
+                String querySelect = @"select * from relationship_curs_user 
+                                       where fk_curs=@pFk_cursSelect and fk_user=@pFk_usersSelect";
 
                 //Conexion creada
-                SqlCommand comand = new SqlCommand(query, cnn.Connection);
+                SqlCommand comandSelect = new SqlCommand(querySelect, cnnselect.Connection);
 
                 //Parametros de la query
-                SqlParameter pFk_curs = new SqlParameter("@pFk_curs", cursUser.Fk_curs);
-                SqlParameter pFk_users = new SqlParameter("@pFk_users", cursUser.Fk_users);
-                SqlParameter pFk_exercise = new SqlParameter("@pFk_exercise", cursUser.Fk_exercise);
+                SqlParameter pFk_cursSelect = new SqlParameter("@pFk_cursSelect", cursUser.Fk_curs);
+                SqlParameter pFk_usersSelect = new SqlParameter("@pFk_usersSelect", cursUser.Fk_users);
 
-                //Añadir los parametros
-                comand.Parameters.Add(pFk_curs);
-                comand.Parameters.Add(pFk_users);
-                comand.Parameters.Add(pFk_users);
+                //Añadir parametros
+                comandSelect.Parameters.Add(pFk_cursSelect);
+                comandSelect.Parameters.Add(pFk_usersSelect);
 
                 //Ejecutar query
-                comand.ExecuteNonQuery();
-                Debug.WriteLine("Curso " + cursUser.Fk_curs + " -- " + cursUser.Fk_users + " creado");
+                SqlDataReader registros = comandSelect.ExecuteReader();
 
+                //Obtener lo datos
+
+                if (registros.Read() == false)
+                {
+
+                    //String query
+                    String query = @"INSERT  INTO  relationship_curs_user (fk_curs,fk_user)
+                                    VALUES(@pFk_curs,@pFk_users)";
+
+                    //Conexion creada
+                    SqlCommand comand = new SqlCommand(query, cnn.Connection);
+
+                    //Parametros de la query
+                    SqlParameter pFk_curs = new SqlParameter("@pFk_curs", cursUser.Fk_curs);
+                    SqlParameter pFk_users = new SqlParameter("@pFk_users", cursUser.Fk_users);
+
+                    //Añadir los parametros
+                    comand.Parameters.Add(pFk_users);
+                    comand.Parameters.Add(pFk_curs);
+
+                    //Ejecutar query
+                    comand.ExecuteNonQuery();
+                    Debug.WriteLine("Curso " + cursUser.Fk_curs + " -- " + cursUser.Fk_users + " creado");
+                }
+                else
+                {
+                    result = "Ya estas suscrito a este gurso";
+                    Debug.WriteLine("Ya estas suscrito");
+                }
             }
             catch (Exception exeption)
             {
@@ -46,7 +75,17 @@ namespace ProyectoEFE.DAL
             finally
             {
                 cnn.CerrarConexion();
+                cnnselect.CerrarConexion();
             }
+            return result;
+        }
+
+        public object GestionarNulos(object valOriginal)
+        {
+            if (valOriginal == System.DBNull.Value)
+                return null;
+            else
+                return valOriginal;
         }
     }
 }
