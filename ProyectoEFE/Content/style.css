@@ -323,3 +323,18 @@ hr .new1 {
     height: 100px;
 }
 
+/*footer sebitas*/
+p#pfoter {
+    color: white !important;
+    padding: 10px;
+    font-size:20px
+}
+img#logo {
+    width: 700px;
+    height: 700px;
+    margin-top: -200px;
+}
+img#hlogo {
+    width: 40px;
+    height: 40px;
+}
