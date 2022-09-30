@@ -149,11 +149,11 @@
                 </div>
             </div>
         </nav>
-        <main class="fondoPantallaGeneralDisplayFlex">
+        
             <%-- Contenido dinamico --%>
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
-        </main>
+      
         <footer class="fixed-bottom text-center degradadoHaciaArriba">
             <p>&copy; <%: DateTime.Now.Year %> - My ASP.NET Application</p>
         </footer>
