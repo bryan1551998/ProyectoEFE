@@ -12,19 +12,27 @@ namespace ProyectoEFE.Account
 {
     public partial class Register : Page
     {
-        
+
 
         protected void CreateUser_Click(object sender, EventArgs e)
         {
-            //Comprueba si quieres ser student o teacher y le otroga ese rol
-            string role;
-            role = this.selectRol.Value.ToString();
+            string picture = null;
+            if (this.selectgender.Value.ToString() == "Hombre")
+            {
+                picture = "/hombre";
+            }
+            else
+            {
+                picture = "/mujer";
+            }
+
+
 
             DateTime birthday = Convert.ToDateTime(BirthDay.Text);
 
             var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
             var signInManager = Context.GetOwinContext().Get<ApplicationSignInManager>();
-            var user = new ApplicationUser() { UserName = Email.Text, Email = Email.Text, FirstName = FirstName.Text, LastName = LastName.Text, BirthDay = birthday, NickName =NickName.Text, Role = role};
+            var user = new ApplicationUser() { UserName = Email.Text, Email = Email.Text, FirstName = FirstName.Text, LastName = LastName.Text, BirthDay = birthday, NickName = NickName.Text, Role = this.selectRol.Value.ToString(), ProfilePicture = picture,  Gender = this.selectgender.Value.ToString() };
             IdentityResult result = manager.Create(user, Password.Text);
             if (result.Succeeded)
             {
@@ -33,10 +41,10 @@ namespace ProyectoEFE.Account
                 //string callbackUrl = IdentityHelper.GetUserConfirmationRedirectUrl(code, user.Id, Request);
                 //manager.SendEmail(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>.");
 
-                signInManager.SignIn( user, isPersistent: false, rememberBrowser: false);
+                signInManager.SignIn(user, isPersistent: false, rememberBrowser: false);
                 IdentityHelper.RedirectToReturnUrl(Request.QueryString["ReturnUrl"], Response);
             }
-            else 
+            else
             {
                 ErrorMessage.Text = result.Errors.FirstOrDefault();
             }
