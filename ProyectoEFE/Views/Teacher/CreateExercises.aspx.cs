@@ -26,11 +26,11 @@ namespace ProyectoEFE.Views.Teacher
             //Controlar tabla para no crar duplicados
             if (!IsPostBack)
             {
-                DALLessons lessons = new DALLessons();
-                List<LessonsModel> listLessons = lessons.SelectLessons(Context.User.Identity.GetUserId());
-                foreach (var item in listLessons)
+                DALTopics topics = new DALTopics();
+                List<TopicsModel> listTopics = topics.SelectTopics(Context.User.Identity.GetUserId());
+                foreach (var item in listTopics)
                 {
-                    this.SelectExercises.Items.Add("ID: " + item.Id_lessons.ToString() + " - " + item.Name_lesson.ToString());
+                    this.SelectExercises.Items.Add("ID: " + item.Id_topic.ToString() + " - " + item.Name_topic.ToString());
                 }
             }
             this.CrearTableTopics();
@@ -39,14 +39,14 @@ namespace ProyectoEFE.Views.Teacher
         protected void btn_Crear_exercise_Click(object sender, EventArgs e)
         {
             //Recuperar los Topics del usuairp
-            DALLessons lessons = new DALLessons();
-            List<LessonsModel> listLessons = lessons.SelectLessons(Context.User.Identity.GetUserId());
+            DALTopics topics = new DALTopics();
+            List<TopicsModel> listTopics = topics.SelectTopics(Context.User.Identity.GetUserId());
 
             //Recuperar el indice seleccionado 
-            int indiceSelect = listLessons[SelectExercises.SelectedIndex].Id_lessons;
+            int indiceSelect = listTopics[SelectExercises.SelectedIndex].Id_topic;
 
             //Insertar el tema
-            ExercisesModel exercisesModel = new ExercisesModel(this.image_exercise.Value, this.name_exercise.Value, this.description_exercise.Value, this.resposta_exercise.Value, this.number_of_exercise.Value);
+            ExercisesModel exercisesModel = new ExercisesModel(this.name_exercise.Value, this.description_exercise.Value, this.resposta_exercise.Value, this.number_of_exercise.Value);
             DALExercises exercise = new DALExercises();
             exercise.InsertExercises(exercisesModel, indiceSelect);
             Response.Redirect("~/Views/Teacher/CreateExercises");

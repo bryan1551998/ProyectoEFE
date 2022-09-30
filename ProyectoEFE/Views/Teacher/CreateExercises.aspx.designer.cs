@@ -42,15 +42,6 @@ namespace ProyectoEFE.Views.Teacher
         protected global::System.Web.UI.HtmlControls.HtmlTextArea description_exercise;
 
         /// <summary>
-        /// Control image_exercise.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText image_exercise;
-
-        /// <summary>
         /// Control number_of_exercise.
         /// </summary>
         /// <remarks>

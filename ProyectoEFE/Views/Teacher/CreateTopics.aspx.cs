@@ -46,14 +46,14 @@ namespace ProyectoEFE.Views.Teacher
             int indiceSelect = lisModels[SelectCurs.SelectedIndex].Id_curs;
 
             //Insertar el tema
-            TopicsModel topicsModel = new TopicsModel(this.name_topics.Value, this.description_topics.Value, this.image_topics.Value);
+            TopicsModel topicsModel = new TopicsModel(this.name_topics.Value, this.description_topics.Value);
             DALTopics topic = new DALTopics();
             topic.InsertTopic(topicsModel, indiceSelect);
             Response.Redirect("~/Views/Teacher/CreateTopics");
         }
-        protected void btn_Crear_Lessons_Click(object sender, EventArgs e)
+        protected void btn_Crear_Exercise_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/Views/Teacher/CreateLessons");
+            Response.Redirect("~/Views/Teacher/CreateExercises");
         }
 
 
