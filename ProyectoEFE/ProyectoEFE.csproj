@@ -214,6 +214,7 @@
     <Content Include="images\imagenPefe.jpg" />
     <Content Include="images\Instagram.png" />
     <Content Include="images\Java.png" />
+    <Content Include="images\Male.png" />
     <Content Include="images\matrix.jpg" />
     <Content Include="images\ProyectoAprendisaje1.jpg" />
     <Content Include="images\Python_logo.jpg" />
@@ -221,6 +222,7 @@
     <Content Include="images\The.Matrix.glmatrix.2.png" />
     <Content Include="images\Twiter1.jpeg" />
     <Content Include="images\WebDesign.jpg" />
+    <Content Include="images\Woman.png" />
     <Content Include="images\working-on-code.jpg" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />

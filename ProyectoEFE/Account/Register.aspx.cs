@@ -19,11 +19,11 @@ namespace ProyectoEFE.Account
             string picture = null;
             if (this.selectgender.Value.ToString() == "Hombre")
             {
-                picture = "/hombre";
+                picture = "/images/Male.png";
             }
             else
             {
-                picture = "/mujer";
+                picture = "/images/Woman.jpg";
             }
 
 
