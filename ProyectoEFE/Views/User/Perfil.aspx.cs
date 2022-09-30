@@ -15,6 +15,9 @@ namespace ProyectoEFE.Views.User
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            /*DALRole rol = new DALRole();
+            string roles = rol.ReadRol(Context.User.Identity.GetUserId());
+            this.rolUser.InnerText = roles;*/
             DALUser user = new DALUser();
             string cualquiera= user.NameUser(Context.User.Identity.GetUserId());
             this.nombreUser.InnerText = cualquiera;
