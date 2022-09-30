@@ -80,7 +80,7 @@ namespace ProyectoEFE.Views.User
                                 
             DALCursoUser dALCursoUser = new DALCursoUser();
 
-            this.result.InnerText = dALCursoUser.InsertCursUser(cursUser);
+            /*this.result.InnerText = dALCursoUser.InsertCursUser(cursUser);*/
 
             Debug.WriteLine("hola " + cursUser.Fk_users + " - " + cursUser.Fk_curs + " - " + cursUser.Fk_exercise + " ?");
 
