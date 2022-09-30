@@ -3,8 +3,6 @@
 
 
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
-
-    <div class="fondoPantallaGeneralDisplayFlex ">
         <div class="color-contenedor posicionamiento contenedorPerfil ">
                 <div>
                     <center>

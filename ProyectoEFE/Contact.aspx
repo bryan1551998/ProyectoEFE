@@ -1,7 +1,6 @@
 ﻿<%@ Page Title="Contact" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Contact.aspx.cs" Inherits="ProyectoEFE.Contact" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-    <main class="fondoPantallaGeneralDisplayFlex" >
         <div class="color-contenedor posicionamiento aboutContainer" id="AboutUs">
             <h2 class="pt-4">Envianos Tus Dudas</h2>
             <div class="d-flex justify-content-center align-content-center">
@@ -26,5 +25,4 @@
                 +34-queteimporta
             </address>
         </div>
-    </main>
 </asp:Content>
