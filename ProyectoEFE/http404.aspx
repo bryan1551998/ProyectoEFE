@@ -5,10 +5,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
    <title>Not Found</title>
-   <meta http-equiv="refresh" content="1;url=/"/>
+   <meta http-equiv="refresh" content="2;url=/"/>
 </head>
 <body>
-   <h1>Not Found</h1>
-   <p>Redirecting to Home...</p>
+    <center>  <img src="images/not%20found.png" 
+        width="50%"
+        height="50%"/></center>
 </body>
 </html>

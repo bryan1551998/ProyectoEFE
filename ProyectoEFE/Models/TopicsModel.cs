@@ -5,7 +5,6 @@
         //Atributos
         int id_topic;
         int fk_curs;
-        string image_url_topic;
         string name_topic;
         string description_topic;
 
