@@ -69,7 +69,7 @@ namespace ProyectoEFE.Views.Teacher
         {
             DALTopics topics = new DALTopics();
             topics.EliminarTopic(int.Parse(this.id_tema_delete.Value));
-            Response.Redirect("~/Views/Topics/CreateTopics");
+            Response.Redirect("~/Views/Teacher/CreateTopics");
         }
     }
 }

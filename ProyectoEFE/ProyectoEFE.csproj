@@ -218,6 +218,7 @@
     <Content Include="images\logo white.png" />
     <Content Include="images\logoWitesmall.png" />
     <Content Include="images\matrix.jpg" />
+    <Content Include="images\not found.png" />
     <Content Include="images\ProyectoAprendisaje1.jpg" />
     <Content Include="images\Python_logo.jpg" />
     <Content Include="images\Robotica.jpg" />

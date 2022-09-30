@@ -213,6 +213,14 @@
     color:black;
     padding:20px 10px;
 }
+.bg_contenido {
+    background-color: forestgreen;
+    border-radius: 20px;
+    height: 200px;
+}
+.bg_div_carousel {
+    background;
+}
 .btn1 {
     transition: all 0.5s;
 }
@@ -293,11 +301,11 @@ hr .new1 {
 }
 
 #MainContent_contenedor {
-    background-color: #fafafa;
+    background: linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.0));
     display: flex;
-    flex-wrap:wrap;
+    flex-wrap: wrap;
     padding: 8px;
-    grid-gap:10px;
+    grid-gap: 10px;
 }
 
 .CursAll {
