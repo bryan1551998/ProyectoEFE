@@ -365,6 +365,7 @@
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Views\Admin\Topics\CreateTopics.aspx" />
     <Content Include="Views\User\AllCurs.aspx" />
+    <Content Include="Views\User\Curs\VerCurso.aspx" />
     <Content Include="Views\User\Perfil.aspx" />
     <Content Include="Views\User\MisCursos.aspx" />
     <Content Include="Web.config" />
@@ -632,6 +633,13 @@
     </Compile>
     <Compile Include="Views\User\AllCurs.aspx.designer.cs">
       <DependentUpon>AllCurs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\User\Curs\VerCurso.aspx.cs">
+      <DependentUpon>VerCurso.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\User\Curs\VerCurso.aspx.designer.cs">
+      <DependentUpon>VerCurso.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\User\Perfil.aspx.cs">
       <DependentUpon>Perfil.aspx</DependentUpon>

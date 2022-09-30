@@ -3,6 +3,7 @@ using ProyectoEFE.DAL;
 using ProyectoEFE.Models;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -55,13 +56,39 @@ namespace ProyectoEFE.Views.User
                 description.Attributes.Add("class", "descriptionCursClass");
                 description.InnerText = lisModels[i].Description_curs;
 
+                //Crea boton
+                Button btn = new Button();
+                btn.Attributes.Add("runat", "server");
+                btn.Click += new EventHandler(btn_Subscribirse_Click);
+                btn.Text = "Clic" + i;
+                btn.Attributes.Add("class", "btn btn-primary btn-curs-user");
+                btn.Attributes.Add("name", "prueba");
+                btn.CommandName = lisModels[i].Id_curs.ToString();
+
                 //Añadir los hijos al padre
                 contenedor.Controls.Add(item);
                 item.Controls.Add(titulo);
                 item.Controls.Add(imagen);
                 item.Controls.Add(description);
+                item.Controls.Add(btn);
 
             }
+
+        }
+
+        protected void btn_Subscribirse_Click(object sender, EventArgs e)
+        {
+
+            Button btn = (Button)sender;
+            CursUserModel cursUser = new CursUserModel(int.Parse(btn.CommandName), Context.User.Identity.GetUserId());
+            DALCursoUser dALCursoUser = new DALCursoUser();
+
+
+
+            Debug.WriteLine("hola seleccionaste el curso " + cursUser.Fk_users + " - " + cursUser.Fk_curs + " - " + cursUser.Fk_exercise + " ?");
+
+            Response.Redirect("/Views/User/Curs/VerCurso?hola=" + cursUser.Fk_curs);
+
 
         }
     }
