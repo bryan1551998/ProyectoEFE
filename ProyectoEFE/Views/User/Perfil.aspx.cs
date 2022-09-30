@@ -26,16 +26,16 @@ namespace ProyectoEFE.Views.User
             this.rolUser.InnerText = roles;
 
             DALCurs curs = new DALCurs();
-            List<CursModel> lisModels = curs.SelectCurs();
+            List<CursModel> lisModels = curs.UserCurs(Context.User.Identity.GetUserId());
             // Creamos los elementos de la lista de forma dinámica
 
             for (int i = 0; i < lisModels.Count; i++)
             {
                 HtmlGenericControl item = new HtmlGenericControl("div");
-                item.Attributes.Add("class", "CursAll carousel-item ");
+                item.Attributes.Add("class", " bg_contenido carousel-item ");
                 if (i == 0)
                 {
-                    item.Attributes.Add("class", " CursAll carousel-item active ");
+                    item.Attributes.Add("class", " bg_contenido carousel-item active ");
                 }
                 item.Attributes.Add("id", "cursoDatos" + i);
                 item.InnerText = lisModels[i].Name_curs;

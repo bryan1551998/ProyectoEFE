@@ -37,7 +37,7 @@
                                  <h2>Cursos Iniciados/Realizados</h2>
                                  <hr />
                                     <div id="carouselExampleControls" class="carousel slide " data-bs-ride="carousel">
-                                       <div class="carousel-inner contenidos" id="contenedor" runat="server">
+                                       <div class="carousel-inner contenidos bg_div_carousel" id="contenedor" runat="server">
                                        </div>
                                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev" id="Next">
                                           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
