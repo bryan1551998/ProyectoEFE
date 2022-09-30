@@ -248,5 +248,47 @@ namespace ProyectoEFE.DAL
                 cnn.CerrarConexion();
             }
         }
+        public List<CursModel> UserCurs(string id_user)
+        {
+            List<CursModel> lisModels = new List<CursModel>();
+            ConexionBD cnn = new ConexionBD();
+
+            try
+            {
+                //String query
+                String query = @"SELECT c.id_curs,c.name_curs, c.description_curs, c.image_curs
+                                FROM curs c INNER JOIN relationship_curs_user r ON c.id_curs = r.fk_curs 
+                                INNER JOIN AspNetUsers u ON u.id = r.fk_user
+                                WHERE u.id='" + id_user+"'";
+
+                //Conexion creada
+                SqlCommand comand = new SqlCommand(query, cnn.Connection);
+
+                //Ejecutar query
+                SqlDataReader registros = comand.ExecuteReader();
+
+                //Obtener lo datos
+                while (registros.Read())
+                {
+                    CursModel cursModel = new CursModel();
+                    cursModel.Id_curs = (int)registros["id_curs"];
+                    cursModel.Name_curs = (String)registros["name_curs"];
+                    cursModel.Description_curs = (String)registros["description_curs"];
+                    cursModel.Image_url_curs = (String)registros["image_curs"];
+                    lisModels.Add(cursModel);
+                }
+            }
+            catch (Exception exeption)
+            {
+                Debug.WriteLine("ERROR SELECT CURS-: " + exeption.Message);
+            }
+            finally
+            {
+                cnn.CerrarConexion();
+            }
+
+            return lisModels;
+        }
+
     }
 }

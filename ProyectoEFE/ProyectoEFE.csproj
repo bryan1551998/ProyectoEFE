@@ -308,7 +308,6 @@
     <Content Include="Views\Teacher\CreateExercises.aspx" />
     <Content Include="Views\Teacher\CreateLessons.aspx" />
     <Content Include="Views\Teacher\CreateTopics.aspx" />
-    <Content Include="Views\Testing.aspx" />
     <EntityDeploy Include="Conexion\Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model1.Designer.cs</LastGenOutput>
@@ -363,6 +362,7 @@
     <Content Include="Views\Admin\Topics\CreateTopics.aspx" />
     <Content Include="Views\User\AllCurs.aspx" />
     <Content Include="Views\User\Perfil.aspx" />
+    <Content Include="Views\User\MisCursos.aspx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
   </ItemGroup>
@@ -518,6 +518,7 @@
     <Compile Include="Contact.aspx.designer.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
     </Compile>
+    <Compile Include="DAL\DALCursoUser.cs" />
     <Compile Include="DAL\DALExercises.cs" />
     <Compile Include="DAL\DALLessons.cs" />
     <Compile Include="DAL\DALRole.cs" />
@@ -541,6 +542,7 @@
     <Compile Include="http404.aspx.designer.cs">
       <DependentUpon>http404.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Models\CursUserModel.cs" />
     <Compile Include="Models\RelationshipCursUserModel.cs" />
     <Compile Include="Models\TopicsModel.cs" />
     <Compile Include="Models\LessonsModel.cs" />
@@ -613,13 +615,6 @@
     <Compile Include="Views\Teacher\CreateTopics.aspx.designer.cs">
       <DependentUpon>CreateTopics.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Views\Testing.aspx.cs">
-      <DependentUpon>Testing.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Views\Testing.aspx.designer.cs">
-      <DependentUpon>Testing.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Views\Admin\Topics\CreateTopics.aspx.cs">
       <DependentUpon>CreateTopics.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -634,8 +629,6 @@
     <Compile Include="Views\User\AllCurs.aspx.designer.cs">
       <DependentUpon>AllCurs.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Views\User\HtmlElementEventArgs.cs" />
-    <Compile Include="Views\User\HtmlElementEventHandler.cs" />
     <Compile Include="Views\User\Perfil.aspx.cs">
       <DependentUpon>Perfil.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -643,7 +636,13 @@
     <Compile Include="Views\User\Perfil.aspx.designer.cs">
       <DependentUpon>Perfil.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Views\User\StyleGenerator.cs" />
+    <Compile Include="Views\User\MisCursos.aspx.cs">
+      <DependentUpon>MisCursos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\User\MisCursos.aspx.designer.cs">
+      <DependentUpon>MisCursos.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />

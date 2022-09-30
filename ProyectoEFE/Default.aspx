@@ -2,7 +2,6 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
-   <div id="header">
          <div class="text-light text-right banner" id="tituloDeLaPagina">
                  <div class="display-4 text-center font-weight-bold heading">
                         <h1 id="titutlo" aria-atomic="False">

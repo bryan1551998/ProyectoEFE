@@ -3,7 +3,6 @@
 <%@ Register Src="~/Account/OpenAuthProviders.ascx" TagPrefix="uc" TagName="OpenAuthProviders" %>
 
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
-        <div class="fondoPantallaGeneralDisplayFlex">
             <div class="color-contenedor posicionamiento ">
                 <div class="p-3">
                     <section id="loginForm">
@@ -60,5 +59,4 @@
                     </section>
                 </div>
          </div>                
-    </div>
 </asp:Content>

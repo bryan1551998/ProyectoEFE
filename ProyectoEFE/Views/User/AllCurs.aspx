@@ -1,45 +1,20 @@
 ﻿<%@ Page Title="Cursos" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="AllCurs.aspx.cs" Inherits="ProyectoEFE.Views.User.AllCurs" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <style>
-        #MainContent_contenedor {
-            background-color: #fafafa !important;
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
-            grid-auto-rows: auto;
-            grid-gap: 15px;
-            padding: 8px;
-        }
 
-        .CursAll {
-            background-color: red;
-            border-radius: 8px;
-        }
+                         <!--contenedor general-->
+        <div class="color-contenedor posicionamiento " style="max-width:850px; min-width:850px;">
+            <div><!--contenedor objetos -->
+                <div class="p-2"><!--Titulo-->
+                    <h1>Cursos Disponibles</h1>
+                </div>
+                    <!--contenedor de los cursos-->
+                    <div id="contenedor" class="color-contenedor table-responsive" runat="server">
 
-        .tituloCursClass {
-            text-align: center;
-            padding: 12px;
-        }
-
-        .imgCursClass {
-            margin: 10px auto;
-            display: block;
-        }
-
-        .descriptionCursClass {
-            padding: 10px;
-            text-align: justify;
-            height: 150px
-        }
-    </style>
-
-    <div class="container pb-4">
-        <div class="row pt-4 pb-4">
-            <div id="contenedor" class="contenidos" runat="server">
-                
+                    </div>
+                    <asp:Button ID="Button1" runat="server" CssClass="btn btn-outline-light p-2 m-3" Text="Button" OnClick="Button1_Click" />
             </div>
-            <asp:Button ID="Button1" runat="server" Text="Button" OnClick="Button1_Click" />
         </div>
 
-    </div>
+    
 </asp:Content>
