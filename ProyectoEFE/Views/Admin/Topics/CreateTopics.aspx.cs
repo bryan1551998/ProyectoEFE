@@ -46,7 +46,7 @@ namespace ProyectoEFE.Views.Topics
             List<CursModel> lisModels = curs.SelectCurs();
 
             //Insertar el tema
-            TopicsModel topicsModel = new TopicsModel(this.image_topics.Value, this.name_topics.Value, this.description_topics.Value);
+            TopicsModel topicsModel = new TopicsModel(this.name_topics.Value, this.description_topics.Value);
             DALTopics topic = new DALTopics();
             topic.InsertTopic(topicsModel, indiceSelect);
             Response.Redirect("~/Views/Admin/Topics/CreateTopics");

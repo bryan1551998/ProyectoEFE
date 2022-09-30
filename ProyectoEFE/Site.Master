@@ -81,7 +81,6 @@
                                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                         <li><a class="dropdown-item" href="/Views/Admin/Curs/CreateCurs">Cursos</a></li>
                                         <li><a class="dropdown-item" href="/Views/Admin/Topics/CreateTopics">Temas</a></li>
-                                        <li><a class="dropdown-item" href="/Views/Admin/Lessons/CreateLessons">Lesiones</a></li>
                                         <li><a class="dropdown-item" href="/Views/Admin/Exercises/CreateExercises">Ejercicios</a></li>
                                     </ul>
 
@@ -110,7 +109,6 @@
                                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown2">
                                         <li><a class="dropdown-item" href="/Views/Teacher/CreateCurs">Cursos</a></li>
                                         <li><a class="dropdown-item" href="/Views/Teacher/CreateTopics">Temas</a></li>
-                                        <li><a class="dropdown-item" href="/Views/Teacher/CreateLessons">Lesiones</a></li>
                                         <li><a class="dropdown-item" href="/Views/Teacher/CreateExercises">Ejercicios</a></li>
                                     </ul>
 

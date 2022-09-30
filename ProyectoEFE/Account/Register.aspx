@@ -53,7 +53,14 @@
                             <option runat="server" value="teacher">Teacher</option>
                         </select>
                     </div>
-
+                    <div class="">
+                        <asp:Label runat="server" AssociatedControlID="selectgender" CssClass="">¿Que eres?</asp:Label>
+                        <select name="select" runat="server" id="selectgender" class="form-select">
+                            <option runat="server" value="Hombre" selected>Hombre</option>
+                            <option runat="server" value="Mujer">Mujer</option>
+                            <option runat="server" value="Otro">Otro</option>
+                        </select>
+                    </div>
 
 
                     <div class="">

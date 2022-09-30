@@ -21,7 +21,6 @@ namespace ProyectoEFE.DAL
                 String query = @"INSERT topics VALUES
                                (@pName_topic,
                                 @pDescription_topic,
-                                @pImage_topic,
                                 @pFk_curs)";
 
 
@@ -31,12 +30,10 @@ namespace ProyectoEFE.DAL
                 //Parametros de la query
                 SqlParameter pName_topic = new SqlParameter("@pName_topic", topics.Name_topic);
                 SqlParameter pDescription_topic = new SqlParameter("@pDescription_topic", topics.Description_topic);
-                SqlParameter pImage_topic = new SqlParameter("@pImage_topic", topics.Image_url_topic);
                 SqlParameter pFk_curs = new SqlParameter("@pFk_curs", fk_curs);
 
                 //Añadir los parametros
                 comand.Parameters.Add(pFk_curs);
-                comand.Parameters.Add(pImage_topic);
                 comand.Parameters.Add(pName_topic);
                 comand.Parameters.Add(pDescription_topic);
 
@@ -77,7 +74,6 @@ namespace ProyectoEFE.DAL
                     TopicsModel cursModel = new TopicsModel();
                     cursModel.Id_topic = (int)registros["id_topic"];
                     cursModel.Fk_curs = (int)registros["fk_curs"];
-                    cursModel.Image_url_topic=(String)registros["image_topic"];
                     cursModel.Name_topic = (String)registros["name_topic"];
                     cursModel.Description_topic = (String)registros["description_topic"];
                     lisTopics.Add(cursModel);
@@ -118,7 +114,6 @@ namespace ProyectoEFE.DAL
                     TopicsModel cursModel = new TopicsModel();
                     cursModel.Id_topic = (int)registros["id_topic"];
                     cursModel.Fk_curs = (int)registros["fk_curs"];
-                    cursModel.Image_url_topic = (String)registros["image_topic"];
                     cursModel.Name_topic = (String)registros["name_topic"];
                     cursModel.Description_topic = (String)registros["description_topic"];
                     lisTopics.Add(cursModel);

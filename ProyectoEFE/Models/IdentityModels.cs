@@ -26,6 +26,9 @@ namespace ProyectoEFE.Models
         public string NickName { get; set; }
         public DateTime BirthDay { get; set; }
         public string Role { get; set; }
+        public string Gender { get; set; }
+        public string ProfilePicture { get; set; }
+
 
         public Task<ClaimsIdentity> GenerateUserIdentityAsync(ApplicationUserManager manager)
         {

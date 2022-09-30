@@ -17,9 +17,6 @@
                 <label for="description_exercise" class="form-label">Descripcion del ejercicio</label>
                 <textarea runat="server" type="text" class="form-control" id="description_exercise" rows="4" cols="50"> </textarea>
                 <br />
-                <label for="image_exercise" class="form-label">Imagen del ejercicio</label>
-                <input runat="server" type="text" class="form-control" id="image_exercise" />
-                <br />
                 <label for="number_of_exercise" class="form-label">Numero de Ejercicio</label>
                 <input runat="server" type="number" class="form-control" id="number_of_exercise" />
                 <br />

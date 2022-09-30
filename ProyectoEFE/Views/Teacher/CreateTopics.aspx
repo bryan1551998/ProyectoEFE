@@ -17,11 +17,8 @@
                 <label for="description_topics" class="form-label">Descripcion del tema</label>
                 <textarea runat="server" type="text" class="form-control" id="description_topics" rows="4" cols="50"> </textarea>
                 <br />
-                <label for="image_topics" class="form-label">Imagen del tema</label>
-                <input runat="server" type="text" class="form-control" id="image_topics" />
-                <br />
                 <asp:Button ID="btn_Crear_Topics" runat="server" Text="Crear Tema" class="btn btn-primary" OnClick="btn_Crear_Topics_Click" />
-                <asp:Button ID="btn_Crear_Lessons" runat="server" Text="Crear Leccion" class="btn btn-primary" OnClick="btn_Crear_Lessons_Click" />
+                <asp:Button ID="btn_Crear_Exercises" runat="server" Text="Crear Leccion" class="btn btn-primary" OnClick="btn_Crear_Exercise_Click" />
             </div>
 
             <div class="col-6 table-responsive">

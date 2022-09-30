@@ -46,7 +46,7 @@ namespace ProyectoEFE.Views.Teacher
         {
             //creart otro insert en la tabla de relaciones
             DALCurs curs = new DALCurs();
-            List<CursModel> lisModels = curs.UserCurs(Context.User.Identity.GetUserId());
+            List<CursModel> lisModels = curs.SelectCurs(Context.User.Identity.GetUserId());
             this.GridViewCurs.DataSource = lisModels;
             this.GridViewCurs.DataBind();
         }

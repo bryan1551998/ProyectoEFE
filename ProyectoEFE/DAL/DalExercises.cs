@@ -19,20 +19,19 @@ namespace ProyectoEFE.DAL
             {
                 //String query
                 String query = @"INSERT exercises VALUES
-                               (@pImage_exercise,
-                                @pName_exercise,
+                               (@pName_exercise,
                                 @pDescription_exercise,
                                 @pSolution_exercise,
                                 @pN_exercise,
-                                @pFk_lessons)";
+                                @pFk_topic)";
+
 
 
                 //Conexion creada
                 SqlCommand comand = new SqlCommand(query, cnn.Connection);
 
                 //Parametros de la query
-                SqlParameter pFk_lessons = new SqlParameter("@pFk_lessons", fk_lesson);
-                SqlParameter pImage_exercise = new SqlParameter("@pImage_exercise", exercise.Image_exercise);
+                SqlParameter pFk_lessons = new SqlParameter("@pFk_topic", fk_lesson);
                 SqlParameter pName_exercise = new SqlParameter("@pName_exercise", exercise.Name_exercise);
                 SqlParameter pDescription_exercise = new SqlParameter("@pDescription_exercise", exercise.Description_exercise);
                 SqlParameter pSolution_exercise = new SqlParameter("@pSolution_exercise", exercise.Solution_exercise);
@@ -40,7 +39,6 @@ namespace ProyectoEFE.DAL
 
                 //Añadir los parametros
                 comand.Parameters.Add(pFk_lessons);
-                comand.Parameters.Add(pImage_exercise);
                 comand.Parameters.Add(pName_exercise);
                 comand.Parameters.Add(pDescription_exercise);
                 comand.Parameters.Add(pSolution_exercise);
@@ -83,8 +81,7 @@ namespace ProyectoEFE.DAL
                 {
                     ExercisesModel cursModel = new ExercisesModel();
                     cursModel.Id_exercise = (int)registros["id_exercise"];
-                    cursModel.Fk_lessons = (int)registros["fk_lessons"];
-                    cursModel.Image_exercise = (String)registros["imagen_exercise"];
+                    cursModel.Fk_topic = (int)registros["fk_topic"];
                     cursModel.Name_exercise = (String)registros["name_exercise"];
                     cursModel.Description_exercise = (String)registros["description_exercise"];
                     cursModel.Solution_exercise = (String)registros["description_exercise"];
@@ -112,13 +109,11 @@ namespace ProyectoEFE.DAL
                 //String query
                 String query = @"SELECT *
                                 FROM exercises
-                                left join lessons
-                                on exercises.fk_lessons = lessons.id_lessons
-                                left JOIN topics
-                                ON lessons.fk_topic = topics.id_topic
-                                left JOIN curs
+                                LEFT JOIN topics
+                                on exercises.fk_topic = topics.id_topic
+                                LEFT JOIN curs
                                 on topics.fk_curs = curs.id_curs
-                                WHERE autor_idUser='"+id_user+"'";
+                                WHERE autor_idUser='" + id_user + "'";
 
                 //Conexion creada
                 SqlCommand comand = new SqlCommand(query, cnn.Connection);
@@ -131,8 +126,7 @@ namespace ProyectoEFE.DAL
                 {
                     ExercisesModel cursModel = new ExercisesModel();
                     cursModel.Id_exercise = (int)registros["id_exercise"];
-                    cursModel.Fk_lessons = (int)registros["fk_lessons"];
-                    cursModel.Image_exercise = (String)registros["imagen_exercise"];
+                    cursModel.Fk_topic = (int)registros["fk_topic"];
                     cursModel.Name_exercise = (String)registros["name_exercise"];
                     cursModel.Description_exercise = (String)registros["description_exercise"];
                     cursModel.Solution_exercise = (String)registros["description_exercise"];

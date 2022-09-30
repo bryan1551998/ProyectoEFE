@@ -42,15 +42,6 @@ namespace ProyectoEFE.Views.Teacher
         protected global::System.Web.UI.HtmlControls.HtmlTextArea description_topics;
 
         /// <summary>
-        /// Control image_topics.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText image_topics;
-
-        /// <summary>
         /// Control btn_Crear_Topics.
         /// </summary>
         /// <remarks>
@@ -60,13 +51,13 @@ namespace ProyectoEFE.Views.Teacher
         protected global::System.Web.UI.WebControls.Button btn_Crear_Topics;
 
         /// <summary>
-        /// Control btn_Crear_Lessons.
+        /// Control btn_Crear_Exercises.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_Crear_Lessons;
+        protected global::System.Web.UI.WebControls.Button btn_Crear_Exercises;
 
         /// <summary>
         /// Control GridViewTopics.
