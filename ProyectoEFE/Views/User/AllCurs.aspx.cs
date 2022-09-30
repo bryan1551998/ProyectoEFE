@@ -15,7 +15,6 @@ namespace ProyectoEFE.Views.User
     public partial class AllCurs : System.Web.UI.Page
     {
         int numeroQe;
-        private object result;
 
         public int NumeroQe { get => numeroQe; set => numeroQe = value; }
 
@@ -30,7 +29,7 @@ namespace ProyectoEFE.Views.User
             {
                 //Crear el DIV padre
                 HtmlGenericControl item = new HtmlGenericControl("div");
-                item.Attributes.Add("class", "CursAll m-2 ");
+                item.Attributes.Add("class", "CursAll pb-4");
                 item.Attributes.Add("id", "cursoDatos" + i);
 
                 //Crear titulo
@@ -55,10 +54,9 @@ namespace ProyectoEFE.Views.User
                 //Crea boton
                 Button btn = new Button();
                 btn.Attributes.Add("runat", "server");
-                btn.Attributes.Add("id", "result");
                 btn.Click += new EventHandler(btn_Subscribirse_Click);
                 btn.Text = "Clic" + i;
-                btn.Attributes.Add("class", "btn btn-primary");
+                btn.Attributes.Add("class", "btn btn-primary btn-curs-user");
                 btn.Attributes.Add("name", "prueba");
                 btn.CommandName = lisModels[i].Id_curs.ToString();
 
@@ -77,10 +75,10 @@ namespace ProyectoEFE.Views.User
             Button btn = (Button)sender;
 
             CursUserModel cursUser = new CursUserModel(int.Parse(btn.CommandName), Context.User.Identity.GetUserId());
-                                
+
             DALCursoUser dALCursoUser = new DALCursoUser();
 
-            /*this.result.InnerText = dALCursoUser.InsertCursUser(cursUser);*/
+            this.result.InnerText = dALCursoUser.InsertCursUser(cursUser);
 
             Debug.WriteLine("hola " + cursUser.Fk_users + " - " + cursUser.Fk_curs + " - " + cursUser.Fk_exercise + " ?");
 
