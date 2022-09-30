@@ -23,7 +23,7 @@ namespace ProyectoEFE.Account
             }
             else
             {
-                picture = "/images/Woman.jpg";
+                picture = "/images/Woman.png";
             }
 
 

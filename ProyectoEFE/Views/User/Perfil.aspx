@@ -2,13 +2,14 @@
 
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-                                <!-- contenedor general--> 
+    <div class="fondoPantallaGeneralDisplayFlex" >
+         <!-- contenedor general--> 
             <div class="color-contenedor posicionamiento contenedorPefil">
                 <div class="">
                                         <!--contenedor de parte superior-->
                     <div class="contenedorSuperior d-flex flex-column justify-content-center align-items-center">            
                         <button class="btn1 btn-secondary mt-3">                 
-                            <img  runat="server" id="imagengenero" height="100" width="100" />              
+                            <img  runat="server" id="imagenGenero" height="100" width="100" />              
                         </button>                
                         <div runat="server" id="nombreUser" class="name mt-2 mb-2"></div>              
                         <div runat="server" id="rolUser"></div>               
@@ -67,4 +68,6 @@
                         
                     </div>
                         
+    </div>
+                               
 </asp:Content>
