@@ -214,6 +214,8 @@
     <Content Include="images\imagenPefe.jpg" />
     <Content Include="images\Instagram.png" />
     <Content Include="images\Java.png" />
+    <Content Include="images\logo white.png" />
+    <Content Include="images\logoWitesmall.png" />
     <Content Include="images\matrix.jpg" />
     <Content Include="images\ProyectoAprendisaje1.jpg" />
     <Content Include="images\Python_logo.jpg" />
