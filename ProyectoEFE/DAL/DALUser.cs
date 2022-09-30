@@ -87,5 +87,41 @@ namespace ProyectoEFE.DAL
 
             return lisModels;
         }
+        public string ImagenGender(string id_user)
+        {
+            Debug.WriteLine("holaperro");
+            ConexionBD cnn = new ConexionBD();
+            string completename = "";
+            try
+            {
+                //String query
+                String query = @"SELECT ProfilePicture FROM AspNetUsers WHERE id='" + id_user + "'";
+
+                //Conexion creada
+                SqlCommand comand = new SqlCommand(query, cnn.Connection);
+
+                //Ejecutar query
+                SqlDataReader registros = comand.ExecuteReader();
+
+                //Obtener lo datos
+                while (registros.Read())
+                {
+                    UserModel userModel = new UserModel();
+                    userModel.ProfilePicture = (String)registros["ProfilePicture"];
+                    completename = userModel.ProfilePicture;
+                    Debug.WriteLine("tengo la imagen" + completename );
+                }
+            }
+            catch (Exception exeption)
+            {
+                Debug.WriteLine("ERROR SELECT USER-imagen: " + exeption.Message);
+            }
+            finally
+            {
+                cnn.CerrarConexion();
+            }
+
+            return completename;
+        }
     }
 }

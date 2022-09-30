@@ -26,6 +26,9 @@ input[type="tel"],
 input[type="select"] {
     max-width: 280px;
 }
+p#pfoter {
+    color: #ECF0F1 !important;
+}
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
