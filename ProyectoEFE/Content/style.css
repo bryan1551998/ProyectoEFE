@@ -297,13 +297,19 @@ hr .new1 {
     display: flex;
     flex-wrap:wrap;
     padding: 8px;
+    grid-gap:10px;
 }
 
 .CursAll {
     /*background: -webkit-linear-gradient(#4b6cb7,#182848, #4b6cb7); /* Chrome 10-25, Safari 5.1-6 */
     /*background: linear-gradient(#4b6cb7, #182848, #4b6cb7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    background-color:red;
+    background-color: #6393ff1f;
     border-radius: 15px;
+}
+
+.btn-curs-user {
+margin-left:10px;
+margin-top:20px;
 }
 
 .tituloCursClass {
