@@ -2,7 +2,7 @@
 
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <div class="fondoPantallaGeneralDisplayFlex">
+    <div class="d-flex justify-content-center align-items-center ">
                                 <!-- contenedor general--> 
             <div class="color-contenedor posicionamiento contenedorPefil">
                 <div class="">

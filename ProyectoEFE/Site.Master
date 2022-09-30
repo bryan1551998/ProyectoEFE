@@ -149,7 +149,7 @@
                 </div>
             </div>
         </nav>
-        <main>
+        <main class="fondoPantallaGeneralDisplayFlex">
             <%-- Contenido dinamico --%>
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>

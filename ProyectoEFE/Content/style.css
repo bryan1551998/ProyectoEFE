@@ -4,7 +4,12 @@
 }
 
 /* contenido general de las paginas */
-
+.fondopantalla {
+    height: 100vh;
+    text-align: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../images/imagenPefe.jpg) no-repeat center center fixed;
+    background-size: cover;
+}
 .fondoPantallaGeneralDisplayFlex {
     height: 100vh;
     text-align: center;
