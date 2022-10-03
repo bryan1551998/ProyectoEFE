@@ -187,6 +187,7 @@
     <Content Include="Content\bootstrap-reboot.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\css.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Content\style.css" />
     <Content Include="Default.aspx" />
@@ -367,6 +368,7 @@
     <Content Include="Views\Admin\Topics\CreateTopics.aspx" />
     <Content Include="Views\User\AllCurs.aspx" />
     <Content Include="Views\User\Curs\VerCurso.aspx" />
+    <Content Include="Views\User\Ejercicio\VerEjercicio.aspx" />
     <Content Include="Views\User\Perfil.aspx" />
     <Content Include="Views\User\MisCursos.aspx" />
     <Content Include="Web.config" />
@@ -526,6 +528,7 @@
     </Compile>
     <Compile Include="DAL\DALCursoUser.cs" />
     <Compile Include="DAL\DALExercises.cs" />
+    <Compile Include="DAL\DALHistorial.cs" />
     <Compile Include="DAL\DALLessons.cs" />
     <Compile Include="DAL\DALRole.cs" />
     <Compile Include="DAL\DALTopics.cs" />
@@ -549,6 +552,7 @@
       <DependentUpon>http404.aspx</DependentUpon>
     </Compile>
     <Compile Include="Models\CursUserModel.cs" />
+    <Compile Include="Models\HistorialModel.cs" />
     <Compile Include="Models\RelationshipCursUserModel.cs" />
     <Compile Include="Models\TopicsModel.cs" />
     <Compile Include="Models\LessonsModel.cs" />
@@ -641,6 +645,13 @@
     </Compile>
     <Compile Include="Views\User\Curs\VerCurso.aspx.designer.cs">
       <DependentUpon>VerCurso.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\User\Ejercicio\VerEjercicio.aspx.cs">
+      <DependentUpon>VerEjercicio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\User\Ejercicio\VerEjercicio.aspx.designer.cs">
+      <DependentUpon>VerEjercicio.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\User\Perfil.aspx.cs">
       <DependentUpon>Perfil.aspx</DependentUpon>

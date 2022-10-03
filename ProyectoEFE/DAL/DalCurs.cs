@@ -12,13 +12,13 @@ namespace ProyectoEFE.DAL
     {
         public int SelectUserCurs(string id_user)
         {
-            int userCurs =0;
+            int userCurs = 0;
             ConexionBD cnn = new ConexionBD();
 
             try
             {
                 //String query
-                String query = @"SELECT id_curs FROM CURS WHERE  autor_idUser='" + id_user+"'";
+                String query = @"SELECT id_curs FROM CURS WHERE  autor_idUser='" + id_user + "'";
 
                 //Conexion creada
                 SqlCommand comand = new SqlCommand(query, cnn.Connection);
@@ -48,14 +48,14 @@ namespace ProyectoEFE.DAL
         public void ReletionCursUser(int idCurs, string idUser)
         {
             ConexionBD cnn = new ConexionBD();
-            
+
             try
             {
                 //String query
                 String query = @"INSERT INTO relationship_curs_user VALUES
                                (@pfk_curs,
                                 @pfk_user,
-                                @pfk_exercise)"; 
+                                @pfk_exercise)";
 
                 //Conexion creada
                 SqlCommand comand = new SqlCommand(query, cnn.Connection);
@@ -89,7 +89,6 @@ namespace ProyectoEFE.DAL
 
         public void InsertCurs(CursModel curs, string idUser)
         {
-
             ConexionBD cnn = new ConexionBD();
 
             try
@@ -126,7 +125,7 @@ namespace ProyectoEFE.DAL
             }
             catch (Exception exeption)
             {
-                Debug.WriteLine("ERROR INSERTAR CURS: " + exeption.Message +" --- "+ curs.Name_curs);
+                Debug.WriteLine("ERROR INSERTAR CURS: " + exeption.Message + " --- " + curs.Name_curs);
             }
             finally
             {
@@ -134,7 +133,6 @@ namespace ProyectoEFE.DAL
             }
 
         }
-
 
         public List<CursModel> SelectCurs()
         {
@@ -176,6 +174,7 @@ namespace ProyectoEFE.DAL
 
             return lisModels;
         }
+        
         public List<CursModel> SelectCurs(string id_user)
         {
             List<CursModel> lisModels = new List<CursModel>();
@@ -217,6 +216,47 @@ namespace ProyectoEFE.DAL
             return lisModels;
         }
 
+        public List<CursModel> SelectCursId(string id_curs)
+        {
+            List<CursModel> lisModels = new List<CursModel>();
+            ConexionBD cnn = new ConexionBD();
+
+            try
+            {
+                //String query
+                String query = @"SELECT * FROM curs WHERE id_curs='" + id_curs + "'";
+
+                //Conexion creada
+                SqlCommand comand = new SqlCommand(query, cnn.Connection);
+
+                //Ejecutar query
+                SqlDataReader registros = comand.ExecuteReader();
+
+                //Obtener lo datos
+                while (registros.Read())
+                {
+                    CursModel cursModel = new CursModel();
+                    cursModel.Id_curs = (int)registros["id_curs"];
+                    cursModel.Name_curs = (String)registros["name_curs"];
+                    cursModel.Description_curs = (String)registros["description_curs"];
+                    cursModel.Image_url_curs = (String)registros["image_curs"];
+                    cursModel.Autor_name = (String)registros["autor_name"];
+                    cursModel.Autor_idUser = (String)registros["autor_idUser"];
+                    lisModels.Add(cursModel);
+                }
+            }
+            catch (Exception exeption)
+            {
+                Debug.WriteLine("ERROR SELECT CURS ID: " + exeption.Message);
+            }
+            finally
+            {
+                cnn.CerrarConexion();
+            }
+
+            return lisModels;
+        }
+
         public void EliminarCurs(int id_curs)
         {
 
@@ -237,7 +277,7 @@ namespace ProyectoEFE.DAL
 
                 //Ejecutar query
                 SqlDataReader registros = comand.ExecuteReader();
-                Debug.WriteLine("Curso "+ id_curs + " eliminado");
+                Debug.WriteLine("Curso " + id_curs + " eliminado");
             }
             catch (Exception exeption)
             {
@@ -259,7 +299,7 @@ namespace ProyectoEFE.DAL
                 String query = @"SELECT c.id_curs,c.name_curs, c.description_curs, c.image_curs
                                 FROM curs c INNER JOIN relationship_curs_user r ON c.id_curs = r.fk_curs 
                                 INNER JOIN AspNetUsers u ON u.id = r.fk_user
-                                WHERE u.id='" + id_user+"'";
+                                WHERE u.id='" + id_user + "'";
 
                 //Conexion creada
                 SqlCommand comand = new SqlCommand(query, cnn.Connection);

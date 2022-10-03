@@ -21,11 +21,10 @@ namespace ProyectoEFE.DAL
                 String query = @"INSERT exercises VALUES
                                (@pName_exercise,
                                 @pDescription_exercise,
+                                @pEjemplo_exercise,
                                 @pSolution_exercise,
                                 @pN_exercise,
                                 @pFk_topic)";
-
-
 
                 //Conexion creada
                 SqlCommand comand = new SqlCommand(query, cnn.Connection);
@@ -34,6 +33,7 @@ namespace ProyectoEFE.DAL
                 SqlParameter pFk_lessons = new SqlParameter("@pFk_topic", fk_lesson);
                 SqlParameter pName_exercise = new SqlParameter("@pName_exercise", exercise.Name_exercise);
                 SqlParameter pDescription_exercise = new SqlParameter("@pDescription_exercise", exercise.Description_exercise);
+                SqlParameter pEjemplo_exercise = new SqlParameter("@pEjemplo_exercise", exercise.Ejemplo_exercise);
                 SqlParameter pSolution_exercise = new SqlParameter("@pSolution_exercise", exercise.Solution_exercise);
                 SqlParameter pN_exercise = new SqlParameter("@pN_exercise", exercise.Number_exercise);
 
@@ -41,9 +41,9 @@ namespace ProyectoEFE.DAL
                 comand.Parameters.Add(pFk_lessons);
                 comand.Parameters.Add(pName_exercise);
                 comand.Parameters.Add(pDescription_exercise);
+                comand.Parameters.Add(pEjemplo_exercise);
                 comand.Parameters.Add(pSolution_exercise);
                 comand.Parameters.Add(pN_exercise);
-
 
                 //Ejecutar query
                 comand.ExecuteNonQuery();
@@ -84,7 +84,8 @@ namespace ProyectoEFE.DAL
                     cursModel.Fk_topic = (int)registros["fk_topic"];
                     cursModel.Name_exercise = (String)registros["name_exercise"];
                     cursModel.Description_exercise = (String)registros["description_exercise"];
-                    cursModel.Solution_exercise = (String)registros["description_exercise"];
+                    cursModel.Solution_exercise = (String)registros["solution_exercise"];
+                    cursModel.Ejemplo_exercise = (String)registros["ejemplo_exercise"];
                     lisExercise.Add(cursModel);
                 }
             }
@@ -99,6 +100,90 @@ namespace ProyectoEFE.DAL
 
             return lisExercise;
         }
+
+        public List<ExercisesModel> SelectExercisesId(int id_topic)
+        {
+            List<ExercisesModel> lisExercise = new List<ExercisesModel>();
+            ConexionBD cnn = new ConexionBD();
+
+            try
+            {
+                //String query
+                String query = @"SELECT * FROM exercises where fk_topic=" + id_topic;
+
+                //Conexion creada
+                SqlCommand comand = new SqlCommand(query, cnn.Connection);
+
+                //Ejecutar query
+                SqlDataReader registros = comand.ExecuteReader();
+
+                //Obtener lo datos
+                while (registros.Read())
+                {
+                    ExercisesModel cursModel = new ExercisesModel();
+                    cursModel.Id_exercise = (int)registros["id_exercise"];
+                    cursModel.Fk_topic = (int)registros["fk_topic"];
+                    cursModel.Name_exercise = (String)registros["name_exercise"];
+                    cursModel.Description_exercise = (String)registros["description_exercise"];
+                    cursModel.Solution_exercise = (String)registros["solution_exercise"];
+                    cursModel.Ejemplo_exercise = (String)registros["ejemplo_exercise"];
+                    cursModel.Number_exercise = (int)registros["n_exercise"];
+                    lisExercise.Add(cursModel);
+                }
+            }
+            catch (Exception exeption)
+            {
+                Debug.WriteLine("ERROR SELECT EJERCICIOS: " + exeption.Message);
+            }
+            finally
+            {
+                cnn.CerrarConexion();
+            }
+
+            return lisExercise;
+        }
+
+        public List<ExercisesModel> SelectExercisesIdexercise(int id_topic)
+        {
+            List<ExercisesModel> lisExercise = new List<ExercisesModel>();
+            ConexionBD cnn = new ConexionBD();
+
+            try
+            {
+                //String query
+                String query = @"SELECT * FROM exercises where id_exercise=" + id_topic;
+
+                //Conexion creada
+                SqlCommand comand = new SqlCommand(query, cnn.Connection);
+
+                //Ejecutar query
+                SqlDataReader registros = comand.ExecuteReader();
+
+                //Obtener lo datos
+                while (registros.Read())
+                {
+                    ExercisesModel cursModel = new ExercisesModel();
+                    cursModel.Id_exercise = (int)registros["id_exercise"];
+                    cursModel.Fk_topic = (int)registros["fk_topic"];
+                    cursModel.Name_exercise = (String)registros["name_exercise"];
+                    cursModel.Description_exercise = (String)registros["description_exercise"];
+                    cursModel.Solution_exercise = (String)registros["solution_exercise"];
+                    cursModel.Ejemplo_exercise = (String)registros["ejemplo_exercise"];
+                    lisExercise.Add(cursModel);
+                }
+            }
+            catch (Exception exeption)
+            {
+                Debug.WriteLine("ERROR SELECT EJERCICIOS: " + exeption.Message);
+            }
+            finally
+            {
+                cnn.CerrarConexion();
+            }
+
+            return lisExercise;
+        }
+
         public List<ExercisesModel> SelectExercises(string id_user)
         {
             List<ExercisesModel> lisExercise = new List<ExercisesModel>();
@@ -129,7 +214,9 @@ namespace ProyectoEFE.DAL
                     cursModel.Fk_topic = (int)registros["fk_topic"];
                     cursModel.Name_exercise = (String)registros["name_exercise"];
                     cursModel.Description_exercise = (String)registros["description_exercise"];
-                    cursModel.Solution_exercise = (String)registros["description_exercise"];
+                    cursModel.Solution_exercise = (String)registros["solution_exercise"];
+                    cursModel.Number_exercise = (int)registros["n_exercise"];
+                    cursModel.Ejemplo_exercise = (String)registros["ejemplo_exercise"];
                     lisExercise.Add(cursModel);
                 }
             }
@@ -147,7 +234,7 @@ namespace ProyectoEFE.DAL
 
         public void EliminareExercise(int id_exercise)
         {
-                        ConexionBD cnn = new ConexionBD();
+            ConexionBD cnn = new ConexionBD();
 
             try
             {

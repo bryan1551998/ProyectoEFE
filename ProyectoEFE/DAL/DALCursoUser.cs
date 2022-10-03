@@ -13,8 +13,10 @@ namespace ProyectoEFE.DAL
     {
         public string InsertCursUser(CursUserModel cursUser)
         {
+            //Result mensaje
             string result = "Gracias por suscribirte";
 
+            //Conexiones BD
             ConexionBD cnnselect = new ConexionBD();
             ConexionBD cnn = new ConexionBD();
             try
@@ -64,7 +66,7 @@ namespace ProyectoEFE.DAL
                 }
                 else
                 {
-                    result = "Ya estas suscrito a este gurso";
+                    result = "Ya estas suscrito a este curso";
                     Debug.WriteLine("Ya estas suscrito");
                 }
             }

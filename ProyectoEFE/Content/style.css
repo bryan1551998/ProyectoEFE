@@ -69,19 +69,7 @@
         transition: 0.6s;
     }
 
-/*BTN*/
-.btn-primary {
-    background-color: #7950b6 !important;
-    border: none !important;
-    transition: 0.6s;
-}
 
-.btn-primary:hover {
-        background-color: #9364d7 !important;
-        padding-left: 16px;
-        padding-right: 16px;
-        transition: 0.6s;
-}
 
 /*Footer*/
 /*GRID ALL CURS*/
@@ -340,8 +328,9 @@ margin-top:20px;
 /*footer sebitas*/
 p#pfoter {
     color: white !important;
-    padding: 10px;
-    font-size:20px
+    padding: 5px;
+    font-size: 20px;
+    margin-bottom: 0px !important;
 }
 img#logo {
     width: 700px;

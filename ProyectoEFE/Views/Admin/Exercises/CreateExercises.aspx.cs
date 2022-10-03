@@ -45,8 +45,8 @@ namespace ProyectoEFE.Views.Exercises
             //Recuperar el indice seleccionado 
             int indiceSelect = listTopics[SelectExercises.SelectedIndex].Id_topic;
 
-            //Insertar el tema
-            ExercisesModel exercisesModel = new ExercisesModel(this.name_exercise.Value, this.description_exercise.Value, this.resposta_exercise.Value, this.number_of_exercise.Value);
+            //Insertar el tema 
+            ExercisesModel exercisesModel = new ExercisesModel(this.name_exercise.Value, this.description_exercise.Value , this.resposta_exercise.Value, this.ejemplo_exercise.Value,int.Parse(this.number_of_exercise.Value));
             DALExercises exercise = new DALExercises();
             exercise.InsertExercises(exercisesModel, indiceSelect);
             Response.Redirect("~/Views/Admin/Exercises/CreateExercises");

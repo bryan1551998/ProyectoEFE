@@ -28,9 +28,13 @@ namespace ProyectoEFE.Views.Teacher
             {
                 DALTopics topics = new DALTopics();
                 List<TopicsModel> listTopics = topics.SelectTopics(Context.User.Identity.GetUserId());
+
                 foreach (var item in listTopics)
                 {
-                    this.SelectExercises.Items.Add("ID: " + item.Id_topic.ToString() + " - " + item.Name_topic.ToString());
+                    DALCurs curs = new DALCurs();
+                    List<CursModel> lisModels = curs.SelectCursId(item.Fk_curs.ToString());
+
+                    this.SelectExercises.Items.Add("ID: " + item.Id_topic.ToString() + " - " + item.Name_topic.ToString() + " - Curso: " + lisModels[0].Name_curs);
                 }
             }
             this.CrearTableTopics();
@@ -46,7 +50,7 @@ namespace ProyectoEFE.Views.Teacher
             int indiceSelect = listTopics[SelectExercises.SelectedIndex].Id_topic;
 
             //Insertar el tema
-            ExercisesModel exercisesModel = new ExercisesModel(this.name_exercise.Value, this.description_exercise.Value, this.resposta_exercise.Value, this.number_of_exercise.Value);
+            ExercisesModel exercisesModel = new ExercisesModel(this.name_exercise.Value, this.description_exercise.Value, this.resposta_exercise.Value, this.ejemplo_exercise.Value, int.Parse(this.number_of_exercise.Value));
             DALExercises exercise = new DALExercises();
             exercise.InsertExercises(exercisesModel, indiceSelect);
             Response.Redirect("~/Views/Teacher/CreateExercises");
@@ -64,7 +68,7 @@ namespace ProyectoEFE.Views.Teacher
         {
             DALExercises exercise = new DALExercises();
             exercise.EliminareExercise(int.Parse(this.id_exercise_delete.Value));
-            Response.Redirect("~/Views/Exercises/CreateExercises");
+            Response.Redirect("~/Views/Teacher/CreateExercises");
         }
     }
 }

@@ -2,7 +2,12 @@
 
 <asp:Content ID="PaginaTopics" ContentPlaceHolderID="MainContent" runat="server">
 
-    <div class="container pb-4">
+    <div class="container pb-4 mb-4 fondo-cursos">
+
+        <center>
+            <h3 class="p-4">Administrar Ejercicios</h3>
+        </center>
+
         <div class="row pt-4 pb-4">
 
             <div class="col-6">
@@ -18,21 +23,12 @@
                 <textarea runat="server" type="text" class="form-control" id="description_topics" rows="4" cols="50"> </textarea>
                 <br />
                 <asp:Button ID="btn_Crear_Topics" runat="server" Text="Crear Tema" class="btn btn-primary" OnClick="btn_Crear_Topics_Click" />
-                <asp:Button ID="btn_Crear_Exercises" runat="server" Text="Crear Leccion" class="btn btn-primary" OnClick="btn_Crear_Exercise_Click" />
+                <asp:Button ID="btn_Crear_Exercises" runat="server" Text="Crear Ejercicio" class="btn btn-primary" OnClick="btn_Crear_Exercise_Click" />
             </div>
 
-            <div class="col-6 table-responsive">
+            
 
-                <asp:GridView ID="GridViewTopics" runat="server" CssClass="table table-hover" BorderStyle="None" GridLines="None">
-                    <FooterStyle BorderStyle="None" />
-                </asp:GridView>
-
-            </div>
-
-        </div>
-
-        <div class="row pt-4 pb-4">
-            <div class="col-6">
+             <div class="col-6">
 
                 <label for="id_tema_delete" class="form-label">Introduzca el <b>ID</b> del tema para eliminarlo: </label>
                 <input runat="server" type="number" class="form-control" id="id_tema_delete" />
@@ -40,12 +36,25 @@
                 <asp:Button ID="btn_eliminar_curs" runat="server" Text="Eliminar Tema" class="btn btn-primary" OnClick="btn_eliminar_curs_Click" />
 
             </div>
+
+        </div>
+
+        <hr />
+
+        <div class="row pt-4 pb-4">
+           <div class="col-12 table-responsive">
+
+                <asp:GridView ID="GridViewTopics" runat="server" CssClass="table table-hover" BorderStyle="None" GridLines="None">
+                    <FooterStyle BorderStyle="None" />
+                </asp:GridView>
+
+            </div>
         </div>
     </div>
 
-      <script>
-          var tabla = document.querySelector("#MainContent_GridViewTopics");
+    <script>
+        var tabla = document.querySelector("#MainContent_GridViewTopics");
         var datatable = new DataTable(tabla);
-      </script>
+    </script>
 
 </asp:Content>

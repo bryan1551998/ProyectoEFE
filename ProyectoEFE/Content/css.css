@@ -1,0 +1,155 @@
+﻿/*BTN*/
+.btn-primary {
+    background-color: #9270c5 !important;
+    border: none !important;
+    transition: 0.6s;
+}
+
+    .btn-primary:hover {
+        background-color: #7940ce !important;
+        padding-left: 16px;
+        padding-right: 16px;
+        transition: 0.6s;
+    }
+
+input.aspNetDisabled {
+    background-color: #9184a4 !important;
+    color: white;
+    border: 0px;
+    padding: 5px;
+    margin-left: 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+
+/*CursosCArds*/
+#MainContent_contenedorCurs {
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    grid-gap: 20px;
+    justify-content: center;
+    margin-bottom: 50px;
+    border-radius: 10px;
+    background: #f8fafb;
+}
+
+.CursAllItems {
+    background-color: #6393ff1f;
+    border-radius: 15px;
+    transition: 0.8s;
+}
+
+    .CursAllItems:hover {
+        box-shadow: 2px 3px 5px #35383f63;
+        transition: 0.8s;
+    }
+
+.imagenCursItemsClass {
+    margin: 10px auto;
+    display: block;
+    transition: 0.5s;
+}
+
+    .imagenCursItemsClass:hover {
+        filter: blur(0.8px);
+        transition: 0.8s;
+    }
+
+.tituloCursClass {
+    padding: 10px;
+    font-weight: 700;
+}
+
+.resultCursItems {
+    padding: 25px;
+    width: auto;
+    background: #dc8a8a;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    color: white;
+    font-weight: 500;
+}
+
+.descriptionCursItemsClass {
+    padding: 10px;
+    text-align: justify;
+    width: 400px;
+    height: 125px;
+}
+
+/*Ver curso*/
+.rowCurso {
+    display: grid;
+    grid-template-columns: 160px auto;
+    grid-auto-rows: auto;
+    grap: 7px;
+}
+
+p#MainContent_parrafoMyCurs {
+    background: #f8fafb;
+    border-radius: 15px;
+    padding: 10px;
+}
+
+img#MainContent_imagenfoMyCurs {
+    width: 100px;
+}
+
+.temaTitle {
+    background-color: #6393ff1f;
+}
+
+.accordion-button:focus {
+    box-shadow: 0 0 0 0.25rem rgb(113 115 118 / 25%) !important;
+    border-radius: 5px !important;
+    color: #9d9ea2;
+}
+
+.accordion-button:not(.collapsed) {
+    color: #93a08f !important;
+    background-color: #6393ff1f;
+}
+
+.accordion-button {
+    color: #837db1;
+}
+
+.bodyAcordeonPadre {
+    background-color: #f8fafb !important;
+    color: grey;
+}
+
+.descriptionBtnAcordeon {
+    margin-top: 6px !important;
+    margin-bottom: 6px !important;
+    background: #e7ecff;
+    color: grey;
+}
+
+    .descriptionBtnAcordeon:focus {
+        background: #e7ecff !important;
+    }
+
+    .descriptionBtnAcordeon:not(.collapsed) {
+        background: #e7ecff !important;
+    }
+
+.btnEjercicioCurso {
+    margin-left: 20px !important;
+    margin-bottom: 10px !important;
+}
+
+.fondo-cursos {
+    background: #f8f8f8a6 !important;
+    padding: 15px;
+}
+
+/*Vistas Teacher*/
+.CrearecerciseTeacher {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(22rem, 1fr));
+    grid-auto-rows: auto;
+    grid-gap: 25px;
+}

@@ -81,6 +81,45 @@ namespace ProyectoEFE.DAL
             }
             catch (Exception exeption)
             {
+                Debug.WriteLine("ERROR SELECT TEMAS CON ID: " + exeption.Message);
+            }
+            finally
+            {
+                cnn.CerrarConexion();
+            }
+
+            return lisTopics;
+        }
+
+        public List<TopicsModel> SelectTopicsIdCurs(int id_curs)
+        {
+            List<TopicsModel> lisTopics = new List<TopicsModel>();
+            ConexionBD cnn = new ConexionBD();
+
+            try
+            {
+                //String query
+                String query = @"SELECT * FROM topics where FK_curs="+id_curs;
+
+                //Conexion creada
+                SqlCommand comand = new SqlCommand(query, cnn.Connection);
+
+                //Ejecutar query
+                SqlDataReader registros = comand.ExecuteReader();
+
+                //Obtener lo datos
+                while (registros.Read())
+                {
+                    TopicsModel cursModel = new TopicsModel();
+                    cursModel.Id_topic = (int)registros["id_topic"];
+                    cursModel.Fk_curs = (int)registros["fk_curs"];
+                    cursModel.Name_topic = (String)registros["name_topic"];
+                    cursModel.Description_topic = (String)registros["description_topic"];
+                    lisTopics.Add(cursModel);
+                }
+            }
+            catch (Exception exeption)
+            {
                 Debug.WriteLine("ERROR SELECT TEMAS: " + exeption.Message);
             }
             finally
@@ -90,6 +129,7 @@ namespace ProyectoEFE.DAL
 
             return lisTopics;
         }
+
         public List<TopicsModel> SelectTopics(string id_user)
         {
             List<TopicsModel> lisTopics = new List<TopicsModel>();
@@ -100,7 +140,7 @@ namespace ProyectoEFE.DAL
                 //String query
                 String query = @"SELECT * FROM topics LEFT JOIN curs ON
                                 topics.fk_curs = curs.id_curs 
-                                WHERE autor_idUser='" + id_user+"'";
+                                WHERE autor_idUser='" + id_user + "'";
 
                 //Conexion creada
                 SqlCommand comand = new SqlCommand(query, cnn.Connection);

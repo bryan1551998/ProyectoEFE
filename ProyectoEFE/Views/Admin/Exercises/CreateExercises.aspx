@@ -23,8 +23,10 @@
                 <label for="resposta_exercise" class="form-label">Respuesta del ejercicio</label>
                 <input runat="server" type="text" class="form-control" id="resposta_exercise" />
                 <br />
-                
-                <asp:Button ID="btn_Crear_exercise" runat="server" Text="Crear Ejercicio" class="btn btn-primary" OnClick="btn_Crear_exercise_Click"  />
+                <label for="ejemplo_exercise" class="form-label">Ejemplo del ejercicio</label>
+                <input runat="server" type="text" class="form-control" id="ejemplo_exercise" />
+
+                <asp:Button ID="btn_Crear_exercise" runat="server" Text="Crear Ejercicio" class="btn btn-primary" OnClick="btn_Crear_exercise_Click" />
 
             </div>
 
@@ -43,7 +45,7 @@
                 <label for="id_exercise_delete" class="form-label">Introduzca el <b>ID</b> de ejercicio para eliminarlo: </label>
                 <input runat="server" type="number" class="form-control" id="id_exercise_delete" />
                 <br />
-                <asp:Button ID="btn_eliminar_lesson" runat="server" Text="Eliminar Ejercicio" class="btn btn-primary" OnClick="btn_eliminar_lesson_Click"  />
+                <asp:Button ID="btn_eliminar_lesson" runat="server" Text="Eliminar Ejercicio" class="btn btn-primary" OnClick="btn_eliminar_lesson_Click" />
 
             </div>
         </div>

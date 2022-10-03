@@ -7,83 +7,65 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ProyectoEFE.Views.Teacher
+namespace ProyectoEFE.Views.User.Ejercicio
 {
 
 
-    public partial class TeacherCurs
+    public partial class VerEjercicio
     {
 
         /// <summary>
-        /// name_curs control.
+        /// contenedorCursID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText name_curs;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl contenedorCursID;
 
         /// <summary>
-        /// description_curs control.
+        /// tituloEjercicio control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTextArea description_curs;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl tituloEjercicio;
 
         /// <summary>
-        /// image_curs control.
+        /// descriptionEjercicio control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText image_curs;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl descriptionEjercicio;
 
         /// <summary>
-        /// btn_Crear_Curs control.
+        /// ejemploEjercicio control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_Crear_Curs;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl ejemploEjercicio;
 
         /// <summary>
-        /// btn_Crear_Tema control.
+        /// respuestaEjercico control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_Crear_Tema;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText respuestaEjercico;
 
         /// <summary>
-        /// id_curs_delete control.
+        /// btn_comprobar_result control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl id_curs_delete;
-
-        /// <summary>
-        /// btn_eliminar_curs control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_eliminar_curs;
-
-        /// <summary>
-        /// GridViewCurs control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridViewCurs;
+        protected global::System.Web.UI.WebControls.Button btn_comprobar_result;
     }
 }
