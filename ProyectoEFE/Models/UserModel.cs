@@ -46,7 +46,7 @@ namespace ProyectoEFE.Models
             this.firstname = firstname;
             this.lastname = lastname;
         }
-        public UserModel(string nickName, string firstName, string lastName,string gender, string role)
+        public UserModel(string firstName, string lastName, string nickName, string role, string gender)
         {
             this.nickname = nickName;
             this.firstname = firstName;
