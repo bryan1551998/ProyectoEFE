@@ -27,6 +27,8 @@ namespace ProyectoEFE.Views.User.Ejercicio
                 Response.Redirect("~/");
             }
 
+            this.respuestaExercise.Visible = false;
+
             //Mostar ejercicio
             this.MostrarEjercicio();
         }
@@ -63,18 +65,21 @@ namespace ProyectoEFE.Views.User.Ejercicio
 
             if (n1 == n2)
             {
+                this.respuestaExercise.Visible = true;
                 Debug.WriteLine("Acertaste!!!!!!!");
                 HistorialModel historial = new HistorialModel(Context.User.Identity.GetUserId(), int.Parse(Parametro), 1);
                 DALHistorial dALHistorial = new DALHistorial();
                 dALHistorial.InsertCurs(historial);
+                this.btn_comprobar_result.Enabled = false;
+                this.respuestaExercise.InnerText = "Respuesta correcta.";
             }
             else
             {
-                Debug.WriteLine("Eres pendejo !!!");
+                this.respuestaExercise.Visible = true;
+                Debug.WriteLine("Eres pendejo !");
+                this.respuestaExercise.InnerText = "Intentalo otra vez.";
+                this.respuestaEjercico.Value = "";
             }
-
-           
-        
         }
     }
 }

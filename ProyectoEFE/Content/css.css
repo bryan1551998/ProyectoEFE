@@ -122,8 +122,8 @@ img#MainContent_imagenfoMyCurs {
 }
 
 .descriptionBtnAcordeon {
-    margin-top: 6px !important;
-    margin-bottom: 6px !important;
+    margin-top: 8px !important;
+    margin-bottom: 8px !important;
     background: #e7ecff;
     color: grey;
 }
@@ -152,4 +152,26 @@ img#MainContent_imagenfoMyCurs {
     grid-template-columns: repeat(auto-fill, minmax(22rem, 1fr));
     grid-auto-rows: auto;
     grid-gap: 25px;
+}
+
+/*Vistas */
+#MainContent_descriptionEjercicio {
+    padding: 20px;
+    background: #f8fafb;
+    border-radius: 10px;
+}
+
+p#MainContent_ejemploEjercicio {
+    padding: 20px;
+    background: #ecf2ff;
+    border-radius: 10px;
+}
+
+div#MainContent_respuestaExercise {
+    padding: 20px;
+    background: #909adf;
+    width: 250px !important;
+    color: white;
+    margin-bottom: 10px;
+    border-radius: 10px;
 }

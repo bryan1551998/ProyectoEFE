@@ -5,7 +5,7 @@
     <main class="fondoPantallaGeneralDisplayFlex" >
         <div class="color-contenedor posicionamiento aboutContainer" id="AboutUs">
             <div class="aboutContainer_Informacion d-flex justify-content-center text-center">
-                <div id="collapseOne"  aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                <div id="collapseOne"  class="bt-4 mt-4" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                     <h1>
                         Education For Everyone
                     </h1>
@@ -14,7 +14,7 @@
                         </h3>
                         <br />
                         <p>
-                            hemos creado este sitio web para que la gente de cualquier clase social pueda aprender de manera gratiuta y sencilla el arte de programar 
+                            Hemos creado este sitio web para que la gente de cualquier clase social pueda aprender de manera gratiuta y sencilla el arte de programar 
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
                             ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur
                             adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.

@@ -4,7 +4,7 @@
 
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
     <main class="fondoPantallaGeneralDisplayFlex">
-        s     
+        
     <div class="color-contenedor posicionamiento ">
         <div class="p-3">
             <section id="loginForm">
@@ -56,9 +56,9 @@
             </section>
         </div>
         <div>
-            <section id="socialLoginForm">
+           <%-- <section id="socialLoginForm">
                 <uc:OpenAuthProviders runat="server" ID="OpenAuthLogin" />
-            </section>
+            </section>--%>
         </div>
     </div>
     </main>

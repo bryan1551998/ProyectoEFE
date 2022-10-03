@@ -2,25 +2,29 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
-    <div class="container">
 
-        <div class="row justify-content-center mb-4 pb-4">
 
-            <div id="contenedorCursID" class="col-10 " runat="server">
+    <div class="row justify-content-center mb-4 pb-4 ">
 
-                <h2 class="tituloCurstemsCards p-4 text-center" id="tituloEjercicio" runat="server"></h2>
+        <div id="contenedorCursID" class="col-5 " runat="server">
 
-                <div class="pt-4 pb-4">
+            <h2 class="tituloCurstemsCards p-4 text-center" id="tituloEjercicio" runat="server"></h2>
 
-                    <p class="" id="descriptionEjercicio" runat="server"></p>
-                    <p>Ejemplo</p>
-                    <p class="" id="ejemploEjercicio" runat="server"></p>
-                    <input  type="text" id="respuestaEjercico" runat="server" class=" form-control"/>
-                    <br/>
-                    <asp:Button cssClass="btn btn-primary"  ID="btn_comprobar_result" runat="server" Text="Comprobar" OnClick="btn_comprobar_result_Click" />
-                </div>
-            </div>
+            <div id="respuestaExercise" runat="server"></div>
+
+            <p class="" id="descriptionEjercicio" runat="server"></p>
+            <p>Ejemplo</p>
+            <p class="" id="ejemploEjercicio" runat="server"></p>
+            <p>Introuce tu respuesta.</p>
+            <input type="text" id="respuestaEjercico" runat="server" class=" form-control" />
+            <br />
+            <asp:Button CssClass="btn btn-primary" ID="btn_comprobar_result" runat="server" Text="Comprobar" OnClick="btn_comprobar_result_Click" />
+
+           
+
         </div>
+
+
     </div>
 
 </asp:Content>
