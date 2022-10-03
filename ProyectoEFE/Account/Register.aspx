@@ -97,7 +97,7 @@
                     <div class="form-group">
                         <center>
                             <div class="">
-                                <asp:Button runat="server" OnClick="CreateUser_Click" Text="Register" CssClass="btn btn btn-outline-light botonRegister " />
+                                <asp:Button runat="server" OnClick="CreateUser_Click" Text="Registrarse" CssClass="btn btn btn-outline-light botonRegister " />
                             </div>
                         </center>
                     </div>

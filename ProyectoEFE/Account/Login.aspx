@@ -9,7 +9,7 @@
         <div class="p-3">
             <section id="loginForm">
                 <div class="">
-                    <h4>Login</h4>
+                    <h4>Iniciar Sesion</h4>
                     <hr />
                     <asp:PlaceHolder runat="server" ID="ErrorMessage" Visible="false">
                         <p class="text-danger">
@@ -25,7 +25,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <asp:Label runat="server" AssociatedControlID="Password" CssClass="">Password</asp:Label>
+                        <asp:Label runat="server" AssociatedControlID="Password" CssClass="">Contraseña</asp:Label>
                         <div class="">
                             <asp:TextBox runat="server" ID="Password" TextMode="Password" CssClass="form-control" />
                             <asp:RequiredFieldValidator runat="server" ControlToValidate="Password" CssClass="text-danger" ErrorMessage="The password field is required." />
@@ -41,7 +41,7 @@
                     </div>
                     <div class="form-group botonLogin ">
                         <div class="">
-                            <asp:Button runat="server" OnClick="LogIn" Text="Log in" CssClass="btn btn-outline-light " />
+                            <asp:Button runat="server" OnClick="LogIn" Text="Iniciar Sesion" CssClass="btn btn-outline-light " />
                         </div>
                     </div>
                 </div>

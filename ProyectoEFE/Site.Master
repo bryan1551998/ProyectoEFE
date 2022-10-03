@@ -66,9 +66,9 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item"><a class="nav-link active" aria-current="page" runat="server" href="~/">Home</a></li>
-                        <li class="nav-item"><a class="nav-link active" aria-current="page" runat="server" href="~/About">About</a></li>
-                        <li class="nav-item"><a class="nav-link active" aria-current="page" runat="server" href="~/Contact">Contacat</a></li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" runat="server" href="~/">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" runat="server" href="~/About">Acerca de</a></li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" runat="server" href="~/Contact">Contacto</a></li>
 
                         <asp:LoginView runat="server" ViewStateMode="Disabled">
                             <LoggedInTemplate>
@@ -128,8 +128,8 @@
                             <AnonymousTemplate>
 
                                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                                    <li class="nav-item"><a class="nav-link active" runat="server" href="~/Account/Register">Register</a></li>
-                                    <li class="nav-item"><a class="nav-link active" runat="server" href="~/Account/Login">Log in</a></li>
+                                    <li class="nav-item"><a class="nav-link active" runat="server" href="~/Account/Register">Registrarce</a></li>
+                                    <li class="nav-item"><a class="nav-link active" runat="server" href="~/Account/Login">Iniciar Sesion</a></li>
                                 </ul>
 
                             </AnonymousTemplate>
@@ -137,9 +137,9 @@
                             <LoggedInTemplate>
 
                                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                                    <li class="nav-item"><a class="nav-link active" runat="server" href="~/Views/User/Perfil" title="Manage your account">Hello, <%:this.nombreUser( Context.User.Identity.GetUserId())  %>!</a></li>
+                                    <li class="nav-item"><a class="nav-link active" runat="server" href="~/Views/User/Perfil" title="Manage your account">Bienvenido!!, <%:this.nombreUser( Context.User.Identity.GetUserId())  %>!</a></li>
                                     <li class="nav-item">
-                                        <asp:LoginStatus class="nav-link active" runat="server" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" />
+                                        <asp:LoginStatus class="nav-link active" runat="server" LogoutAction="Redirect" LogoutText="Cerrar Sesion" LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" />
                                     </li>
                                 </ul>
                             </LoggedInTemplate>
