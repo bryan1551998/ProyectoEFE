@@ -14,6 +14,7 @@ namespace ProyectoEFE.Models
         string lastname;
         string profilepicture;
         string role;
+        string gender;
         string email;
         DateTime birtday;
 
@@ -25,6 +26,7 @@ namespace ProyectoEFE.Models
         public string ProfilePicture { get => profilepicture; set => profilepicture = value; }
         public string Id_user { get => id_user; set => id_user = value; }
         public string Role { get => role; set => role = value; }
+        public string Gender { get => gender; set => gender = value; }
         public string Email { get => email; set => email = value; }
 
         //Constructors
@@ -43,6 +45,14 @@ namespace ProyectoEFE.Models
         {
             this.firstname = firstname;
             this.lastname = lastname;
+        }
+        public UserModel(string nickName, string firstName, string lastName,string gender, string role)
+        {
+            this.nickname = nickName;
+            this.firstname = firstName;
+            this.lastname = lastName;
+            this.role = role;
+            this.gender = gender;
         }
         public UserModel()
         {

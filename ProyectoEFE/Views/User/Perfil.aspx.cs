@@ -1,8 +1,11 @@
 ﻿using Microsoft.AspNet.Identity;
+using ProyectoEFE.Conexion;
 using ProyectoEFE.DAL;
 using ProyectoEFE.Models;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -55,6 +58,17 @@ namespace ProyectoEFE.Views.User
                 item.Controls.Add(item3);
             }
         }
-       
+        protected void ModifyUser_Click(object sender, EventArgs e)
+        {
+            DALUser usuario = new DALUser();
+            string sfirstName = firstName.Text;
+            string slastName = lastName.Text;
+            string snickName = (string)nickName.Text;
+            string srole = this.selectRol.Value.ToString();
+            string sgender = this.selectgender.Value.ToString();
+            UserModel usuarioCambiodatos = new UserModel(sfirstName,slastName,snickName,srole,sgender);        
+            usuario.Modificar_Usuario(usuarioCambiodatos, Context.User.Identity.GetUserId());
+        }
+
     }
 }
