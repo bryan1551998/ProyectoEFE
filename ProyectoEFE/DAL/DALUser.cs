@@ -89,7 +89,6 @@ namespace ProyectoEFE.DAL
         }
         public string ImagenGender(string id_user)
         {
-            Debug.WriteLine("holaperro");
             ConexionBD cnn = new ConexionBD();
             string completename = "";
             try
@@ -122,6 +121,33 @@ namespace ProyectoEFE.DAL
             }
 
             return completename;
+        }
+        public void Modificar_Usuario(UserModel usuario, string id_user)
+        {
+            ConexionBD cnn = new ConexionBD();
+            try
+            {
+                Debug.WriteLine("estoy aqui");
+                //String query
+                String query = $"UPDATE AspNetUsers SET FirstName = '{(string)usuario.FirstName}'," +
+                                                     $" LastName = '{(string)usuario.LastName}'," +
+                                                     $" NickName = '{(string)usuario.NickName}'," +
+                                                     $" Role = '{(string)usuario.Role}'," +
+                                                     $" Gender = '{(string)usuario.Gender}'" + 
+                                                     $" WHERE Id = '" + id_user + "'";
+                //Conexion creada
+                SqlCommand comand = new SqlCommand(query, cnn.Connection);
+                //Ejecutar query
+                SqlDataReader registros = comand.ExecuteReader();
+            }
+            catch (Exception exeption)
+            {
+                Debug.WriteLine("ERROR SELECT USER: " + exeption.Message);
+            }
+            finally
+            {
+                cnn.CerrarConexion();
+            }
         }
     }
 }
