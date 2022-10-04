@@ -5,7 +5,7 @@
       
             <div class="text-light text-right banner" id="tituloDeLaPagina">
                 <div class="display-4 text-center font-weight-bold heading">
-                    <img id="logo" src="/images/logo%20white.png" />
+                    <img  id="logo"src="images/logowhites.png" />
                 </div>
             </div>
         
